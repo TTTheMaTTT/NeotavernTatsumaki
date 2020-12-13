@@ -1,0 +1,64 @@
+// Пример анимации качения текста (вариант, работающий со словами)
+public void SetText( string text ) 
+{
+    _textGUI.SetText( text );
+
+    // Определяем положения слов
+    _wordIndexes = new List<int> { 0 };
+    _wordLengthes = new List<int>();
+
+    for( int index = text.IndexOf( ' ' ); index > -1; index = text.IndexOf( ' ', index + 1 ) ) {
+        _wordLengthes.Add( index - _wordIndexes[_wordIndexes.Count - 1] );
+        _wordIndexes.Add( index + 1 );
+    }
+    _wordLengthes.Add( text.Length - _wordIndexes[_wordIndexes.Count - 1] );
+}
+
+private void Awake()
+{
+    _textGUI = GetComponent<TextMeshProUGUI>();
+}
+
+private void Update()
+{
+    if( _textGUI.text.Length == 0 ) {
+        return;
+    }
+    _textGUI.ForceMeshUpdate();
+
+    var mesh = _textGUI.mesh;
+    var vertices = mesh.vertices;
+
+    for( int w = 0; w < _wordIndexes.Count; w++ ) {
+
+        int wordIndex = _wordIndexes[w];
+        Vector3 offset = Wobble( Time.unscaledTime + w );
+        for( int c = 0; c < _wordLengthes[w]; c++ ) {
+            var charInfo = _textGUI.textInfo.characterInfo[wordIndex +  c];
+            if( !charInfo.isVisible ) {
+                continue;
+            }
+
+            for( int j = 0; j < 4; j++ ) {
+                vertices[charInfo.vertexIndex + j] += offset;
+            }
+        }
+    }
+
+    mesh.vertices = vertices;
+    _textGUI.canvasRenderer.SetMesh( mesh );
+}
+
+private Vector2 Wobble( float time ) 
+{
+    return new Vector2( Mathf.Sin( time * _xCoof ), Mathf.Cos( time * _yCoof ) ) * _wobbleAmplitude;
+}
+
+private TextMeshProUGUI _textGUI;// Соответствующий обработчику элемент GUI, занимающийся отображением текста
+
+List<int> _wordIndexes;
+List<int> _wordLengthes;
+
+private float _xCoof = 4f;
+private float _yCoof = 5f;
+private float _wobbleAmplitude = 1f;

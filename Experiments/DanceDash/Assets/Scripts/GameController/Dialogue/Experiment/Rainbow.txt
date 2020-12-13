@@ -1,0 +1,58 @@
+// Радуга
+public void SetText( string text ) 
+{
+    _textGUI.SetText( text );
+}
+
+private void Awake()
+{
+    _textGUI = GetComponent<TextMeshProUGUI>();
+}
+
+private void Update()
+{
+    if( _textGUI.text.Length == 0 ) {
+        return;
+    }
+
+    _textGUI.ForceMeshUpdate();
+
+    var mesh = _textGUI.mesh;
+    var vertices = mesh.vertices;
+    var colors = mesh.colors;
+
+    for( int c = 0; c < _textGUI.textInfo.characterCount; c++ ) {
+        var charInfo = _textGUI.textInfo.characterInfo[c];
+        if( !charInfo.isVisible ) {
+            continue;
+        }
+
+        for( int j = 0; j < 4; j++ ) {
+            colors[charInfo.vertexIndex + j] = GetRainbowColor( Time.unscaledTime + _lengthCoof * vertices[charInfo.vertexIndex + j].x );
+        }
+    }
+
+    mesh.colors = colors;
+    _textGUI.canvasRenderer.SetMesh( mesh );
+
+}
+
+private Color GetRainbowColor( float time ) 
+{
+    /*
+    return new Color( 
+        Mathf.Sin( _rainbowFrequence * time ) + 1 / 2,
+        Mathf.Sin( _rainbowFrequence * time + Mathf.PI * 2 / 3) + 1 / 2,
+        Mathf.Sin( _rainbowFrequence * time + Mathf.PI * 4 / 3 ) + 1 / 2
+        );
+    */
+    return new Color(
+        Mathf.Clamp( Mathf.Sin( _rainbowFrequence * time + Mathf.PI * 4 / 3 ), 0 ,1 ),
+        Mathf.Clamp( Mathf.Sin( _rainbowFrequence * time + Mathf.PI * 2 / 3 ), 0, 1 ),
+        Mathf.Clamp( Mathf.Sin( _rainbowFrequence * time  ), 0, 1 )
+        );
+}
+
+private TextMeshProUGUI _textGUI;// Соответствующий обработчику элемент GUI, занимающийся отображением текста
+float _rainbowFrequence = 4f;
+float _lengthCoof = 0.01f;

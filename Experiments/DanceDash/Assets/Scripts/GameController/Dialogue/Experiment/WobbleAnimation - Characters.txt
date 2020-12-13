@@ -1,0 +1,43 @@
+// Пример анимации качения текста (вариант, работающий с символами)
+public void SetText( string text ) 
+{
+    _textGUI.SetText( text );
+}
+
+private void Awake()
+{
+    _textGUI = GetComponent<TextMeshProUGUI>();
+}
+
+private void Update()
+{
+    _textGUI.ForceMeshUpdate();
+    var mesh = _textGUI.mesh;
+    var vertices = mesh.vertices;
+
+    for( int i = 0; i < _textGUI.textInfo.characterCount; i++ ) {
+        var charInfo = _textGUI.textInfo.characterInfo[i];
+        if( !charInfo.isVisible ) {
+            continue;
+        }
+        Vector3 offset = Wobble( Time.unscaledTime + i );
+
+        for( int j = 0; j < 4; j++ ) {
+            vertices[charInfo.vertexIndex + j] += offset;
+        }
+    }
+
+    mesh.vertices = vertices;
+    _textGUI.canvasRenderer.SetMesh( mesh );
+}
+
+private Vector2 Wobble( float time ) 
+{
+    return new Vector2( Mathf.Sin( time * _xCoof ), Mathf.Cos( time * _yCoof ) ) * _wobbleAmplitude;
+}
+
+private TextMeshProUGUI _textGUI;// Соответствующий обработчику элемент GUI, занимающийся отображением текста
+
+private float _xCoof = 4f;
+private float _yCoof = 5f;
+private float _wobbleAmplitude = 1f;

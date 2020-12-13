@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogueSystem>
+	<actorsImagesFolder>Sprites\Characters</actorsImagesFolder>
+	<actorScale>0.4</actorScale>
+</dialogueSystem>

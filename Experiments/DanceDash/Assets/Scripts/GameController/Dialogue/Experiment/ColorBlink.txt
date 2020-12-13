@@ -1,0 +1,43 @@
+
+// Пример мигания цвета
+public void SetText( string text ) 
+{
+    _textGUI.SetText( text );
+    _textGUI.ForceMeshUpdate();
+
+}
+
+private void Awake()
+{
+    _textGUI = GetComponent<TextMeshProUGUI>();
+}
+
+private void Update()
+{
+    var textInfo = _textGUI.textInfo;
+
+    // Мигание
+    Color newColor = Color.Lerp( Color.red, Color.blue,  (Mathf.Sin(Time.unscaledTime * _frequencyCoof ) + 1 )/2 );
+
+    for( int i = 0; i < textInfo.characterCount; i++ ) {
+        var charInfo = textInfo.characterInfo[i];
+        if( !charInfo.isVisible ) {
+            continue;
+        }
+        var colors = textInfo.meshInfo[charInfo.materialReferenceIndex].colors32;
+        int vertexIndex = charInfo.vertexIndex;
+        for( int j = 0; j < 4; j++ ) {
+            colors[vertexIndex + j] = newColor;
+        }
+    }
+
+    for( int i = 0; i < textInfo.meshInfo.Length; i++ ) {
+        var meshInfo = textInfo.meshInfo[i];
+        meshInfo.mesh.colors32 = meshInfo.colors32;
+        _textGUI.UpdateGeometry( meshInfo.mesh, i );
+    }
+}
+
+private TextMeshProUGUI _textGUI;// Соответствующий обработчику элемент GUI, занимающийся отображением текста
+
+private float _frequencyCoof = 10f;// Скорость перехода.

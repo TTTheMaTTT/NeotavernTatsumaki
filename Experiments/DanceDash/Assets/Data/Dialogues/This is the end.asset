@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0f281a44638d44ea46772e00af6b80, type: 3}
+  m_Name: This is the end
+  m_EditorClassIdentifier: 
+  Statements:
+  - Name: Da
+    Statement: <type=wobble, coverage=character, amplitude=5>Roses are  <type=color,color=ff0000>red</color></wobble>
+  - Name: Da
+    Statement: Violets are <type=color_blink, colorFrom=ff0000, colorTo=0000ff>blue</color_blink>
+  - Name: Da
+    Statement: <type=color_transition, colorFrom=ffffffff,colorTo=ffffff00,speed=1>All</color_transition>
+      <type=color_transition, colorFrom=ffffffff,colorTo=ffffff00,speed=0.8>things</color_transition>
+      <type=color_transition, colorFrom=ffffffff,colorTo=ffffff00,speed=0.6>will</color_transition>
+      <type=color_transition, colorFrom=ffffffff,colorTo=ffffff00,speed=0.4>end</color_transition>
+  - Name: Da
+    Statement: <type=shake, coverage=word, frequency=100, amplitude=5><type=color_rainbow>And
+      so do you</color_rainbow></shake>
+  - Name: Da
+    Statement: <type=size_transition, sizeFrom=1, sizeTo=0, speed=0.1>Goodbye</size_transition>

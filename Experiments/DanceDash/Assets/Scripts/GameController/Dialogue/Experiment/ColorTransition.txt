@@ -1,0 +1,65 @@
+
+// Пример перехода от одного цвета к другому.
+public void SetText( string text ) 
+{
+    _startTransitionTime = Time.unscaledTime;
+
+    _textGUI.SetText( text );
+    _textGUI.ForceMeshUpdate();
+
+    var textInfo = _textGUI.textInfo;
+
+    for( int i = 0; i < textInfo.characterCount; i++ ) {
+        var charInfo = textInfo.characterInfo[i];
+        if( !charInfo.isVisible ) {
+            continue;
+        }
+        var colors = textInfo.meshInfo[charInfo.materialReferenceIndex].colors32;
+        int vertexIndex = charInfo.vertexIndex;
+        for( int j = 0; j < 4; j++ ) {
+            colors[vertexIndex + j] = Color.red;
+        }
+    }
+
+    for( int i = 0; i < textInfo.meshInfo.Length; i++ ) {
+        var meshInfo = textInfo.meshInfo[i];
+        meshInfo.mesh.colors32 = meshInfo.colors32;
+        _textGUI.UpdateGeometry( meshInfo.mesh, i );
+    }
+}
+
+private void Awake()
+{
+    _textGUI = GetComponent<TextMeshProUGUI>();
+}
+
+private void Update()
+{
+    var textInfo = _textGUI.textInfo;
+
+    // Переход цвета.
+    Color newColor = Color.Lerp( Color.red, Color.blue, Mathf.Clamp( _transitionSpeed * (Time.unscaledTime - _startTransitionTime), 0f, 1f ) );
+
+    for( int i = 0; i < textInfo.characterCount; i++ ) {
+        var charInfo = textInfo.characterInfo[i];
+        if( !charInfo.isVisible ) {
+            continue;
+        }
+        var colors = textInfo.meshInfo[charInfo.materialReferenceIndex].colors32;
+        int vertexIndex = charInfo.vertexIndex;
+        for( int j = 0; j < 4; j++ ) {
+            colors[vertexIndex + j] = newColor;
+        }
+    }
+
+    for( int i = 0; i < textInfo.meshInfo.Length; i++ ) {
+        var meshInfo = textInfo.meshInfo[i];
+        meshInfo.mesh.colors32 = meshInfo.colors32;
+        _textGUI.UpdateGeometry( meshInfo.mesh, i );
+    }
+}
+
+private TextMeshProUGUI _textGUI;// Соответствующий обработчику элемент GUI, занимающийся отображением текста
+        
+private float _startTransitionTime;// Время начала перехода.
+private float _transitionSpeed = 1f;// Скорость перехода.
