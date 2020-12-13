@@ -38,7 +38,7 @@ namespace Dialogue {
         public TDialogueActorArrangementPosition Position;// Где расположить лицо. Не имеет смысла при ArrangementAction == Leave
         public Vector2 ExactPosistion;// Точные координаты (в системе отсчёта UI), на которых нужно расположить лицо. Принимается в расчёт при ArrangementPosition == Custom.
         public bool UseAutoSize = true;// Автоматически рассчитывать размер спрайта лица
-        public bool Size;// Задаваемый размер спрайта. Имеет смысл, когда UseAutoSize = false.
+        public Vector2 Size;// Задаваемый размер спрайта. Имеет смысл, когда UseAutoSize = false.
     }
 
     /// <summary>
@@ -80,8 +80,8 @@ namespace Dialogue {
         public string Name;// Имя отображаемого имени говорящего
         public string ActorName;// Имя говорящего действующего лица. Может отличаться от Name. Нужно для соотнесения с ActorsArrangements и ActorsImages
 
-        CDialogueActorsArrangements ActorsArrangements;// Как нужно поменять расположение лиц диалога при данном высказывании
-        CDialogueActorImage[] ActorsImages;// Как нужно отобразить лиц диалога.
+        public CDialogueActorsArrangements ActorsArrangements;// Как нужно поменять расположение лиц диалога при данном высказывании
+        public CDialogueActorImage[] ActorsImages;// Как нужно отобразить лиц диалога.
 
         [TextArea]
         public string Statement;// Само высказывание

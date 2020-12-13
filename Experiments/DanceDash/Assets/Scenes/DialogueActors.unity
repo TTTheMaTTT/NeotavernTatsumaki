@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 220640729}
   - component: {fileID: 220640731}
   - component: {fileID: 220640730}
+  - component: {fileID: 220640732}
   m_Layer: 5
   m_Name: ActorsPanel
   m_TagString: Untagged
@@ -403,6 +404,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220640728}
   m_CullTransparentMesh: 0
+--- !u!114 &220640732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220640728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9411e24dbe1a6459f04678be3efa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actorDefaultScale: 0.8
+  _boundaries:
+    serializedVersion: 2
+    x: -500
+    y: -500
+    width: 1000
+    height: 700
+  _transitionSpeed: 0.03
 --- !u!1 &596743199
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +826,7 @@ MonoBehaviour:
   _statementText: {fileID: 596743201}
   _nameText: {fileID: 1877610139}
   _nextStatementButton: {fileID: 2048550060}
-  _actorsPanel: {fileID: 0}
+  _actorsPanel: {fileID: 220640732}
 --- !u!1 &1584907629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1382,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 6655414813778436790, guid: a9815ec6696e44f41bdf3622d9f51f65,
+        type: 3}
+      propertyPath: _dialogueToShow
+      value: 
+      objectReference: {fileID: 11400000, guid: bb11932398ff55a4dbc284e3c2c5629a,
+        type: 2}
     - target: {fileID: 6655414813778436791, guid: a9815ec6696e44f41bdf3622d9f51f65,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Xml;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,15 +11,12 @@ namespace Dialogue {
     public class CDialogueSystem : IDialogueSystem
     {
 
-        public CDialogueSystem( string iniPath = "DialogueSystem.xml") 
+        public CDialogueSystem() 
         {
             _currentStatements = new Queue<CDialogueStatement>();
 
-            XmlDocument iniDoc = new XmlDocument();
-            iniDoc.Load( iniPath );
-
             _dialogueWindow = CGameUI.Instance().DialogueWindow;
-            _dialogueWindow.Initialize( nextStatementCallback, iniDoc );
+            _dialogueWindow.Initialize( nextStatementCallback );
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace Dialogue {
     {
 
         //IDialogueWindow
-        public void Initialize( Action nextStatementCallback, XmlDocument iniDoc = null ) 
+        public void Initialize( Action nextStatementCallback ) 
         {
             _nextStatementCallback = nextStatementCallback.Invoke;
 
@@ -28,6 +28,7 @@ namespace Dialogue {
             _dialoguePane.SetActive( true );
             _statementTextProcessor.SetText( "" );
             _nameText.SetText( "" );
+            _actorsPanel.OnStartDialogue();
         }
 
         public void Close()
@@ -39,6 +40,8 @@ namespace Dialogue {
         {
             _nameText.SetText( statement.Name );
             _statementTextProcessor.SetText( statement.Statement );
+
+            _actorsPanel.ShowActors( statement.ActorsArrangements, statement.ActorsImages, statement.ActorName );
         }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Dialogue {
             if( _actorsPanel == null ) {
                 _actorsPanel = _dialoguePane.transform.Find( "ActorsPanel" ).GetComponent<CDialogueActorsPanel>();
             }
+            Assert.IsTrue( _actorsPanel != null );
 
             _areChildrenWindowsDefined = true;
         }

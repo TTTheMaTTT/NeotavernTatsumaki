@@ -12,7 +12,7 @@ namespace Dialogue {
         /// Инициализация окна. Просто указывается функция, вызываемая при переходе к следующему выражению.
         /// </summary>
         /// <param name="nextStatementCallback">Коллбэк при переходе к следующему выражению</param>
-        void Initialize( Action nextStatementCallback, XmlDocument iniDoc );
+        void Initialize( Action nextStatementCallback );
         void Open();
         void Close();
         /// <summary>
