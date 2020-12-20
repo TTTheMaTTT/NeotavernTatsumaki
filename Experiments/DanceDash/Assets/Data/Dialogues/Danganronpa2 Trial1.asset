@@ -1,0 +1,1774 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0f281a44638d44ea46772e00af6b80, type: 3}
+  m_Name: Danganronpa2 Trial1
+  m_EditorClassIdentifier: 
+  Statements:
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 0
+        Position: 3
+        ExactPosistion: {x: 0, y: -100}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 0
+        Position: 3
+        ExactPosistion: {x: -300, y: 200}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Monokuma
+      Image: {fileID: 21300000, guid: 8bc4994f8e588064094a0aeae47327ed, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Monomi
+      Image: {fileID: 21300000, guid: 817df53d3dea9d741951d86c12d31830, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Now then, let's begin with a simple explanation of the class trial.
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: During the class trial, you will present your arguments for whio the
+      killer is, and vote for "whodunnit."
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: If you vote correctly, then only the blackened will receive punishment.
+      But if you pick the wrong person...
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: I''ll punish everyone *besides* the blackened, and that person will
+      earn the right to leave this island!
+  - Name: Monomi
+    ActorName: Monomi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Monomi
+      Image: {fileID: 21300000, guid: 807a62b129d91ce44a0e360e2082c402, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: S-Such a cruel rule...!
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Chiaki
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nekomaru
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Sonia
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Teruteru
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Peko
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Kazuichi
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mahiru
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hajime
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hiyoko
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Gundham
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Akane
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Fuyuhiko
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Ibuki
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nagito
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mikan
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Chiaki
+      Image: {fileID: 21300000, guid: 041eb7f2d045fd84882109d24fbe70af, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: d80f50ccbb491ee4caac218ca8cc7eeb, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Sonia
+      Image: {fileID: 21300000, guid: 5707481232ead61478e394bd21952773, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Teruteru
+      Image: {fileID: 21300000, guid: bc84990e047ef1c449ac5fa71950c566, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: d2eeeb248e7ac8c429151be8fa2fdb3f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 9f29253c02c72a448bbcccac9cdb908c, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: a31e0da81045eb9499f92dfcd0630db7, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8e0809d27d07eb642aa713badf0fb6ae, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Hiyoko
+      Image: {fileID: 21300000, guid: 9883c0bc440965a45bb55265237bd727, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Gundham
+      Image: {fileID: 21300000, guid: 1c6410e9cc21b6449b4040d46b915e68, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: e3e2346847a97174399b2e372ea29c5f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Fuyuhiko
+      Image: {fileID: 21300000, guid: d153c4a6e10cb604b9290cb99c45c3b2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: 3a13bb5072a74b74583144460aa57e11, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 40d82129fe394474e907011756db371b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Mikan
+      Image: {fileID: 21300000, guid: fa698d3199395554ba542aaf3f48836d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Before we begin, I'd like to confirm one thing. Is there really a
+      killer among us?
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 0
+        Position: 3
+        ExactPosistion: {x: 0, y: -100}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 0
+        Position: 3
+        ExactPosistion: {x: -300, y: 200}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Chiaki
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nekomaru
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Sonia
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Teruteru
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Peko
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Kazuichi
+        ArrangementAction: 1
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mahiru
+        ArrangementAction: 1
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hajime
+        ArrangementAction: 1
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hiyoko
+        ArrangementAction: 1
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Gundham
+        ArrangementAction: 1
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Akane
+        ArrangementAction: 1
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Fuyuhiko
+        ArrangementAction: 1
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Ibuki
+        ArrangementAction: 1
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nagito
+        ArrangementAction: 1
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mikan
+        ArrangementAction: 1
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Monokuma
+      Image: {fileID: 21300000, guid: 8bc4994f8e588064094a0aeae47327ed, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Monomi
+      Image: {fileID: 21300000, guid: 807a62b129d91ce44a0e360e2082c402, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Most definitely... There's no doubt that the blackened is lurking
+      among you.
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Such a sad state of affairs, isn't it?
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: By the way, this class trial is gonna be 100 percent fair, so there's
+      no need to worry.
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Monokuma
+      Image: {fileID: 21300000, guid: ae1dd0bf361208a4d8bc328e8d1e1995, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: I'm the type who hates favoritism and prejudice... Well, not as much
+      as I hate Monomi. of course.
+  - Name: Monomi
+    ActorName: Monomi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Monomi
+      Image: {fileID: 21300000, guid: 825f61b963f72784c8c6e7398223b458, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: You hate me that much!?
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Monokuma
+      Image: {fileID: 21300000, guid: 567e5dabb4558114c902d08e6f71c2ac, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Now let's begin!
+  - Name: Mikan
+    ActorName: Mikan
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Chiaki
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nekomaru
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Sonia
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Teruteru
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Peko
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Kazuichi
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mahiru
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hajime
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Hiyoko
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Gundham
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Akane
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Fuyuhiko
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Ibuki
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Nagito
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Mikan
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Chiaki
+      Image: {fileID: 21300000, guid: 041eb7f2d045fd84882109d24fbe70af, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: d80f50ccbb491ee4caac218ca8cc7eeb, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Sonia
+      Image: {fileID: 21300000, guid: 5707481232ead61478e394bd21952773, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Teruteru
+      Image: {fileID: 21300000, guid: bc84990e047ef1c449ac5fa71950c566, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: d2eeeb248e7ac8c429151be8fa2fdb3f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 9f29253c02c72a448bbcccac9cdb908c, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: a31e0da81045eb9499f92dfcd0630db7, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8e0809d27d07eb642aa713badf0fb6ae, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: 3a13bb5072a74b74583144460aa57e11, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Hiyoko
+      Image: {fileID: 21300000, guid: 9883c0bc440965a45bb55265237bd727, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Gundham
+      Image: {fileID: 21300000, guid: 1c6410e9cc21b6449b4040d46b915e68, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: e3e2346847a97174399b2e372ea29c5f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Fuyuhiko
+      Image: {fileID: 21300000, guid: d153c4a6e10cb604b9290cb99c45c3b2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 40d82129fe394474e907011756db371b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Mikan
+      Image: {fileID: 21300000, guid: 268bd187db03e4c48ad98adcde66d62d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Y-You're telling us to begin... but what are we supposed to do?
+  - Name: Akane
+    ActorName: Akane
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: 5e6fbf90cbce51442bef6d8ee038a7ab, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No complainin', let's just settle this with our fists!
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 7de9b666fbdfcb64f8491a00599f24f9, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Were you even listening to the rules!?
+  - Name: Fuyuhiko
+    ActorName: Fuyuhiko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Fuyuhiko
+      Image: {fileID: 21300000, guid: 5b97e8edac0823447804e77606ac8840, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Didn't that Byakuya bastard get killed in the dining hall, huh? Then
+      everyone there is a fuckin' suspect.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 1b6f6a8634cace94eb856100cbc48e31, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Yeah, yeah. What you're really trying to say is that you're not the
+      killer, right?
+  - Name: Fuyuhiko
+    ActorName: Fuyuhiko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Fuyuhiko
+      Image: {fileID: 21300000, guid: 705e98e994428c445ac57a4c221be909, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No shit... You guys went off on your own and started killing each
+      other. This has nothing to do with me...
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 51a877d70c824ad45b2fef517a4431b8, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Huh? What does that mean?
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 098ba023f62d7d24b97a6f9d43f3e293, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: A-Anyway... why don't we try talking about the most pressing issue
+      on our minds?
+  - Name: Teruteru
+    ActorName: Teruteru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Teruteru
+      Image: {fileID: 21300000, guid: 40a3fc98985d74743a11c25fc445cff5, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Huh? The most pressing issue on our minds...?
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 40d82129fe394474e907011756db371b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Where we found the body. It's very strange to find a body underneath
+      a table.
+  - Name: Chiaki
+    ActorName: Chiaki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Chiaki
+      Image: {fileID: 21300000, guid: 041eb7f2d045fd84882109d24fbe70af, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Then... let's start with that mystery.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 037df1c283b1c794389c435f97d313cc, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: <type=color, color=0000ff>The reason why Byakuya's body was discovered
+      under the dining hall table...</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: <type=color, color=0000ff>We can start with that... But ultimately,
+      we need to find out who murdered him...</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: <type=color, color=0000ff>If we can't do that...</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: cf99e7c3216798c4683ca4d1af9f7573, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: <type=color, color=0000ff>No... thinking about "if" is a waste of
+      time.</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: <type=color, color=0000ff>We have to do this... no matter what!</color>
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 1eac2ce34ae09334eb2434737522aec2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Why was Byakuya's body...
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...in a place like that?
+  - Name: Gundham
+    ActorName: Gundham
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Gundham
+      Image: {fileID: 21300000, guid: e9da1ed96577e8e44b4367649234779a, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: His body was underneath the table...
+  - Name: Gundham
+    ActorName: Gundham
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...at the very back of the dining hall.
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 253ff1c38794b2044806d0b437692ce5, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: After the killer murdered Byakuya...
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: cb65a7d247baeaf47a2ad715049415c2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ...they probably <type=color, color=ffff00>moved the body</color>
+      there.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 5a1b9bce5465e3b478566fb36836d68d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No... I don't think the killer moved the body.
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 782df8d0dc3c83247a077a14791ad2cd, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ...Huh? Why?
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 1eac2ce34ae09334eb2434737522aec2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Try to remember what the body looked like when we found it under the
+      table...
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Though there was a lot of blood everywhere, there was no sign the
+      killer actually dragged the body through it.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: f964acbe16864db42b3a046c50ddf80c, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: So that's why you think it's impossible that the killer moved the
+      body... I see, I get your point.
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 10b304430ff0941428b30514f0cbdd8b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Arghhh! And here I though I had a genius idea!
+  - Name: Hiyoko
+    ActorName: Hiyoko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hiyoko
+      Image: {fileID: 21300000, guid: 5be3dc23b36886a4a8360afeaf727c9f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Too bad you're sooooooo stupid and boring and unpopular! Your life
+      is meaningless!
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 4af171893a5edae4e9cea7f6cb50d0b2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: I-I respond better to praise, you know!
+  - Name: Ibuki
+    ActorName: Ibuki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: c01f567c5d872e641b3bfda8b0d550fe, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But if the killer didn't move the body, why was it under the table?
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 037df1c283b1c794389c435f97d313cc, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Byakuya was probably killed... under the table.
+  - Name: Nekomaru
+    ActorName: Nekomaru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: 74c57608b8184504da959e2f3b09f02e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: What...? You think he was killed under the table!?
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 49bd30a8538757241af8e72a2bb95277, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: So Byakuya snuck under the table for reasons unknown, and that's when
+      he was killed...
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Then, shortly thereafter, we found his body under the table.
+  - Name: Nekomaru
+    ActorName: Nekomaru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: 07f56887260a06749ac5e14f5a5de6cc, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Th-That does make sense, but... why di he go under the table?
+  - Name: Akane
+    ActorName: Akane
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: 3335aaebf05888d49ac26eb2d209185e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Obviously he was hidin' so he could surprise us. That dude was always
+      a big jokester.
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: 3335aaebf05888d49ac26eb2d209185e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: The hell he was! You seriously could't tell that kinda person he was!?
+  - Name: Kazuichi
+    ActorName: Kazuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Kazuichi
+      Image: {fileID: 21300000, guid: 712287c5db8aff94bb2864e9c3c4c71f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: The hell he was! You seriously couldn't tell what kinda person he
+      was!?
+  - Name: Teruteru
+    ActorName: Teruteru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Teruteru
+      Image: {fileID: 21300000, guid: ee0f47411a3883946bbbcc930fee62a8, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Hmm... Maybe he panicked during the blackout and dove under the table...
+  - Name: Nekomaru
+    ActorName: Nekomaru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: 8dac30b0f501fd2499179552e88f989f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: It's a blackout, not an erthquake! Just ' cause the power went out
+      doesn't mean he'd dive under the table!
+  - Name: Nagito
+    ActorName: Nagito
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nagito
+      Image: {fileID: 21300000, guid: 1eac2ce34ae09334eb2434737522aec2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: The reason why... is probably connected to what Byakuya was doing
+      during the party, don't you think?
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8978d6e5c20c41642935f7bdc976ef87, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: <type=color, color=0000ff>The reason Byakuya dove under the table...</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8978d6e5c20c41642935f7bdc976ef87, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: <type=color, color=0000ff>The reason Byakuya dove under the table...</color>
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: It probably has something to do<type=color, color=ffff00>knife</color>
+      we found under the table.
+  - Name: Ibuki
+    ActorName: Ibuki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: 49a9f32c0b598844c8c1b796d1251783, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Knife...? Oh, you mean that thing that obviously screams, "I am the
+      murder weapon!"?
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Byakuya probably noticed the knife was hidden there...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...so in order to get it, he moved under the table.
+  - Name: Gundham
+    ActorName: Gundham
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Gundham
+      Image: {fileID: 21300000, guid: e387ed1626e34ba43a2644cd5bd19689, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: He was particularly sensitive to the presence of dangerous items,
+      so I cannot deny that posibility...
+  - Name: Gundham
+    ActorName: Gundham
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Gundham
+      Image: {fileID: 21300000, guid: ca37e3485bf1fdd4d8d9b82d79f64a01, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But how did he notice that there was a knife under the table?
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 60767a84ceb7d1e4d846bf21b5c021ab, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: If he knew beforehand... he probably would've done something about
+      it before the blackout, right?
+  - Name: Chiaki
+    ActorName: Chiaki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Chiaki
+      Image: {fileID: 21300000, guid: fd6153b224e986b4dbc5da534bbefa20, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Then... instead of knowing about it beforehand, maybe he saw it right
+      at that moment...?
+  - Name: Chiaki
+    ActorName: Chiaki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Like, for example, he might've seen someone trying to take the knife
+      out from under the table...
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: 956f59ec89036ec449c41c2ac3d0bd72, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No, that's not possible.
+  - Name: Nekomaru
+    ActorName: Nekomaru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Nekomaru
+      Image: {fileID: 21300000, guid: 07f56887260a06749ac5e14f5a5de6cc, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: What...? You seem rather confident about that.
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: d2eeeb248e7ac8c429151be8fa2fdb3f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Of course. I have proof to back me up.
+  - Name: Monokuma
+    ActorName: Monokuma
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 0
+        Position: 3
+        ExactPosistion: {x: -200, y: 300}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Monokuma
+      Image: {fileID: 21300000, guid: ae1dd0bf361208a4d8bc328e8d1e1995, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Monomi
+      Image: {fileID: 21300000, guid: 825f61b963f72784c8c6e7398223b458, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Puhuhu! This is almost like a real trial!
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Monokuma
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 0
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+      - ActorName: Monomi
+        ArrangementAction: 1
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 0
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: d6923c376b2c50e4fb74df1d09b26c9f, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: I'm sure Byakuya ducked under the table...
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...during the blackout.
+  - Name: Sonia
+    ActorName: Sonia
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Sonia
+      Image: {fileID: 21300000, guid: 473ecde7f50c667419f8223589ee9363, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: That sounds correct!
+  - Name: Hiyoko
+    ActorName: Hiyoko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hiyoko
+      Image: {fileID: 21300000, guid: 9fa062fa620d8e44b9054b9b6d9e79bb, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: If that's the case...
+  - Name: Hiyoko
+    ActorName: Hiyoko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: During the blackout, Mr. Ham Hands...
+  - Name: Hiyoko
+    ActorName: Hiyoko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hiyoko
+      Image: {fileID: 21300000, guid: e90d0b30d46e6b344b720b54cfdb8c7c, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ...must've seen the killer take the knife...
+  - Name: Ibuki
+    ActorName: Ibuki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: c01f567c5d872e641b3bfda8b0d550fe, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But it was super pitch black!
+  - Name: Akane
+    ActorName: Akane
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Akane
+      Image: {fileID: 21300000, guid: 3335aaebf05888d49ac26eb2d209185e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: It was so dark I couldn't see my food!
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: 956f59ec89036ec449c41c2ac3d0bd72, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: <type=color, color=ffff00>Byakuya couldn't see</color> in the dark,
+      either...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 5a1b9bce5465e3b478566fb36836d68d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No, Byakuya was probably the only who was able to see in the dark.
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: 39eaaac19679f724694b519ed652eea0, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ...Why do you say that?
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: If he was using those <type=color, color=ffff00>night-vision goggles</color>
+      we found under the table, he could've seen what was happening.
+  - Name: Peko
+    ActorName: Peko
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Peko
+      Image: {fileID: 21300000, guid: 0b0b068de8c8b6149914c0aa8f21ad5b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: If he was using those <type=color, color=ffff00>night-vision goggles</color>
+      we found under the table, he could've seen what was happening.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...Yeah, that seems to be the case.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 51a877d70c824ad45b2fef517a4431b8, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: No, that's obviously wrong! It should be the other way around!
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 037df1c283b1c794389c435f97d313cc, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: O-Other way around...?
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: e212e01fff2ffff429799904410c4926, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Seriously, the killer used those night-vision goggles, not Byakuya!
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 1b6f6a8634cace94eb856100cbc48e31, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: If you just use common sense...
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 51a877d70c824ad45b2fef517a4431b8, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ..the killer obviously...
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...used those night-vision goggles!
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: e212e01fff2ffff429799904410c4926, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: That's gotta be it!
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 5a1b9bce5465e3b478566fb36836d68d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Where's your proof that the killer used them?
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: a63031a431f52044caa1c12ca8cf154b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Because, if they used night-vision goggles...
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 51a877d70c824ad45b2fef517a4431b8, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: ...the they could've killed Byakuya... even in the dark...
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 5c2a682fddfaa244984902214c79993e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: then they could've kiled Byakuya... I mean, in reality... that's what
+      happened.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: 96b3c84676902094db63751eead74dfe, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: So... those goggles were planned in advance.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: e212e01fff2ffff429799904410c4926, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: The killer... <type=color, color=ffff00>brought them</color> to the
+      crime scene!
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages: []
+    Statement: No, Byakuya was definitely the one who brought those night-vision
+      goggles.
+  - Name: Mahiru
+    ActorName: Mahiru
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Mahiru
+      Image: {fileID: 21300000, guid: ce248399c5d99164dae880fb89770b9b, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: D-Definitely...? But why!?
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8e0809d27d07eb642aa713badf0fb6ae, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Inside the <type=color, color=ffff00>duralumin case</color> Byakuya
+      had with him during the party...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 0
+      MaxActorsOnScreen: 2
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...we found a smaller case for storing the night-vision goggles.
+  - Name: Ibuki
+    ActorName: Ibuki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: 206a12d31b99b8344915d7611fd1e449, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Which means we can assume that the night-vision goggles were kept
+      inside that duralumin case as well...
+  - Name: Ibuki
+    ActorName: Ibuki
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Ibuki
+      Image: {fileID: 21300000, guid: 11d4289e2ad1ae64397d00dce22f1e1a, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Wahoo! I said "assume!" Ibuki never uses such clever language!

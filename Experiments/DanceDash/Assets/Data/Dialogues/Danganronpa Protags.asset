@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0f281a44638d44ea46772e00af6b80, type: 3}
+  m_Name: Danganronpa Protags
+  m_EditorClassIdentifier: 
+  Statements:
+  - Name: 
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Hajime
+        ArrangementAction: 0
+        Position: 0
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8e0809d27d07eb642aa713badf0fb6ae, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: 
+  - Name: Shuichi
+    ActorName: Shuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements:
+      - ActorName: Shuichi
+        ArrangementAction: 0
+        Position: 2
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 0
+        UseCustomScale: 1
+        Scale: 0.45
+        Size: {x: 0, y: 0}
+      - ActorName: Makoto
+        ArrangementAction: 0
+        Position: 1
+        ExactPosistion: {x: 0, y: 0}
+        UseAutoSize: 1
+        UseCustomScale: 0
+        Scale: 0
+        Size: {x: 0, y: 0}
+    ActorsImages:
+    - ActorName: Shuichi
+      Image: {fileID: 21300000, guid: 3d35853e3c8a5884196e96366a3cdb77, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 7493a799851a34244b79609cc54b0d9d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Huh? Hajime? I'm surprised to see you here.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: edbb1121608ddcf4b83d2bdbf9ad9d19, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: I'm on my way back to the reserve course now. If I'm late, Usami won't
+      let me back in.
+  - Name: Makoto
+    ActorName: Makoto
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 8386781526e8b53439f40eeaf04f3757, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: When you get something you really like, it makes you want to spend
+      more time with that person.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 164c019507f2e8b4688716c3ce20cef2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: That's true. I'm always giving gifts, so maybe I was a little too
+      eager to receive one this time.
+  - Name: Shuichi
+    ActorName: Shuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Shuichi
+      Image: {fileID: 21300000, guid: 4ad4829870c4573489fb03c84c0e7e1a, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Ah, I'm also usually giving presents rather than receiving them.
+  - Name: Shuichi
+    ActorName: Shuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: It's fun, isn't it? Thinking about the person being happy...
+  - Name: Makoto
+    ActorName: Makoto
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 7493a799851a34244b79609cc54b0d9d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Seeing their face when you give them something they really like makes
+      you happy too.
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: d50ccb847cbc3fb4ea3204af006e1c70, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But sometimes they react poorly...
+  - Name: Makoto
+    ActorName: Makoto
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 0de8d10807f7fec4ca7aa31002da5b9e, type: 3}
+      ImagesDir: 
+      ImageName: 
+    - ActorName: Shuichi
+      Image: {fileID: 21300000, guid: 972c1ff17249e814fb8f8b6203cad073, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Yeah... it can make you feel pretty bad.
+  - Name: Makoto
+    ActorName: Makoto
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 66fb635f323dd4f4186ba0c05c20e7d0, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: Sometimes when that happens, I think about it later and wonder why
+      I even gave them that.
+  - Name: Shuichi
+    ActorName: Shuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Shuichi
+      Image: {fileID: 21300000, guid: 94e856e2f0110d849af8dce3269b0710, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But you're always so confident when you hant it to them...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 8978d6e5c20c41642935f7bdc976ef87, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: When someone gives me a gift, I get shy when I think about why they've
+      given it to me...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Hajime
+      Image: {fileID: 21300000, guid: 164c019507f2e8b4688716c3ce20cef2, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: But when I see that look of sincere generosity on their face, I can't
+      help but feel happy.
+  - Name: Makoto
+    ActorName: Makoto
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages:
+    - ActorName: Makoto
+      Image: {fileID: 21300000, guid: 7493a799851a34244b79609cc54b0d9d, type: 3}
+      ImagesDir: 
+      ImageName: 
+    Statement: You're right... Seeing a face like that can make you happy all on
+      its own.
+  - Name: Shuichi
+    ActorName: Shuichi
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: ...Ah, I'm getting embarassed thinking about the face I make when
+      I receive a present...
+  - Name: Hajime
+    ActorName: Hajime
+    ActorsArrangements:
+      UseDefaultMaxActorsOnScreen: 1
+      MaxActorsOnScreen: 0
+      Arrangements: []
+    ActorsImages: []
+    Statement: Now that I think about it, I should probably get my friend something
+      in return...

@@ -423,6 +423,7 @@ MonoBehaviour:
     y: -500
     width: 1000
     height: 700
+  _appearanceHeight: -1000
   _transitionSpeed: 0.03
 --- !u!1 &596743199
 GameObject:
@@ -1087,8 +1088,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1386,7 +1387,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _dialogueToShow
       value: 
-      objectReference: {fileID: 11400000, guid: bb11932398ff55a4dbc284e3c2c5629a,
+      objectReference: {fileID: 11400000, guid: b7016b7676cdaad4ebe4377ab867a515,
         type: 2}
     - target: {fileID: 6655414813778436791, guid: a9815ec6696e44f41bdf3622d9f51f65,
         type: 3}

@@ -6,7 +6,7 @@ namespace Dialogue {
 
     public static class DialogueStatementDefaultValues
     {
-        public const int MaxActorsOnScreen = 5;// Максимальное кол-во действующих лиц, которое может одновременно присутствовать на экране
+        public const int MaxActorsOnScreen = 10;// Максимальное кол-во действующих лиц, которое может одновременно присутствовать на экране
     }
 
     // Описывает, какое действие будет произведено с лицом диалога на экране
@@ -38,7 +38,9 @@ namespace Dialogue {
         public TDialogueActorArrangementPosition Position;// Где расположить лицо. Не имеет смысла при ArrangementAction == Leave
         public Vector2 ExactPosistion;// Точные координаты (в системе отсчёта UI), на которых нужно расположить лицо. Принимается в расчёт при ArrangementPosition == Custom.
         public bool UseAutoSize = true;// Автоматически рассчитывать размер спрайта лица
-        public Vector2 Size;// Задаваемый размер спрайта. Имеет смысл, когда UseAutoSize = false.
+        public bool UseCustomScale;// Использовать значение поля Scale для задавания изображения
+        public float Scale;// Во сколько раз нужно увеличить изображение на экране относительно оригинального размера изображения. Имеет смысл, если UseAutoSize == false и UseCustomScale == true.
+        public Vector2 Size;// Выставляемый размер изображению. Имеет смысл только если UseAutoSize и UseCustomScale выставлены в false.
     }
 
     /// <summary>
