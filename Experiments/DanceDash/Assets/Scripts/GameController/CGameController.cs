@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using Dialogue;
+using Databox;
 using UnityEngine.Assertions;
 
 namespace GameController { 
@@ -62,6 +64,7 @@ namespace GameController {
 
         private void Awake()
         {
+
             if( _instance != null ) {
                 Destroy( this );
                 return;
@@ -89,14 +92,19 @@ namespace GameController {
         private void initialize() 
         {
             GameMode = TGameMode.Action;
+
             _dialogueSystem = new CDialogueSystem();
 
             _isInitialized = true;
         }
 
-        [SerializeField] private CDialogue _dialogueToShow;// Временная переменная для проверки диалоговой системы. Потом удалю
+
+        [SerializeField] private string _dialogueToShow;// Временная переменная для проверки диалоговой системы. Потом удалю
+
         private bool showDialog = false;
 
+        [SerializeField]private DataboxObject _dialoguesDatabox;
+        [SerializeField] private DataboxObject _textsDatabox;
         private IDialogueSystem _dialogueSystem;
 
         private bool _isInitialized = false;// Был ли проинициализирован контроллер

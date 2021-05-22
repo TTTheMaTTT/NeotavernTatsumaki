@@ -66,15 +66,11 @@
     <Compile Include="Assets\Scripts\Experiments\CBeatAnimationUI.cs" />
     <Compile Include="Assets\Scripts\GameController\CGameController.cs" />
     <Compile Include="Assets\Scripts\GameController\CGameUI.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\CDialogue.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\CDialogueActorsPanel.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\CDialogueTextProcessor.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\CDialogueWindow.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\DialogueEditingFactory.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\DialogueEditingParams.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\DialogueStatement.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Data\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Data\DialogueStatement.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Database\DialogueDatabase.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Database\DialogueTextDatabase.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\DialogueSystem.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\DialogueTextParser.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\ColorBlinkEditing.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\ColorEditing.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\ColorRainbowEditing.cs" />
@@ -83,16 +79,26 @@
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\SizeTransitionEditing.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\WaveEditing.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\Editing\WobbleEditing.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\IDialogueEditing.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Experiment\ScriptableObject\DialogueStatementExperiment.cs" />
     <Compile Include="Assets\Scripts\GameController\Dialogue\IDialogueSystem.cs" />
-    <Compile Include="Assets\Scripts\GameController\Dialogue\IDialogueWindow.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\TextEditor\CDialogueTextProcessor.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\TextEditor\DialogueEditingFactory.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\TextEditor\DialogueEditingParams.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\TextEditor\DialogueTextParser.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\TextEditor\IDialogueEditing.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Visual\CDialogueActorsPanel.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Visual\CDialogueWindow.cs" />
+    <Compile Include="Assets\Scripts\GameController\Dialogue\Visual\IDialogueWindow.cs" />
     <Compile Include="Assets\Scripts\GameController\GameMode.cs" />
+    <Compile Include="Assets\Scripts\Tools\DatabaseTools.cs" />
+    <Compile Include="Assets\Scripts\Tools\LanguageTools.cs" />
     <Compile Include="Assets\Scripts\Tools\StringTools.cs" />
     <None Include="Assets\Scripts\GameController\Dialogue\Experiment\Rainbow.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Resources\Databases.xml" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Scripts\GameController\Dialogue\Experiment\ColorTransition.txt" />
@@ -681,6 +687,28 @@
     <Reference Include="Boo.Lang">
       <HintPath>E:/Programmes/2019.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Databox.csproj">
+      <Project>{06DFF79B-A6D1-3F71-7582-A1070472F47B}</Project>
+      <Name>Databox</Name>
+    </ProjectReference>
+    <ProjectReference Include="FullSerializer.Editor.csproj">
+      <Project>{14C435B1-3F6A-D540-82B1-56B8A87A4349}</Project>
+      <Name>FullSerializer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Databox.Editor.csproj">
+      <Project>{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}</Project>
+      <Name>Databox.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Databox.OdinSerializer.csproj">
+      <Project>{66077011-6732-5E66-477A-04BE8FD2525E}</Project>
+      <Name>Databox.OdinSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Databox.FullSerializer.csproj">
+      <Project>{C39574D6-3603-D1C7-01EB-EC230035A890}</Project>
+      <Name>Databox.FullSerializer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
