@@ -28,6 +28,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             public bool conversations = false;
             public bool dialogueEntries = false;
             public bool variables = false;
+            public bool actorStates = false;
         }
 
         [SerializeField]
@@ -74,6 +75,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             DrawTemplate("Variables", template.variableFields, null, ref templateFoldouts.variables);
             DrawTemplate("Conversations", template.conversationFields, template.conversationPrimaryFieldTitles, ref templateFoldouts.conversations);
             DrawTemplate("Dialogue Entries", template.dialogueEntryFields, template.dialogueEntryPrimaryFieldTitles, ref templateFoldouts.dialogueEntries);
+            DrawTemplate( "Actor States", template.actorStateFields, template.actorStatePrimaryFieldTitles, ref templateFoldouts.actorStates );
             DrawDialogueLineColors();
             EditorWindowTools.EndIndentedSection();
             if (EditorGUI.EndChangeCheck()) SaveTemplate();
@@ -152,6 +154,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             foreach (var conversation in database.conversations)
             {
                 conversation.dialogueEntries.ForEach(x => ScrubField(x.fields, fieldTitleToRemove));
+                foreach( var dialogueEntry in conversation.dialogueEntries ) {
+                    dialogueEntry.actorsStates.ForEach( x => ScrubField( x.fields, fieldTitleToRemove ) );
+                }
             }
         }
 
@@ -177,13 +182,14 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             {
                 foreach (var conversation in database.conversations)
                 {
-                    if (string.Equals(currentTemplateFoldout, "Conversations"))
-                    {
-                        ScrubField(conversation.fields, fieldTitleToRemove);
-                    }
-                    else if (string.Equals(currentTemplateFoldout, "Dialogue Entries"))
-                    {
-                        conversation.dialogueEntries.ForEach(x => ScrubField(x.fields, fieldTitleToRemove));
+                    if( string.Equals( currentTemplateFoldout, "Conversations" ) ) {
+                        ScrubField( conversation.fields, fieldTitleToRemove );
+                    } else if( string.Equals( currentTemplateFoldout, "Dialogue Entries" ) ) {
+                        conversation.dialogueEntries.ForEach( x => ScrubField( x.fields, fieldTitleToRemove ) );
+                    } else if( string.Equals( currentTemplateFoldout, "Actor States" ) ){
+                        foreach( var dialogueEntry in conversation.dialogueEntries ) {
+                            dialogueEntry.actorsStates.ForEach( x => ScrubField( x.fields, fieldTitleToRemove ) );
+                        }
                     }
                 }
             }

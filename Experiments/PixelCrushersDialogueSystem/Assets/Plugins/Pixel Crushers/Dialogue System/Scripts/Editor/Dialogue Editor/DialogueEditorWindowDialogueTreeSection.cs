@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
@@ -1064,10 +1065,18 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             return changedFieldContents || changedLinks;
         }
 
+        
         private void ApplyDialogueEntryTemplate(List<Field> fields)
         {
             if (template == null || template.dialogueEntryFields == null || fields == null) return;
             ApplyTemplate(fields, template.dialogueEntryFields);
+        }
+
+        private void ApplyActorStateTemplate( List<Field> fields )
+        {
+            if( template == null || template.dialogueEntryFields == null || fields == null )
+                return;
+            ApplyTemplate( fields, template.actorStateFields );
         }
 
         private void DrawDialogueEntryParticipants(DialogueEntry entry, bool isMultinode = false )
@@ -1092,11 +1101,10 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             if (swap) SwapParticipants(ref currentEntryActor, ref currentEntryConversant);
 
             if( !isMultinode ) {
-                EditorWindowTools.EditorGUILayoutBeginGroup();
-                actorStatesFoldout = EditorGUILayout.Foldout( actorStatesFoldout, "Actors States" );
-                EditorWindowTools.EditorGUILayoutEndGroup();
+                DrawDialogueEntryActorStates( entry );
             }
         }
+
 
         private void VerifyParticipantField(DialogueEntry entry, string fieldTitle, ref Field participantField)
         {
@@ -1109,10 +1117,12 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             }
         }
 
+
         private bool IsActorIDUnassigned(Field field)
         {
             return (field == null) || string.IsNullOrEmpty(field.value) || string.Equals(field.value, "-1");
         }
+
 
         private void DrawParticipantField(Field participantField, string tooltipText)
         {
@@ -1125,6 +1135,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             }
         }
 
+
         private void SwapParticipants(ref Field currentActor, ref Field currentConversant)
         {
             var newActorValue = currentConversant.value;
@@ -1132,6 +1143,163 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             currentActor.value = newActorValue;
             currentConversant.value = newConversantValue;
         }
+
+
+        private void DrawDialogueEntryActorStates( DialogueEntry entry )
+        {
+            EditorWindowTools.EditorGUILayoutBeginGroup();
+            EditorGUILayout.BeginHorizontal();
+            actorStatesFoldout = EditorGUILayout.Foldout( actorStatesFoldout, "Actors States" );
+            if( actorStatesFoldout ) {
+                if( entry.actorsStates == null ) {
+                    entry.actorsStates = new List<ActorState>();
+                }
+
+                if( GUILayout.Button( new GUIContent( " ", "Add new actor state." ), "OL Plus", GUILayout.Width( 16 ) ) ) {
+                    ActorState newState = new ActorState();
+                    ApplyActorStateTemplate( newState.fields );
+                    entry.actorsStates.Add( newState );
+                    SetDatabaseDirty( "Add Actor State" );
+                }
+            }
+            EditorGUILayout.EndHorizontal();
+
+            if( actorStatesFoldout ) {
+                int indexToRemove = -1;
+                for( int i = 0; i < entry.actorsStates.Count; i++ ) {
+                    DrawOneActorState( entry, i, ref indexToRemove );
+                }
+                if( indexToRemove != -1 ) {
+                    if( entry.actorsStates[indexToRemove].ActorID != -1 ) {
+                        RemoveActorReference( entry.actorsStates[indexToRemove].ActorID, currentConversationID );
+                    }
+                    entry.actorsStates.RemoveAt( indexToRemove );
+                }
+            }
+
+            EditorWindowTools.EditorGUILayoutEndGroup();
+        }
+
+
+        // Draw all fields for one actor state
+        private void DrawOneActorState( DialogueEntry entry, int index, ref int indexToRemove )
+        {
+            EditorWindowTools.EditorGUILayoutBeginGroup();
+            ActorState actorState = entry.actorsStates[index];
+            EditorGUILayout.BeginHorizontal();
+
+            // Drawing actor id
+            int oldActorId = actorState.ActorID;
+            DrawParticipantField( actorState.ActorField, "actor " + index );
+            int newActorId = actorState.ActorID;
+            if( actorState.ActorID != oldActorId ) {
+                if( newActorId != -1 ) {
+
+                    // check if actor doesn't have dublicates
+                    if( entry.actorsStates.Any( x => x.ActorID == newActorId && !System.Object.ReferenceEquals( x, actorState ) ) ) {
+                        actorState.ActorID = oldActorId;
+                    } else {
+                        AddActorReference( newActorId, currentConversationID );
+                        entry.actorsStates[index] = new ActorState();
+                        ApplyActorStateTemplate( entry.actorsStates[index].fields );
+                        entry.actorsStates[index].ActorID = newActorId;
+                        actorState = entry.actorsStates[index];
+                        if( oldActorId != -1 ) {
+                            RemoveActorReference( oldActorId, currentConversationID );
+                        }
+                    }
+                }
+            }
+
+            if( GUILayout.Button( new GUIContent( " ", "Remove actor state." ), "OL Minus", GUILayout.Width( 16 ) ) ) {
+                indexToRemove = index;
+            }
+
+            EditorGUILayout.EndHorizontal();
+
+            // Portrait type
+            PortraitType oldPortraitType = actorState.PortraitType;
+            PortraitType newPortraitType = (PortraitType)EditorGUILayout.EnumPopup( "Portrait type", actorState.PortraitType );
+            if( newPortraitType != oldPortraitType ) {
+                actorState.PortraitType = newPortraitType;
+                actorState.PortraitIndex = 1;
+            }
+
+            // Portrait
+            DrawActorStatePortrait( actorState );
+
+            // Other Fields
+            DrawActorStateAuxFields( actorState );
+
+            EditorWindowTools.EditorGUILayoutEndGroup();
+        }
+
+        // Draws a button with image of actor portrait on this entry.
+        // If button is pressed, a window with portraits to change will show up.
+        private void DrawActorStatePortrait( ActorState actorState )
+        {
+            if( actorState.ActorID != -1 ) {
+                var actor = GetActorByID( actorState.ActorID );
+                EditorGUILayout.LabelField( actorState.PortraitIndex.ToString() );
+                Texture2D currentTexture = null;
+                switch( actorState.PortraitType ) {
+                    case PortraitType.Sprite: {
+                        actorState.PortraitIndex = Mathf.Clamp( actorState.PortraitIndex, 1, actor.spritePortraits.Count + 1 );
+                        var currentImage = actorState.PortraitIndex > 1 ? actor.spritePortraits[actorState.PortraitIndex - 2] : actor.spritePortrait;
+                        currentTexture = currentImage ? currentImage.texture : null;
+                        break;
+                    }
+                    case PortraitType.Texture:
+                        actorState.PortraitIndex = Mathf.Clamp( actorState.PortraitIndex, 1, actor.alternatePortraits.Count + 1 );
+                        currentTexture = actorState.PortraitIndex > 1 ? actor.alternatePortraits[actorState.PortraitIndex - 2] : actor.portrait;
+                        break;
+                    default:
+                        currentTexture = null;
+                        break;
+                }
+                if( GUILayout.Button( new GUIContent( currentTexture, "Change portrait in this state." ), GUILayout.Height( 128 ), GUILayout.Width( 128 ) ) ) {
+                    List<Texture> textures = new List<Texture>();
+                    switch( actorState.PortraitType ) {
+                        case PortraitType.Sprite:
+                            textures.Add( actor.spritePortrait ? actor.spritePortrait.texture : null );
+                            foreach( var portrait in actor.spritePortraits ) {
+                                textures.Add( portrait ? portrait.texture : null );
+                            }
+                            break;
+                        case PortraitType.Texture:
+                            textures.Add( actor.portrait );
+                            textures.AddRange( actor.alternatePortraits );
+                            break;
+                        default:
+                            break;
+                    }
+
+                    // Creates a popup window with list of textures to choose from. When texture is chosen appropriate portrait index is setted.
+                    TexturesListWindow.ShowWindow( textures, GUIUtility.GUIToScreenPoint( Event.current.mousePosition ),
+                        x => { if( x >= 0 && x < textures.Count ) { actorState.PortraitIndex = x + 1; } } );
+                }
+            }
+        }
+
+        private static List<string> actorStateMainFieldTitles = new List<string>( new string[] { "Actor", "Portrait Index", "Portrait Type" } );
+
+        // Draws auxilary fields for actor state
+        private void DrawActorStateAuxFields( ActorState actorState )
+        {
+            if( actorState == null || actorState.fields == null )
+                return;
+            foreach( var field in actorState.fields ) {
+                var fieldTitle = field.title;
+                if( string.IsNullOrEmpty( fieldTitle ) )
+                    continue;
+                if( actorStateMainFieldTitles.Contains( fieldTitle ) )
+                    continue;
+                EditorGUILayout.BeginHorizontal();
+                DrawField( field, false, false );
+                EditorGUILayout.EndHorizontal();
+            }
+        }
+
 
         private int GetFalseConditionIndex(string falseConditionString)
         {

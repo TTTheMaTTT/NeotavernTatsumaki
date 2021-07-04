@@ -813,7 +813,8 @@ namespace PixelCrushers.DialogueSystem
                 if ((barkEntry == null) && DialogueDebug.logWarnings) Debug.Log(string.Format("{0}: Bark (speaker={1}, listener={2}): '{3}' bark entry is null", new System.Object[] { DialogueDebug.Prefix, speaker, listener, conversation }), speaker);
                 if (barkEntry != null)
                 {
-                    Subtitle subtitle = new Subtitle(cachedState.subtitle.listenerInfo, cachedState.subtitle.speakerInfo, new FormattedText(barkEntry.currentDialogueText), barkEntry.currentSequence, string.Empty, barkEntry);
+                    Subtitle subtitle = new Subtitle(cachedState.subtitle.listenerInfo, cachedState.subtitle.speakerInfo, cachedState.subtitle.entryActorsInfo, 
+                        new FormattedText(barkEntry.currentDialogueText), barkEntry.currentSequence, string.Empty, barkEntry);
                     if (DialogueDebug.logInfo) Debug.Log(string.Format("{0}: Bark (speaker={1}, listener={2}): '{3}'", new System.Object[] { DialogueDebug.Prefix, speaker, listener, subtitle.formattedText.text }), speaker);
                     if (barkGroupMember != null)
                     {

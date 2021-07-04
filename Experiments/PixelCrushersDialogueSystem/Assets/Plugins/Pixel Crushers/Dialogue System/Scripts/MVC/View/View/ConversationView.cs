@@ -375,7 +375,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (lastSubtitle == null) // Need to create a dummy subtitle to OnConversationLineCancelled's signature.
             {
-                var dummySubtitle = new Subtitle(null, null, null, string.Empty, string.Empty, null);
+                var dummySubtitle = new Subtitle(null, null, null, null, string.Empty, string.Empty, null);
                 BroadcastMessage(DialogueSystemMessages.OnConversationLineCancelled, dummySubtitle, SendMessageOptions.DontRequireReceiver);
             }
             else

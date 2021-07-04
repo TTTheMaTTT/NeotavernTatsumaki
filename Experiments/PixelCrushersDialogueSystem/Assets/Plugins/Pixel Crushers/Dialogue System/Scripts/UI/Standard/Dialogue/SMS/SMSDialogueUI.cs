@@ -491,7 +491,7 @@ namespace PixelCrushers.DialogueSystem
                         var speakerInfo = DialogueManager.ConversationModel.GetCharacterInfo(entry.ActorID);
                         var listenerInfo = DialogueManager.ConversationModel.GetCharacterInfo(entry.ConversantID);
                         var formattedText = FormattedText.Parse(entry.currentDialogueText, DialogueManager.MasterDatabase.emphasisSettings);
-                        var subtitle = new Subtitle(speakerInfo, listenerInfo, formattedText, "None()", entry.ResponseMenuSequence, entry);
+                        var subtitle = new Subtitle(speakerInfo, listenerInfo, null, formattedText, "None()", entry.ResponseMenuSequence, entry);
                         AddMessage(subtitle);
                     }
                     if (lastInstance != null)

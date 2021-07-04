@@ -25,6 +25,7 @@ namespace PixelCrushers.DialogueSystem
         public List<Field> variableFields = new List<Field>();
         public List<Field> conversationFields = new List<Field>();
         public List<Field> dialogueEntryFields = new List<Field>();
+        public List<Field> actorStateFields = new List<Field>();
 
         public List<string> actorPrimaryFieldTitles = new List<string>();
         public List<string> itemPrimaryFieldTitles = new List<string>();
@@ -33,6 +34,7 @@ namespace PixelCrushers.DialogueSystem
         public List<string> variablePrimaryFieldTitles = new List<string>();
         public List<string> conversationPrimaryFieldTitles = new List<string>();
         public List<string> dialogueEntryPrimaryFieldTitles = new List<string>();
+        public List<string> actorStatePrimaryFieldTitles = new List<string>();
 
         public Color npcLineColor = Color.red;
         public Color pcLineColor = Color.blue;
@@ -88,6 +90,10 @@ namespace PixelCrushers.DialogueSystem
             template.dialogueEntryFields.Add(new Field("Audio Files", "[]", FieldType.Files));
             template.dialogueEntryFields.Add(new Field("Video File", string.Empty, FieldType.Text));
             template.dialogueEntryFields.Add(new Field("Sequence", string.Empty, FieldType.Text));
+
+            template.actorStateFields.Add( new Field( "Actor", string.Empty, FieldType.Actor ) );
+            template.actorStateFields.Add( new Field( "Portrait Index", "1", FieldType.Number ) );
+            template.actorStateFields.Add( new Field( "Portrait Type", "Sprite", FieldType.Text ) );
 
             return template;
         }
@@ -191,6 +197,13 @@ namespace PixelCrushers.DialogueSystem
             entry.conversationID = conversationID;
             entry.Title = title;
             return entry;
+        }
+
+        public ActorState CreateActorState()
+        {
+            ActorState actorState = new ActorState();
+            actorState.fields = CreateFields( actorStateFields );
+            return actorState;
         }
 
         public List<Field> CreateFields(List<Field> templateFields)

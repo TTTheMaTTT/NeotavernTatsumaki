@@ -1,12 +1,19 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrushers.DialogueSystem
 {
 
+    public enum PortraitType
+    {
+        Texture,
+        Sprite
+    }
+
     public enum ActorArrangementActionType
     {
+        None,
         ChangePosition,
         Leave
     }
@@ -15,16 +22,25 @@ namespace PixelCrushers.DialogueSystem
     {
         Left,
         Center,
-        Right,
-        Custom
+        Right
     }
 
     /// <summary>
     /// Description of actor state changes during the dialogue entry.
     /// Consists of custom fields, that can be described in the templates tab
     /// </summary>
+    [System.Serializable]
     public class ActorState
     {
+
+        public ActorState()
+        {
+            fields = new List<Field>();
+            ActorID = -1;
+            PortraitIndex = 1;// portraits counts from 1. 1 means default portrait
+            PortraitType = PortraitType.Sprite;
+        }
+
         /// <summary>
         /// The dialogue entry's field list. (See Field)
         /// </summary>
@@ -46,6 +62,13 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+        public Field ActorField
+        {
+            get {
+                return Field.Lookup(fields, "Actor");
+            }
+        }
+
         /// <summary>
         /// Gets or sets the index of portrait
         /// </summary>
@@ -62,9 +85,21 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
-        public bool HasPortraitIndex()
+        /// <summary>
+        /// What kind of portrait actor should use? If true, than textures, otherwise sprites.
+        /// </summary>
+        /// <value>
+        /// The index of the actor's portrait.
+        /// </value>
+        public PortraitType PortraitType
         {
-            return Field.LookupValue( fields, "Portrait Index" ) != null;
+            get {
+                string portraitTypeString = Field.LookupValue( fields, "Portrait Type" );
+                return (PortraitType)Enum.Parse( typeof( PortraitType ), portraitTypeString, true );
+            }
+            set {
+                Field.SetValue( fields, "Portrait Type", value.ToString(), FieldType.Boolean );
+            }
         }
 
     }

@@ -1,5 +1,7 @@
 // Copyright (c) Pixel Crushers. All rights reserved.
 
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrushers.DialogueSystem
@@ -22,6 +24,11 @@ namespace PixelCrushers.DialogueSystem
         /// Info about the listener to whom the line is being spoken.
         /// </summary>
         public CharacterInfo listenerInfo;
+
+        /// <summary>
+        /// List of infos about all actors in this entry.
+        /// </summary>
+        public List<CharacterInfo> entryActorsInfo;
 
         /// <summary>
         /// The formatted text of the line. The IDialogueUI displays this text.
@@ -55,15 +62,17 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         /// <param name="speakerInfo">Speaker info.</param>
         /// <param name="listenerInfo">Listener info.</param>
+        /// <param name="entryActorsInfo">Info about all actors in entry.</param>
         /// <param name="formattedText">Formatted text.</param>
         /// <param name="sequence">Sequence.</param>
         /// <param name="responseMenuSequence">Response menu sequence.</param>
         /// <param name="dialogueEntry">Dialogue entry.</param>
-        public Subtitle(CharacterInfo speakerInfo, CharacterInfo listenerInfo, FormattedText formattedText,
-                        string sequence, string responseMenuSequence, DialogueEntry dialogueEntry)
+        public Subtitle(CharacterInfo speakerInfo, CharacterInfo listenerInfo, List<CharacterInfo> entryActorsInfo,
+            FormattedText formattedText, string sequence, string responseMenuSequence, DialogueEntry dialogueEntry)
         {
             this.speakerInfo = speakerInfo;
             this.listenerInfo = listenerInfo;
+            this.entryActorsInfo = entryActorsInfo.Select( x => x ).ToList();
             this.formattedText = formattedText;
             this.sequence = sequence;
             this.responseMenuSequence = responseMenuSequence;
@@ -77,16 +86,24 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         /// <param name="speakerInfo">Speaker info.</param>
         /// <param name="listenerInfo">Listener info.</param>
+        /// <param name="entryActorsInfo">Info about all actors in entry.</param>
         /// <param name="formattedText">Formatted text.</param>
         /// <param name="sequence">Sequence.</param>
         /// <param name="responseMenuSequence">Response menu sequence.</param>
         /// <param name="dialogueEntry">Dialogue entry.</param>
         /// <param name="entrytag">Entrytag.</param>
-        public Subtitle(CharacterInfo speakerInfo, CharacterInfo listenerInfo, FormattedText formattedText,
-                        string sequence, string responseMenuSequence, DialogueEntry dialogueEntry, string entrytag)
+        public Subtitle(CharacterInfo speakerInfo,
+            CharacterInfo listenerInfo,
+            List<CharacterInfo> entryActorsInfo,
+            FormattedText formattedText,
+            string sequence, 
+            string responseMenuSequence,
+            DialogueEntry dialogueEntry, 
+            string entrytag)
         {
             this.speakerInfo = speakerInfo;
             this.listenerInfo = listenerInfo;
+            this.entryActorsInfo = entryActorsInfo.Select( x => x ).ToList();
             this.formattedText = formattedText;
             this.sequence = sequence;
             this.responseMenuSequence = responseMenuSequence;

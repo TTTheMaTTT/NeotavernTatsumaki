@@ -49,6 +49,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private AssetList itemAssetList = null;
         private AssetList locationAssetList = null;
         private Dictionary<int, string> actorNamesByID = new Dictionary<int, string>();
+        private Dictionary<int, Actor> actorByID = new Dictionary<int, Actor>();
 
         private void ResetAssetLists()
         {
@@ -56,6 +57,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             itemAssetList = null;
             locationAssetList = null;
             actorNamesByID.Clear();
+            actorByID.Clear();
         }
 
         private AssetList GetAssetList<T>(List<T> assets) where T : Asset
@@ -99,6 +101,14 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 database.actors.ForEach(actor => actorNamesByID[actor.id] = actor.Name);
             }
             return actorNamesByID.ContainsKey(actorID) ? actorNamesByID[actorID] : string.Empty;
+        }
+
+        private Actor GetActorByID( int actorID )
+        {
+            if( (actorByID.Count == 0) && (database != null) ) {
+                database.actors.ForEach( actor => actorByID[actor.id] = actor );
+            }
+            return actorByID.ContainsKey( actorID ) ? actorByID[actorID] : null;
         }
 
     }

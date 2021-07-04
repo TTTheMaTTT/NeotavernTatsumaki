@@ -184,6 +184,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                         continue;
                     }
                     foreach( var actorState in dialogueEntry.actorsStates ) {
+                        if( actorState.ActorField == null || actorState.ActorID == -1 ) {
+                            continue;
+                        }
                         if( !actorsReferencies.ContainsKey( actorState.ActorID ) ) {
                             actorsReferencies.Add( actorState.ActorID, new Dictionary<int, int>() );
                         }
@@ -196,57 +199,78 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             }
         }
 
-        private void DeleteActorReferencies( Actor actor )
+
+        private void DeleteActorReferencies( int actorId )
         {
             if( database == null ) {
                 return;
             }
-            if( actorsReferencies.ContainsKey( actor.id ) ) {
-                foreach( var conversationId in actorsReferencies[actor.id].Keys ) {
+            if( actorsReferencies.ContainsKey( actorId ) ) {
+                foreach( var conversationId in actorsReferencies[actorId].Keys ) {
                     var conversation = database.GetConversation( conversationId );
                     foreach( var dialogueEntry in conversation.dialogueEntries ) {
                         if( dialogueEntry.actorsStates == null ) {
                             continue;
                         }
                         for( int i = dialogueEntry.actorsStates.Count - 1; i >= 0; i-- ) {
-                            if( dialogueEntry.actorsStates[i].ActorID == actor.id ) {
+                            if( dialogueEntry.actorsStates[i].ActorID == actorId ) {
                                 dialogueEntry.actorsStates.RemoveAt( i );
                             }
                         }
                     }
                 }
-                actorsReferencies.Remove( actor.id );
+                actorsReferencies.Remove( actorId );
             }
         }
 
-        private void AddActorReference( Actor actor, Conversation conversation )
+
+        private void DeleteConversationInActorsReferencies( int conversationId )
         {
             if( database == null ) {
                 return;
             }
-            if( !actorsReferencies.ContainsKey( actor.id ) ) {
-                actorsReferencies.Add( actor.id, new Dictionary<int, int>() );
+            List<int> actorIdsToRemove = new List<int>();
+            foreach( var actorKeyValue in actorsReferencies ) {
+                if( actorKeyValue.Value.ContainsKey( conversationId ) ) {
+                    actorKeyValue.Value.Remove( conversationId );
+                    if( actorKeyValue.Value.Count == 0 ) {
+                        actorIdsToRemove.Add( actorKeyValue.Key );
+                    }
+                }
             }
-            if( !actorsReferencies[actor.id].ContainsKey( conversation.id ) ) {
-                actorsReferencies[actor.id].Add( conversation.id, 0 );
+            foreach( int actorId in actorIdsToRemove ) {
+                actorsReferencies.Remove( actorId );
             }
-            actorsReferencies[actor.id][conversation.id]++;
         }
 
-        private void RemoveActorReference( Actor actor, Conversation conversation )
+        private void AddActorReference( int actorId, int conversationId )
         {
             if( database == null ) {
                 return;
             }
-            if( !actorsReferencies.ContainsKey( actor.id ) ) {
+            if( !actorsReferencies.ContainsKey( actorId ) ) {
+                actorsReferencies.Add( actorId, new Dictionary<int, int>() );
+            }
+            if( !actorsReferencies[actorId].ContainsKey( conversationId ) ) {
+                actorsReferencies[actorId].Add( conversationId, 0 );
+            }
+            actorsReferencies[actorId][conversationId]++;
+        }
+
+        private void RemoveActorReference( int actorId, int conversationId )
+        {
+            if( database == null ) {
                 return;
             }
-            if( !actorsReferencies[actor.id].ContainsKey( conversation.id ) ) {
+            if( !actorsReferencies.ContainsKey( actorId ) ) {
                 return;
             }
-            actorsReferencies[actor.id][conversation.id]--;
-            if( actorsReferencies[actor.id][conversation.id] <= 0 ) {
-                actorsReferencies[actor.id].Remove( conversation.id );
+            if( !actorsReferencies[actorId].ContainsKey( conversationId ) ) {
+                return;
+            }
+            actorsReferencies[actorId][conversationId]--;
+            if( actorsReferencies[actorId][conversationId] <= 0 ) {
+                actorsReferencies[actorId].Remove( conversationId );
             }
         }
 

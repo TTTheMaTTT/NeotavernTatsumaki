@@ -90,6 +90,7 @@ namespace PixelCrushers.DialogueSystem
         {
             base.Open();
             conversationUIElements.OpenSubtitlePanelsOnStart();
+            conversationUIElements.ReseteDialogueScene();
         }
 
         public override void Close()
@@ -196,6 +197,7 @@ namespace PixelCrushers.DialogueSystem
         {
             conversationUIElements.standardMenuControls.Close();
             conversationUIElements.standardSubtitleControls.ShowSubtitle(subtitle);
+            conversationUIElements.dialogueScene.ChangeScene( subtitle.dialogueEntry, subtitle.entryActorsInfo );
         }
 
         public override void HideSubtitle(Subtitle subtitle)

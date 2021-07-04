@@ -120,6 +120,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             if (EditorUtility.DisplayDialog(string.Format("Delete '{0}'?", EditorTools.GetAssetName(actor)), "Are you sure you want to delete this actor?", "Delete", "Cancel"))
             {
                 ReorderableList.defaultBehaviours.DoRemoveButton(list);
+                DeleteActorReferencies( actor.id );
                 if (deletedLastOne) inspectorSelection = null;
                 else inspectorSelection = (list.index < list.count) ? database.actors[list.index] : (list.count > 0) ? database.actors[list.count - 1] : null;
                 SetDatabaseDirty("Remove Actor");
@@ -281,6 +282,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 if (indexToDelete > -1)
                 {
                     actor.alternatePortraits.RemoveAt(indexToDelete);
+                    DeletePortraitIndexFromActorStates( actor, indexToDelete + 2, PortraitType.Texture );
                     SetDatabaseDirty("Delete Portrait");
                 }
 
@@ -358,6 +360,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 if (indexToDelete > -1)
                 {
                     actor.spritePortraits.RemoveAt(indexToDelete);
+                    DeletePortraitIndexFromActorStates( actor, indexToDelete + 2, PortraitType.Sprite );
                     SetDatabaseDirty("Delete Portrait");
                 }
 
@@ -380,6 +383,35 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             actor.IsPlayer = EditorGUILayout.Toggle(new GUIContent("Is Player", ""), actor.IsPlayer);
 
             DrawActorPrimaryFields(actor);
+        }
+
+        private void DeletePortraitIndexFromActorStates( Actor actor, int portraitIndex, PortraitType portraitType )
+        {
+            if( !actorsReferencies.ContainsKey( actor.id ) ){
+                return;
+            }
+            var conversationsWithActor = actorsReferencies[actor.id];
+            foreach( var keyValue in conversationsWithActor ) {
+                if( keyValue.Value <= 0 ) {
+                    continue;
+                }
+                int conversationId = keyValue.Key;
+                var conversation = database.GetConversation( conversationId );
+                if( conversation == null ) {
+                    continue;
+                }
+                foreach( var dialogueEntry in conversation.dialogueEntries ) {
+                    foreach( var actorState in dialogueEntry.actorsStates ) {
+                        if( actorState.ActorID == actor.id && actorState.PortraitType == portraitType ) {
+                            if( actorState.PortraitIndex == portraitIndex ) {
+                                actorState.PortraitIndex = 1;
+                            } else if( actorState.PortraitIndex > portraitIndex ) {
+                                actorState.PortraitIndex--;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void DrawActorPrimaryFields(Actor actor)

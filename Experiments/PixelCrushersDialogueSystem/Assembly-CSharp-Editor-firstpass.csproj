@@ -87,8 +87,12 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UnityEvents\TagMaskDrawer.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Editor\Text\StringAssetMenu.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Editor\Text\TextTableAssetMenu.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\DialogueEditorTexturesListWindow.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\Fields\CustomFieldType_ActorArrangementActionType.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\Fields\CustomFieldType_ActorScreenPositionType.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\Fields\CustomFieldType_PortraitType.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\IModalWindowOwner.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Editor\ModalWindow.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\AssetFoldouts.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueDatabaseEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorVariableView.cs" />

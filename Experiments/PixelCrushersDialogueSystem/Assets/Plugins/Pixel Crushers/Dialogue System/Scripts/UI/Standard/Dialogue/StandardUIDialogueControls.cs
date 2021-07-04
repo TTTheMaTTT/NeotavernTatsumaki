@@ -32,6 +32,9 @@ namespace PixelCrushers.DialogueSystem
         [Tooltip("Check for subtitle panels that are configured to immediately open when conversation starts. Untick to bypass check.")]
         public bool allowOpenSubtitlePanelsOnStartConversation = true;
 
+        [Tooltip("Panel for showing dialogue scene. For examples, actors of the scene.")]
+        public DialogueSceneUIBase dialogueScene;
+
         public StandardUIMenuPanel[] menuPanels;
 
         [Tooltip("Default panel for response menus.")]
@@ -130,6 +133,13 @@ namespace PixelCrushers.DialogueSystem
         public void OpenSubtitlePanelsOnStart()
         {
             if (allowOpenSubtitlePanelsOnStartConversation) standardSubtitleControls.OpenSubtitlePanelsOnStartConversation();
+        }
+
+        public void ReseteDialogueScene()
+        {
+            if( dialogueScene != null ) {
+                dialogueScene.Reset();
+            }
         }
 
         public void ClearCaches()

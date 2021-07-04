@@ -193,6 +193,9 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\UnityEvents\TimedEvent.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\UnityEvents\TriggerEvent.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\MVC\Model\ActorState.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\UI\DialogueSceneUIBase.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\UI\IDialogueSceneUI.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\UI\VisualNovelSceneUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Utility\ITextEffect.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Utility\TextEffectParams.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Custom\Utility\TextEffects\ColorBlinkEffect.cs" />

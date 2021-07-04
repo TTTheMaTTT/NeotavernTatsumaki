@@ -1409,7 +1409,7 @@ namespace PixelCrushers.DialogueSystem
             if (sequence == null) sequence = string.Empty;
             var responseMenuSequence = string.Empty; // Not used in barks.
             DialogueEntry dialogueEntry = null;
-            var subtitle = new Subtitle(speakerInfo, listenerInfo, formattedText, sequence, responseMenuSequence, dialogueEntry);
+            var subtitle = new Subtitle(speakerInfo, listenerInfo, new List<CharacterInfo>(), formattedText, sequence, responseMenuSequence, dialogueEntry);
             if (DialogueDebug.logInfo) Debug.Log("Dialogue System: " + speaker + " barking string '" + barkText + "'.");
             StartCoroutine(BarkController.Bark(subtitle));
         }

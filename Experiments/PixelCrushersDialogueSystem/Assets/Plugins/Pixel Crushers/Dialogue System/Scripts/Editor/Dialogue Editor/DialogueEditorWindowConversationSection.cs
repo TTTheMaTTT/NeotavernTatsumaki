@@ -336,6 +336,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                     "Are you sure you want to delete this conversation?\nYou cannot undo this operation!", "Delete", "Cancel"))
                 {
                     if (conversationToRemove == currentConversation) ResetConversationSection();
+                    DeleteConversationInActorsReferencies( conversationToRemove.id );
                     database.conversations.Remove(conversationToRemove);
                     SetDatabaseDirty("Delete Conversation");
                 }

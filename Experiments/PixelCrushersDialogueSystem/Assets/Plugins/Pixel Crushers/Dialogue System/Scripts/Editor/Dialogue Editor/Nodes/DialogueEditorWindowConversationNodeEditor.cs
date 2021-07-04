@@ -1601,7 +1601,8 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private void DeleteCurrentConversationInNodeEditor()
         {
             nodeEditorDeleteCurrentConversation = false;
-            if (currentConversation != null) database.conversations.Remove(database.conversations.Find(c => c.id == currentConversation.id));
+            DeleteConversationInActorsReferencies( currentConversation.id );
+            if( currentConversation != null) database.conversations.Remove(database.conversations.Find(c => c.id == currentConversation.id));
             ResetConversationSection();
             ActivateNodeEditorMode();
             inspectorSelection = database;

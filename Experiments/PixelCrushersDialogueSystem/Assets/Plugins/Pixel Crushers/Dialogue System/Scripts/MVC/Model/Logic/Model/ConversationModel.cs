@@ -1,6 +1,7 @@
 // Copyright (c) Pixel Crushers. All rights reserved.
 
 using UnityEngine;
+using UnityEngine.Assertions;
 using System.Collections.Generic;
 
 namespace PixelCrushers.DialogueSystem
@@ -236,6 +237,7 @@ namespace PixelCrushers.DialogueSystem
                 }
                 CharacterInfo actorInfo = GetCharacterInfo(entry.ActorID);
                 CharacterInfo listenerInfo = GetCharacterInfo(entry.ConversantID);
+                List<CharacterInfo> entryActorsInfo = GetEntryActorsInfo( entry );
                 if (!skipExecution)
                 {
                     var sceneEvent = DialogueSystemSceneEvents.GetDialogueEntrySceneEvent(entry.sceneEventGuid);
@@ -245,7 +247,7 @@ namespace PixelCrushers.DialogueSystem
                 FormattedText formattedText = FormattedText.Parse(entry.subtitleText, m_database.emphasisSettings);
                 CheckSequenceField(entry);
                 string entrytag = m_database.GetEntrytag(entry.conversationID, entry.id, m_entrytagFormat);
-                Subtitle subtitle = new Subtitle(actorInfo, listenerInfo, formattedText, entry.currentSequence, entry.currentResponseMenuSequence, entry, entrytag);
+                Subtitle subtitle = new Subtitle(actorInfo, listenerInfo, entryActorsInfo, formattedText, entry.currentSequence, entry.currentResponseMenuSequence, entry, entrytag);
                 List<Response> npcResponses = new List<Response>();
                 List<Response> pcResponses = new List<Response>();
                 if (includeLinks)
@@ -601,6 +603,27 @@ namespace PixelCrushers.DialogueSystem
             return GetCharacterInfo(id, GetCharacterTransform(id));
         }
 
+        /// <summary>
+        /// Gets the brief character info for each actor state in entry
+        /// </summary>
+        /// <param name="entry">entry with actors</param>
+        /// <returns>list of characters info</returns>
+        public List<CharacterInfo> GetEntryActorsInfo( DialogueEntry entry )
+        {
+            List<CharacterInfo> infos = new List<CharacterInfo>();
+            foreach( ActorState actorState in entry.actorsStates ) {
+                Actor actor = m_database.GetActor( actorState.ActorID );
+                if( actor == null ) {
+                    continue;
+                }
+                var portrait = GetPortrait( actor, actorState.PortraitIndex, actorState.PortraitType );
+                CharacterInfo characterInfo = new CharacterInfo( actorState.ActorID, actor.Name, 
+                    GetCharacterTransform( actorState.ActorID ), m_database.GetCharacterType( actorState.ActorID ), portrait );
+                infos.Add( characterInfo );
+            }
+            return infos;
+        }
+
         private Transform GetCharacterTransform(int id)
         {
             if (id == m_actorInfo.id)
@@ -663,6 +686,35 @@ namespace PixelCrushers.DialogueSystem
                     : UITools.CreateSprite(DialogueManager.LoadAsset(imageName) as Texture2D);
             }
         }
+
+        // Return portrait by index and portrait type. May return null.
+        private Sprite GetPortrait( Actor actor, int portraitIndex, PortraitType portraitType )
+        {
+            Sprite portrait = null;
+            if( actor != null ) {
+                switch( portraitType ) {
+                    case PortraitType.Sprite:
+                        portrait = portraitIndex == 1 ? 
+                            actor.spritePortrait : 
+                            (portraitIndex - 2 < actor.spritePortraits.Count ? 
+                                actor.spritePortraits[portraitIndex - 2] : 
+                                null);
+                        break;
+                    case PortraitType.Texture:
+                        portrait = UITools.CreateSprite( portraitIndex == 1 ?
+                            actor.portrait :
+                            (portraitIndex - 2 < actor.alternatePortraits.Count ?
+                                actor.alternatePortraits[portraitIndex - 2] :
+                                null));
+                        break;
+                    default:
+                        Assert.IsTrue( false );
+                        break;
+                }
+            }
+            return portrait;
+        }
+
 
         /// <summary>
         /// Updates the actor portrait sprite for any cached character info.

@@ -57,6 +57,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             NormalizeVariables();
             NormalizeConversations();
             NormalizeDialogueEntries();
+            NormalizeActorStates();
         }
 
         private void NormalizeActors()
@@ -102,6 +103,17 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 }
             }
         }
+
+        private void NormalizeActorStates()
+        {
+            foreach( var conversation in database.conversations ) {
+                foreach( var entry in conversation.dialogueEntries ) {
+                    foreach( var actorState in entry.actorsStates ) {
+                        EnforceTemplateOnFields( actorState.fields, template.actorStateFields );
+                    }
+                }
+            }
+        }    
 
         private void NormalizeAssets<T>(List<T> assets, List<Field> templateFields) where T : Asset
         {
@@ -194,6 +206,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 foreach (var entry in conversation.dialogueEntries)
                 {
                     ApplyDialogueEntryTemplate(entry.fields);
+                    foreach( var actorState in entry.actorsStates ) {
+                        ApplyActorStateTemplate( actorState.fields );
+                    }
                 }
             }
         }
@@ -225,6 +240,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 foreach (var entry in conversation.dialogueEntries)
                 {
                     RemoveEmptyFields(entry.fields);
+                    foreach( var actorState in entry.actorsStates ) {
+                        RemoveEmptyFields( actorState.fields );
+                    }
                 }
             }
         }
