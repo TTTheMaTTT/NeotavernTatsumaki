@@ -16,6 +16,11 @@ namespace PixelCrushers.DialogueSystem
             // do nothing
         }
 
+        // Close the scene. Perfomance has ended!
+        public virtual void CloseScene()
+        {
+            // do nothing
+        }
 
         // Update scene with information from entry
         public virtual void ChangeScene( DialogueEntry entry, List<CharacterInfo> entryActorsInfo )

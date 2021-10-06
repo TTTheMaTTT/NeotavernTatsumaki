@@ -1,7 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databox.OdinSerializer", "Databox.OdinSerializer.csproj", "{66077011-6732-5E66-477A-04BE8FD2525E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databox.FullSerializer", "Databox.FullSerializer.csproj", "{C39574D6-3603-D1C7-01EB-EC230035A890}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C15F57EB-EB33-3512-60E1-4B381873570A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databox", "Databox.csproj", "{06DFF79B-A6D1-3F71-7582-A1070472F47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databox.Editor", "Databox.Editor.csproj", "{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullSerializer.Editor", "FullSerializer.Editor.csproj", "{14C435B1-3F6A-D540-82B1-56B8A87A4349}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +19,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66077011-6732-5E66-477A-04BE8FD2525E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66077011-6732-5E66-477A-04BE8FD2525E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66077011-6732-5E66-477A-04BE8FD2525E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66077011-6732-5E66-477A-04BE8FD2525E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39574D6-3603-D1C7-01EB-EC230035A890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39574D6-3603-D1C7-01EB-EC230035A890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39574D6-3603-D1C7-01EB-EC230035A890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39574D6-3603-D1C7-01EB-EC230035A890}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C15F57EB-EB33-3512-60E1-4B381873570A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C15F57EB-EB33-3512-60E1-4B381873570A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C15F57EB-EB33-3512-60E1-4B381873570A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C15F57EB-EB33-3512-60E1-4B381873570A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DFF79B-A6D1-3F71-7582-A1070472F47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DFF79B-A6D1-3F71-7582-A1070472F47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DFF79B-A6D1-3F71-7582-A1070472F47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DFF79B-A6D1-3F71-7582-A1070472F47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFCB597-C0A7-A471-DFC7-4A7BCC028DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C435B1-3F6A-D540-82B1-56B8A87A4349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C435B1-3F6A-D540-82B1-56B8A87A4349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C435B1-3F6A-D540-82B1-56B8A87A4349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C435B1-3F6A-D540-82B1-56B8A87A4349}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

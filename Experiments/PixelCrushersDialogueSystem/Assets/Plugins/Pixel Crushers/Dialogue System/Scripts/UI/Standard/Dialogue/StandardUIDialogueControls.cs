@@ -135,11 +135,16 @@ namespace PixelCrushers.DialogueSystem
             if (allowOpenSubtitlePanelsOnStartConversation) standardSubtitleControls.OpenSubtitlePanelsOnStartConversation();
         }
 
-        public void ReseteDialogueScene()
+        public void ResetDialogueScene()
         {
             if( dialogueScene != null ) {
                 dialogueScene.Reset();
             }
+        }
+
+        public void CloseDialogueScene()
+        {
+                dialogueScene?.CloseScene();
         }
 
         public void ClearCaches()

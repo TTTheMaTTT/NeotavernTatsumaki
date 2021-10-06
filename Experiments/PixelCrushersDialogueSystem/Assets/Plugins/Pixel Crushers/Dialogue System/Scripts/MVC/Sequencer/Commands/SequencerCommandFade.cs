@@ -6,23 +6,25 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
 
     /// <summary>
-    /// Implements sequencer command: "Fade(in|out, [, duration[, webcolor]])".
+    /// Implements sequencer command: "Fade(in|out, [, duration[, webcolor[, sortOrder]]])".
     /// 
     /// Arguments:
     /// -# in or out.
     /// -# (Optional) Duration in seconds. Default: 1.
     /// -# (Optional) Web color in "\#rrggbb" format. Default: Black.
+    /// -# (Optional) Sort order of render. Default: 32766.
     /// </summary>
     [AddComponentMenu("")] // Hide from menu.
     public class SequencerCommandFade : SequencerCommand
     {
 
         private const float SmoothMoveCutoff = 0.05f;
-        private const int FaderCanvasSortOrder = 32766;
+        private const int DefaultFaderCanvasSortOrder = 32766;
 
         private string direction;
         private float duration;
         private Color color;
+        private int sortOrder;
         private bool fadeIn;
         private bool stay;
         private bool unstay;
@@ -38,7 +40,10 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             direction = GetParameter(0);
             duration = GetParameterAsFloat(1, 1);
             color = Tools.WebColor(GetParameter(2, "#000000"));
-            if (DialogueDebug.logInfo) Debug.Log(string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: Sequencer: Fade({1}, {2}, {3})", new System.Object[] { DialogueDebug.Prefix, direction, duration, color }));
+            sortOrder = GetParameterAsInt( 3, DefaultFaderCanvasSortOrder );
+            bool canOverrideSortOrder = true;
+            if (DialogueDebug.logInfo) Debug.Log(string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: Sequencer: Fade({1}, {2}, {3}, {4})", 
+                                                                                            new System.Object[] { DialogueDebug.Prefix, direction, duration, color, sortOrder }));
 
             stay = string.Equals(direction, "stay", System.StringComparison.OrdinalIgnoreCase);
             unstay = string.Equals(direction, "unstay", System.StringComparison.OrdinalIgnoreCase);
@@ -55,9 +60,16 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 if (faderCanvas == null)
                 {
                     faderCanvas = new GameObject("Canvas (Fader)", typeof(Canvas)).GetComponent<Canvas>();
-                    faderCanvas.transform.SetParent(DialogueManager.instance.transform);
-                    faderCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-                    faderCanvas.sortingOrder = FaderCanvasSortOrder;
+                    var parent = DialogueManager.instance.GetComponentInChildren<Canvas>().transform;
+                    if( parent == null ) {
+                        parent = DialogueManager.instance.transform;
+                        faderCanvas.transform.SetParent( parent );
+                        faderCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                        canOverrideSortOrder = false;
+                    } else {
+                        faderCanvas.transform.SetParent( parent );
+                        faderCanvas.overrideSorting = true;
+                    }
                 }
                 if (faderImage == null)
                 {
@@ -66,6 +78,9 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                     faderImage.rectTransform.anchorMin = Vector2.zero;
                     faderImage.rectTransform.anchorMax = Vector2.one;
                     faderImage.sprite = null;
+                }
+                if( canOverrideSortOrder ) {
+                    faderCanvas.sortingOrder = sortOrder;
                 }
                 faderCanvas.gameObject.SetActive(true);
                 faderImage.gameObject.SetActive(true);

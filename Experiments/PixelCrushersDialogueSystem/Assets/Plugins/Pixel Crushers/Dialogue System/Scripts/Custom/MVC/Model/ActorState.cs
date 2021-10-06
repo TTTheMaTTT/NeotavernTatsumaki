@@ -33,6 +33,11 @@ namespace PixelCrushers.DialogueSystem
     public class ActorState
     {
 
+        /// <summary>
+        /// The dialogue entry's field list. (See Field)
+        /// </summary>
+        public List<Field> fields = null;
+
         public ActorState()
         {
             fields = new List<Field>();
@@ -42,9 +47,12 @@ namespace PixelCrushers.DialogueSystem
         }
 
         /// <summary>
-        /// The dialogue entry's field list. (See Field)
+        /// Copy constructor
         /// </summary>
-        public List<Field> fields = null;
+        public ActorState( ActorState sourceState )
+        {
+            this.fields = Field.CopyFields( sourceState.fields );
+        }
 
         /// <summary>
         /// Gets or sets the ID of the line's actor

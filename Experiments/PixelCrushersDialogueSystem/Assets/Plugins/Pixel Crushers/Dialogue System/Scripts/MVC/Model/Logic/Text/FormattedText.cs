@@ -83,6 +83,11 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         public bool forceAuto { get; set; }
 
+        /// <summary>
+        /// If true, automaticaly goes to the next entry after the handling of the current entry
+        /// </summary>
+        public bool autoContinue { get; set; }
+
         public bool noSubtitle { get; set; }
 
         /// <summary>
@@ -131,11 +136,12 @@ namespace PixelCrushers.DialogueSystem
         /// <param name='position'>Position.</param>
         /// <param name='forceMenu'>Force menu.</param>
         /// <param name='forceAuto'>Force automatically selecting response without presenting a menu.</param>
+        /// <param name='autoContinue'>Force automatically continuing conversation after the handling of the entry.</param>
         /// <param name='pic'>The [pic] value, or <c>0</c> for unused.</param>
         /// <param name='picActor'>The [pica] value, or <c>0</c> for unused.</param>
         /// <param name='picConversant'>The [picc] value, or <c>0</c> for unused.</param>
         /// <param name="noSubtitle">Don't show subtitle.</param>
-        public FormattedText(string text = null, Emphasis[] emphases = null, bool italic = false, int position = NoAssignedPosition, bool forceMenu = true, bool forceAuto = false,
+        public FormattedText(string text = null, Emphasis[] emphases = null, bool italic = false, int position = NoAssignedPosition, bool forceMenu = true, bool forceAuto = false, bool autoContinue = false,
                              int pic = NoPicOverride, int picActor = NoPicOverride, int picConversant = NoPicOverride, string variableInputPrompt = null, int subtitlePanelNumber = -1, bool noSubtitle = false)
         {
             this.text = text ?? string.Empty;
@@ -144,6 +150,7 @@ namespace PixelCrushers.DialogueSystem
             this.position = position;
             this.forceMenu = forceMenu;
             this.forceAuto = forceAuto;
+            this.autoContinue = autoContinue;
             this.pic = pic;
             this.picActor = picActor;
             this.picConversant = picConversant;
@@ -194,13 +201,21 @@ namespace PixelCrushers.DialogueSystem
             bool italic = ExtractTag("[a]", ref text);
             bool forceMenu = ExtractTag("[f]", ref text);
             bool forceAuto = ExtractTag("[auto]", ref text);
+            bool autoContinue = ExtractTag( "[autoContinue]", ref text );
             bool noSubtitle = ExtractTag("[nosubtitle]", ref text);
             int position = ExtractPositionTag(ref text);
             int subtitlePanelNumber = ExtractPanelNumberTag(ref text);
             Emphasis[] emphases = DialogueManager.instance.displaySettings.subtitleSettings.richTextEmphases
                 ? ReplaceEmphasisTagsWithRichText(ref text, emphasisSettings)
                 : ExtractEmphasisTags(ref text, emphasisSettings);
-            return new FormattedText(text, emphases, italic, position, forceMenu, forceAuto, pic, pica, picc, variableInputPrompt, subtitlePanelNumber, noSubtitle);
+
+            // the last tag that can clear all text
+            bool isEmpty = ExtractTag( "[empty]", ref text );
+            if( isEmpty ) {
+                text = " ";
+            }
+
+            return new FormattedText(text, emphases, italic, position, forceMenu, forceAuto, autoContinue, pic, pica, picc, variableInputPrompt, subtitlePanelNumber, noSubtitle);
         }
 
         /// <summary>

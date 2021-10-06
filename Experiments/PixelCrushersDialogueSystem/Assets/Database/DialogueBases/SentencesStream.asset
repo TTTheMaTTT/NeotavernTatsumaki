@@ -2043,7 +2043,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2168,7 +2168,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Didn't that Byakuya bastard get killed in the dining hall, huh? Then
-          Everyone there is a fuckin' suspect.
+          everyone there is a fuckin' suspect.
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -2364,8 +2364,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 369
-        y: 175
+        x: 368
+        y: 127.999985
         width: 160
         height: 30
     - id: 2
@@ -2670,7 +2670,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 369
-        y: 325
+        y: 326.69492
         width: 160
         height: 30
     - id: 5
@@ -3107,8 +3107,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <color="blue">The reason why Byakuya's body was discovered under the
-          dining hall table...</color>
+        value: <color=#444444>The reason why Byakuya's body was discovered under
+          the dining hall table...</color>
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -3210,7 +3210,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <color="blue">We can start with that... But ultimately, we need to
+        value: <color=#444444>We can start with that... But ultimately, we need to
           find out who murdered him...</color>
         type: 0
         typeString: CustomFieldType_Text
@@ -3291,7 +3291,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <color="blue">If we can't do that...</color>
+        value: <color=#444444>If we can't do that...</color>
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -3307,7 +3307,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'required Fade(stay, 1, #000000, 5);
+
+          {{default}}'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -3472,7 +3474,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <color="blue">No... Thinking about "if" is a waste of time.</color>
+        value: <color=#444444>No... Thinking about "if" is a waste of time.</color>
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -3542,7 +3544,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 364.9597
+        x: 363.9597
         y: 790.485
         width: 160
         height: 30
@@ -3573,7 +3575,89 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <color="blue">We have to do this.... no matter what!</color>
+        value: <color=#444444>We have to do this.... no matter what!</color>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'required Fade(unstay, 1, #000000, 5);
+
+          {{default}}'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates: []
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 14
+        destinationConversationID: 3
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["Trial1_Status"] = 1
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 364.9597
+        y: 840.485
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Why was Byakuya's body in a place like that?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: \.Why was Byakuya's body in a place like that?
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -3600,7 +3684,735 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      actorsStates: []
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 6
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 4
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: ChangePosition
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Center
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 15
+        destinationConversationID: 3
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 364.4299
+        y: 1074.9174
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 10
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: His body was underneath the table at the very back of the dining hall
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 10
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 2
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: None
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Right
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 16
+        destinationConversationID: 3
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 359.5912
+        y: 1149.5562
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 12
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 10
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: After the killer murdered Byakuya
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 12
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 3
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: ChangePosition
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Left
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 17
+        destinationConversationID: 3
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 359.5912
+        y: 1199.5562
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 12
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 10
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: ...they probably <color="yellow">moved the body</color> there.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 12
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 4
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: None
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Center
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 18
+        destinationConversationID: 3
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 359.5912
+        y: 1249.5562
+        width: 160
+        height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 13
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 12
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Huh? Why?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 13
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 3
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: ChangePosition
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Right
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 19
+        destinationConversationID: 3
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 359.5912
+        y: 1299.5562
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 14
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 13
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <shake>Obviously, by hiding the body...</shake>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 14
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 2
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: ChangePosition
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Left
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 20
+        destinationConversationID: 3
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 358.45483
+        y: 1349.5562
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 14
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 13
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: They tried to delay its discovery!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 14
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 7
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: None
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Center
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 21
+        destinationConversationID: 3
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 358.45483
+        y: 1399.5562
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 14
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 13
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Like a dog burying a bone!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates:
+      - fields:
+        - title: Actor
+          value: 14
+          type: 5
+          typeString: CustomFieldType_Actor
+        - title: Portrait Index
+          value: 6
+          type: 1
+          typeString: CustomFieldType_Number
+        - title: Portrait Type
+          value: Sprite
+          type: 0
+          typeString: 
+        - title: Actor Arrangement Action
+          value: None
+          type: 0
+          typeString: CustomFieldType_ActorArrangementActionType
+        - title: Position Type
+          value: Center
+          type: 0
+          typeString: CustomFieldType_ActorPositionType
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -3610,18 +4422,101 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Trial1_Status"] = 1
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 364.9597
-        y: 840.485
+        x: 358.45483
+        y: 1449.5562
         width: 160
         height: 30
-    canvasScrollPosition: {x: 31.77211, y: 648.9629}
-    canvasZoom: 0.82000005
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '[autoContinue][empty]'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'required Transition(TransitionEffect, 1.5);
+
+          required SendMessage(ChangeBackground,
+          , GameController)@0.75;'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      actorsStates: []
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 23
+        destinationConversationID: 3
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 368.99194
+        y: 930.0013
+        width: 160
+        height: 30
+    canvasScrollPosition: {x: 0, y: 585.8824}
+    canvasZoom: 0.84999985
   - id: 4
     fields:
     - title: Title
@@ -4361,7 +5256,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 429.48672
-        y: 344.07666
+        y: 346.90686
         width: 160
         height: 30
     - id: 6
@@ -4661,8 +5556,8 @@ MonoBehaviour:
         y: 494.07666
         width: 160
         height: 30
-    canvasScrollPosition: {x: 137.76093, y: 39.548725}
-    canvasZoom: 0.96999997
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.9100001
   syncInfo:
     syncActors: 0
     syncItems: 0

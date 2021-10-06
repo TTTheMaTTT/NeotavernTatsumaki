@@ -190,6 +190,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -334,6 +336,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -405,6 +408,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -472,6 +476,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -497,8 +502,8 @@ MonoBehaviour:
         y: 314.98544
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.1199993
+    canvasScrollPosition: {x: 5.882324, y: 272.9414}
+    canvasZoom: 0.8499995
   - id: 2
     fields:
     - title: Title
@@ -593,6 +598,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -666,6 +672,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -737,6 +744,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -808,6 +816,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      actorsStates: []
       conversationID: 2
       isRoot: 0
       isGroup: 0

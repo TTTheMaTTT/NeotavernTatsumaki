@@ -90,7 +90,7 @@ namespace PixelCrushers.DialogueSystem
         {
             base.Open();
             conversationUIElements.OpenSubtitlePanelsOnStart();
-            conversationUIElements.ReseteDialogueScene();
+            conversationUIElements.ResetDialogueScene();
         }
 
         public override void Close()
@@ -109,6 +109,7 @@ namespace PixelCrushers.DialogueSystem
         {
             base.Close();
             conversationUIElements.ClearCaches();
+            conversationUIElements.CloseDialogueScene();
         }
 
         protected IEnumerator CloseAfterPanelsAreClosed()
@@ -197,7 +198,7 @@ namespace PixelCrushers.DialogueSystem
         {
             conversationUIElements.standardMenuControls.Close();
             conversationUIElements.standardSubtitleControls.ShowSubtitle(subtitle);
-            conversationUIElements.dialogueScene.ChangeScene( subtitle.dialogueEntry, subtitle.entryActorsInfo );
+            conversationUIElements.dialogueScene?.ChangeScene( subtitle.dialogueEntry, subtitle.entryActorsInfo );
         }
 
         public override void HideSubtitle(Subtitle subtitle)

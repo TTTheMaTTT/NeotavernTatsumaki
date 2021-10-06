@@ -88,10 +88,22 @@ namespace PixelCrushers.DialogueSystem
             _actorIdToIndex.Clear();
             _shownActorsIndices.Clear();
             _removedActorsIndices.Clear();
+            _prevActorsCount = 0;
             _leadActorIndex = -1;
             for( int i = transform.childCount - 1; i >= 0; i-- ) {
                 DestroyImmediate( transform.GetChild( i ).gameObject );
             }
+        }
+        
+
+        // Make all actors leave the scene. They will move to the bottom of screen
+        public override void CloseScene()
+        {
+            foreach( int index in _shownActorsIndices ) {
+                DeleteActor( _allActors[index].ActorID );
+            }
+            DefineShownIndices();
+            MakeArrangements();
         }
 
 
@@ -376,6 +388,20 @@ namespace PixelCrushers.DialogueSystem
                 ActorInfo actorInfo = _allActors[_actorIdToIndex[info.id]];
                 Image imageComponent = actorInfo.ActorObject.GetComponent<Image>();
                 imageComponent.sprite = info.portrait;
+
+                Rect imageRect = new Rect();
+                imageRect.size = imageComponent.sprite.rect.size * _actorDefaultScale;
+
+                imageComponent.rectTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, imageRect.width );
+                imageComponent.rectTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Vertical, imageRect.height );
+
+                // Set actors y-coordinate
+                var rectTransform = actorInfo.ActorObject.GetComponent<RectTransform>();
+                actorInfo.Position.y = _boundaries.yMin + imageRect.height / 2;
+                var newPos = rectTransform.anchoredPosition;
+                newPos.y = actorInfo.Position.y;
+                rectTransform.anchoredPosition = newPos;
+
             }
 
             int siblingIndex = transform.childCount - 1;
@@ -384,15 +410,6 @@ namespace PixelCrushers.DialogueSystem
             for( int i = 0; i < _shownActorsIndices.Count; i++ ) {
                 // Set images size
                 ActorInfo actorInfo = _allActors[currentIndex];
-                Image imageComponent = actorInfo.ActorObject.GetComponent<Image>();
-                Rect imageRect = new Rect();
-                imageRect.size = imageComponent.sprite.rect.size * _actorDefaultScale;
-
-                imageComponent.rectTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, imageRect.width );
-                imageComponent.rectTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Vertical, imageRect.height );
-
-                // Set actors y-coordinate
-                actorInfo.Position.y = _boundaries.yMin + imageRect.height / 2;
 
                 // Set transform order
                 actorInfo.ActorObject.transform.SetSiblingIndex( siblingIndex-- );
@@ -431,9 +448,10 @@ namespace PixelCrushers.DialogueSystem
 
         private void MoveActors()
         {
+            float delta = _transitionSpeed * DialogueTime.deltaTime;
             foreach( int index in _shownActorsIndices ) {
                 Vector3 pos = _allActors[index].ActorObject.GetComponent<RectTransform>().anchoredPosition;
-                _allActors[index].ActorObject.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp( pos, _allActors[index].Position, _transitionSpeed );
+                _allActors[index].ActorObject.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp( pos, _allActors[index].Position, delta );
             }
             foreach( int index in _removedActorsIndices ) {
                 if( _allActors[index].ActorObject == null ) {
@@ -443,7 +461,7 @@ namespace PixelCrushers.DialogueSystem
                 if( (pos - _allActors[index].Position).magnitude < LeaveEps ) {
                     Destroy( _allActors[index].ActorObject );
                 } else {
-                    _allActors[index].ActorObject.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp( pos, _allActors[index].Position, _transitionSpeed );
+                    _allActors[index].ActorObject.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp( pos, _allActors[index].Position, delta );
                 }
             }
         }

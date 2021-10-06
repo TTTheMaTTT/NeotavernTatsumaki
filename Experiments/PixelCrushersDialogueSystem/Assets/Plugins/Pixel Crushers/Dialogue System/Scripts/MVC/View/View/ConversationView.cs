@@ -200,7 +200,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (subtitle == null) return;
             var isPCLine = subtitle.speakerInfo.characterType == CharacterType.PC;
-            waitForContinue = ShouldWaitForContinueButton(isPCLine, isPCResponseMenuNext, isPCAutoResponseNext);
+            waitForContinue = ShouldWaitForContinueButton(isPCLine, isPCResponseMenuNext, isPCAutoResponseNext, subtitle.formattedText.autoContinue );
             var showContinueButton = ShouldShowContinueButton(isPCLine, isPCResponseMenuNext, isPCAutoResponseNext);
             if (waitForContinue)
             {
@@ -223,8 +223,11 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
-        private bool ShouldWaitForContinueButton(bool isPCLine, bool isPCResponseMenuNext, bool isPCAutoResponseNext)
+        private bool ShouldWaitForContinueButton(bool isPCLine, bool isPCResponseMenuNext, bool isPCAutoResponseNext, bool autoContinue )
         {
+            if( autoContinue ) {
+                return false;
+            }
             switch (settings.GetContinueButtonMode())
             {
                 case DisplaySettings.SubtitleSettings.ContinueButtonMode.Always:

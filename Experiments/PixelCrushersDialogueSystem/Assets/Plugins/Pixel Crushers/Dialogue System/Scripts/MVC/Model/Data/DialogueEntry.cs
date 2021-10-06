@@ -565,7 +565,7 @@ namespace PixelCrushers.DialogueSystem
         {
             this.id = sourceEntry.id;
             this.fields = Field.CopyFields(sourceEntry.fields);
-            this.actorsStates = new List<ActorState>();
+            this.actorsStates = CopyActorStates( sourceEntry.actorsStates );
             this.conversationID = sourceEntry.conversationID;
             this.isRoot = sourceEntry.isRoot;
             this.isGroup = sourceEntry.isGroup;
@@ -587,6 +587,15 @@ namespace PixelCrushers.DialogueSystem
                 links.Add(new Link(sourceLink));
             }
             return links;
+        }
+
+        private List<ActorState> CopyActorStates( List<ActorState> sourceActorStates )
+        {
+            List<ActorState> actorStates = new List<ActorState>();
+            foreach( var sourceState in sourceActorStates ) {
+                actorStates.Add( new ActorState( sourceState ) );
+            }
+            return actorStates;
         }
 
     }

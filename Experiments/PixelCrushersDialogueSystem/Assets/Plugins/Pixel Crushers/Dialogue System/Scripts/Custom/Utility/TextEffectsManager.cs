@@ -566,8 +566,11 @@ namespace PixelCrushers.DialogueSystem
                 Sequencer.Message(SequencerMessages.Typed);
             }
             StopTypewriterCoroutine();
-            if (textComponent != null) maxVisibleCharacters = textComponent.textInfo.characterCount;
-            ChangeCharactersColor( maxVisibleCharacters );
+            if( textComponent != null ) {
+                maxVisibleCharacters = textComponent.textInfo.characterCount;
+                ChangeCharactersColor( maxVisibleCharacters );
+                textGUI?.canvasRenderer.SetMesh( textGUI.mesh );
+            } 
             HandleAutoScroll();
         }
 
