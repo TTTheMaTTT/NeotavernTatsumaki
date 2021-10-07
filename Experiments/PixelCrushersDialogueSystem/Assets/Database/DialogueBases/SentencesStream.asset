@@ -1346,7 +1346,7 @@ MonoBehaviour:
           type: 5
           typeString: CustomFieldType_Actor
         - title: Portrait Index
-          value: 4
+          value: 2
           type: 1
           typeString: CustomFieldType_Number
         - title: Portrait Type
@@ -2466,7 +2466,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 369
+        x: 367.5714
         y: 225
         width: 160
         height: 30
@@ -4515,8 +4515,8 @@ MonoBehaviour:
         y: 930.0013
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 585.8824}
-    canvasZoom: 0.84999985
+    canvasScrollPosition: {x: 0, y: 346.36325}
+    canvasZoom: 0.7599998
   - id: 4
     fields:
     - title: Title

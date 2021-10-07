@@ -5,15 +5,17 @@ using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using PixelCrushers.DialogueSystem;
 
-// Синглтон, контролирующий потоки игровых событий
-public class GameController : GameControllerAbstract
-{    
+// Экспериментальный игровой контроллер, использующийся внутри комнат
+public class GameControllerTavernInside : GameControllerAbstract
+{
+
     // Поставлена ли игра на паузу
     private bool _isPaused;
 
     private DialogueSystemController _dialogueSystemController;
     private PauseMenu _pauseMenu;
     private EventSystem _eventSystem;
+    private PlayerTavernInside _player;
 
 
     // Проинициализировать все составляющие контроллер компоненты.
@@ -27,6 +29,10 @@ public class GameController : GameControllerAbstract
 
         _dialogueSystemController = FindObjectOfType<DialogueSystemController>();
 
+        var players = FindObjectsOfType<PlayerTavernInside>();
+        Assert.IsTrue( players.Length == 1, "One and only one player is allowed!" );
+        _player = players[0];
+
         base.initialize();
     }
 
@@ -34,6 +40,7 @@ public class GameController : GameControllerAbstract
     private void Start()
     {
         _pauseMenu.Close();
+        _player.SetMovability( true );
     }
 
 
@@ -71,6 +78,16 @@ public class GameController : GameControllerAbstract
     {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void OnConversationStart()
+    {
+        _player.SetMovability( false );
+    }
+
+    public void OnConversationEnd()
+    {
+        _player.SetMovability( true );
     }
 
 }

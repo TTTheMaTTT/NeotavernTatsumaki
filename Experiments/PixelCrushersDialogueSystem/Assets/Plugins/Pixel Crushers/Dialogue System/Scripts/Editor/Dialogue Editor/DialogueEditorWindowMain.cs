@@ -365,6 +365,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             ResetVariableSection();
             ResetConversationSection();
             ResetConversationNodeEditor();
+            ResetAssetLists();
         }
 
         void Update()
