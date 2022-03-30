@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace PixelCrushers.DialogueSystem
@@ -67,6 +68,11 @@ namespace PixelCrushers.DialogueSystem
         public List<Variable> variables = new List<Variable>();
 
         /// <summary>
+        /// The attributes in the database.
+        /// </summary>
+        public List<string> attributes = new List<string>();
+
+        /// <summary>
         /// The conversations in the database.
         /// </summary>
         public List<Conversation> conversations = new List<Conversation>();
@@ -78,10 +84,12 @@ namespace PixelCrushers.DialogueSystem
             public bool syncItems = false;
             public bool syncLocations = false;
             public bool syncVariables = false;
+            public bool syncAttributes = false;
             public DialogueDatabase syncActorsDatabase = null;
             public DialogueDatabase syncItemsDatabase = null;
             public DialogueDatabase syncLocationsDatabase = null;
             public DialogueDatabase syncVariablesDatabase = null;
+            public DialogueDatabase syncAttributesDatabase = null;
         }
 
         public void ResetEmphasisSettings()
@@ -104,6 +112,7 @@ namespace PixelCrushers.DialogueSystem
         private Dictionary<string, Item> itemNameCache = null;
         private Dictionary<string, Location> locationNameCache = null;
         private Dictionary<string, Variable> variableNameCache = null;
+        private HashSet<string> attributeNameCache = null;
         private Dictionary<string, Conversation> conversationTitleCache = null;
 
         /// <summary>
@@ -173,6 +182,7 @@ namespace PixelCrushers.DialogueSystem
             if (itemNameCache == null) itemNameCache = CreateCache<Item>(items);
             if (locationNameCache == null) locationNameCache = CreateCache<Location>(locations);
             if (variableNameCache == null) variableNameCache = CreateCache<Variable>(variables);
+            if ( attributeNameCache == null ) attributeNameCache = new HashSet<string>( attributes ); 
             if (conversationTitleCache == null) conversationTitleCache = CreateCache<Conversation>(conversations);
         }
 
@@ -447,6 +457,13 @@ namespace PixelCrushers.DialogueSystem
                 AddAssets<Item>(items, database.items, itemNameCache);
                 AddAssets<Location>(locations, database.locations, locationNameCache);
                 AddAssets<Variable>(variables, database.variables, variableNameCache);
+                
+                foreach( string attribute in database.attributes ) {
+                    if( !attributeNameCache.Contains( attribute ) ) {
+                        attributes.Add( attribute );
+                    }
+                }
+
                 AddAssets<Conversation>(conversations, database.conversations, conversationTitleCache);
             }
         }
@@ -523,6 +540,8 @@ namespace PixelCrushers.DialogueSystem
                 RemoveAssets<Item>(items, database.items, itemNameCache);
                 RemoveAssets<Location>(locations, database.locations, locationNameCache);
                 RemoveAssets<Variable>(variables, database.variables, variableNameCache);
+                HashSet<string> attributesToRemove = new HashSet<string>( database.attributes );
+                attributes.RemoveAll( x => attributesToRemove.Contains( x ) );
                 RemoveAssets<Conversation>(conversations, database.conversations, conversationTitleCache);
             }
         }
@@ -551,6 +570,9 @@ namespace PixelCrushers.DialogueSystem
                 RemoveAssets<Actor>(actors, database.actors, actorNameCache, keep);
                 RemoveAssets<Item>(items, database.items, itemNameCache, keep);
                 RemoveAssets<Location>(locations, database.locations, locationNameCache, keep);
+                HashSet<string> attributesToRemove = new HashSet<string>( database.attributes );
+                HashSet<string> attributesToKeep = new HashSet<string>( keep.SelectMany( x => attributes ) );
+                attributes.RemoveAll( x => attributesToRemove.Contains( x ) && !attributesToKeep.Contains( x ) );
                 RemoveAssets<Variable>(variables, database.variables, variableNameCache, keep);
                 RemoveAssets<Conversation>(conversations, database.conversations, conversationTitleCache, keep);
             }
@@ -596,6 +618,7 @@ namespace PixelCrushers.DialogueSystem
             items.Clear();
             locations.Clear();
             variables.Clear();
+            attributes.Clear();
             conversations.Clear();
             ResetCache();
         }
@@ -609,6 +632,7 @@ namespace PixelCrushers.DialogueSystem
             SyncItems();
             SyncLocations();
             SyncVariables();
+            SyncAttributes();
         }
 
         /// <summary>
@@ -665,6 +689,16 @@ namespace PixelCrushers.DialogueSystem
             {
                 variables.Add(new Variable(variable));
             }
+        }
+
+        public void SyncAttributes()
+        {
+            SetupCaches();
+            if( !syncInfo.syncAttributes || syncInfo.syncAttributesDatabase == null )
+                return;
+            HashSet<string> attributesInSyncDatabase = new HashSet<string>( syncInfo.syncAttributesDatabase.attributes );
+            attributes.AddRange( syncInfo.syncAttributesDatabase.attributes.Where( x => !attributeNameCache.Contains( x ) ) );
+            ResetCache();
         }
 
         /// <summary>

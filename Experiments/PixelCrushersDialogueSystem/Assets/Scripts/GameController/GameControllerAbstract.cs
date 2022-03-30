@@ -9,6 +9,8 @@ public abstract class GameControllerAbstract: MonoBehaviour
 
     // Был ли проинициализирован контроллер
     protected bool _isInitialized = false;
+    // Поставлена ли игра на паузу
+    protected bool _isPaused;
 
     /// <summary>
     /// Доступ к контролеру

@@ -8,10 +8,6 @@ using PixelCrushers.DialogueSystem;
 // Экспериментальный игровой контроллер, использующийся внутри комнат
 public class GameControllerTavernInside : GameControllerAbstract
 {
-
-    // Поставлена ли игра на паузу
-    private bool _isPaused;
-
     private DialogueSystemController _dialogueSystemController;
     private PauseMenu _pauseMenu;
     private EventSystem _eventSystem;

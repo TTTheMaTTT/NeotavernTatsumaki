@@ -528,6 +528,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                     case Toolbar.Tab.Variables:
                         DrawVariableSection();
                         break;
+                    case Toolbar.Tab.Attributes:
+                        DrawAttributesSection();
+                        break;
                     case Toolbar.Tab.Conversations:
                         DrawConversationSection();
                         break;

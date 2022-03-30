@@ -8,13 +8,14 @@ using UnityEngine.UI;
 namespace PixelCrushers.DialogueSystem
 {
 
-
+    // Окошко с персонажами диалога, которые отображаются в виде 2D спрайтов. 
+    // Умеет выставлять, перемещать и выставлять актёров на сцене, в зависимости от параметров текущего DialogueEntry.
     public class VisualNovelSceneUI : DialogueSceneUIBase
     {
 
-        const int DefaultMaxActorsOnScreen = 6;
-        const string ActorArrangementActionFieldName = "Actor Arrangement Action";
-        const string PositionTypeFieldName = "Position Type";
+        private const int DefaultMaxActorsOnScreen = 6;
+        private const string ActorArrangementActionFieldName = "Actor Arrangement Action";
+        private const string PositionTypeFieldName = "Position Type";
 
         // Structure, that helps to organize actors on the scene
         private class ActorInfo

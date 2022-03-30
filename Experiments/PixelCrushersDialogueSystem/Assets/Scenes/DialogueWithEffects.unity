@@ -588,7 +588,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 093da0c364675284a99aeb82198febe4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fd93786f1feb204ea2be79cccaf617f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -607,8 +607,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283611983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.502, y: 1.035, z: 0}
-  m_LocalScale: {x: 0.8536633, y: 0.8536633, z: 0.8536633}
+  m_LocalPosition: {x: 1.75, y: 1.035, z: 0}
+  m_LocalScale: {x: 1.4896281, y: 1.4896281, z: 1.4896281}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
       propertyPath: displaySettings.subtitleSettings.continueButton
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -873,6 +873,17 @@ PrefabInstance:
       propertyPath: reserveBackground
       value: 
       objectReference: {fileID: 21300000, guid: eb0e44ebd38c95948a7df4799b115dbe,
+        type: 3}
+    - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1283611984}
+    - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
+        type: 3}
+      propertyPath: reserveBackgroundImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 660125c6cbe42294cb95cd7a29d27769,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9974e17d6ffe249847c5f31690238a, type: 3}

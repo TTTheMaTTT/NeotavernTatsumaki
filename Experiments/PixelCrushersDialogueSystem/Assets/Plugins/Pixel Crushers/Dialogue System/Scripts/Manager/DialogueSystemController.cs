@@ -400,6 +400,22 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+        void OnEnable()
+        {
+            Lua.RegisterFunction( "GetActorId", this, SymbolExtensions.GetMethodInfo( () => GetActorId( string.Empty ) ) );
+        }
+
+        void OnDisable()
+        {
+            Lua.UnregisterFunction( "GetActorId" );
+        }
+
+        public double GetActorId( string name )
+        {
+            Actor actor = masterDatabase?.GetActor( name );
+            return actor == null ? -1 : actor.id;
+        }
+
         /// <summary>
         /// Standard Unity Input method to check if a button is down.
         /// </summary>
@@ -974,6 +990,12 @@ namespace PixelCrushers.DialogueSystem
         public void StartConversation(string title)
         {
             StartConversation(title, null, null, -1);
+        }
+
+        public void StartConversation( int conversationId )
+        {
+            var converstation = masterDatabase.GetConversation( conversationId );
+            StartConversation( converstation.Title, null, null, -1 );
         }
 
         /// <summary>

@@ -128,6 +128,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             }
             asset.Name = EditorGUILayout.TextField(new GUIContent("Name", "Name of this asset."), asset.Name);
             if (asset is Actor) DrawActorPortrait(asset as Actor);
+            if (asset is Location) DrawLocationSprite( asset as Location );
             if (asset is Item) DrawItemPropertiesFirstPart(asset as Item);
         }
 

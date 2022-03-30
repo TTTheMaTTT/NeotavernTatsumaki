@@ -994,7 +994,7 @@ MonoBehaviour:
         y: 144
         width: 160
         height: 30
-    canvasScrollPosition: {x: 234.62558, y: 0}
+    canvasScrollPosition: {x: 132.26337, y: 0}
     canvasZoom: 1.2699999
   - id: 2
     fields:
@@ -2957,8 +2957,8 @@ MonoBehaviour:
         y: 129
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 0.97088623}
+    canvasZoom: 1.03
   syncInfo:
     syncActors: 0
     syncItems: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using PixelCrushers.DialogueSystem;
 
 // Меню паузы и его UI. Синглтон.
 public class PauseMenu : MonoBehaviour

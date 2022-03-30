@@ -1,5 +1,7 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
@@ -24,6 +26,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
 
         [SerializeField]
         private int locationListSelectedIndex = -1;
+
+        [SerializeField]
+        private bool locationSpritesFoldout = false;
 
         private void ResetLocationSection()
         {
@@ -192,6 +197,61 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 SetDatabaseDirty("Manual Sync Locations");
             }
             EditorGUILayout.EndHorizontal();
+        }
+
+        private void DrawLocationSprite( Location location )
+        {
+            if ( location == null ) return;
+            // Sprites:
+            locationSpritesFoldout = EditorGUILayout.Foldout( locationSpritesFoldout, new GUIContent( "Location Sprites", "Location images using sprite assets." ) );
+            if( locationSpritesFoldout ) {
+                int indexToDelete = -1;
+                if( location.sprites == null )
+                    location.sprites = new List<Sprite>();
+                for( int i = 0; i < location.sprites.Count; i++ ) {
+                    try {
+                        EditorGUILayout.BeginHorizontal();
+                        GUILayout.FlexibleSpace();
+
+                        try {
+                            EditorGUILayout.BeginVertical( GUILayout.Width( 27 ) );
+                            EditorGUILayout.LabelField( string.Empty, GUILayout.Width( 5 ), GUILayout.Height( 16 ) );
+                            EditorGUILayout.LabelField( string.Format( "[{0}]", i + 1 ), CenteredLabelStyle, GUILayout.Width( 27 ) );
+                            EditorGUILayout.BeginHorizontal();
+                            EditorGUILayout.LabelField( string.Empty, GUILayout.Width( 5 ) );
+                            if( GUILayout.Button( new GUIContent( " ", "Delete this sprite." ), "OL Minus", GUILayout.Width( 16 ), GUILayout.Height( 16 ) ) ) {
+                                indexToDelete = i;
+                            }
+                            EditorGUILayout.EndHorizontal();
+                        } finally {
+                            EditorGUILayout.EndVertical();
+                        }
+
+                        try {
+                            location.sprites[i] = EditorGUILayout.ObjectField( location.sprites[i], typeof( Sprite ), false, GUILayout.Width( 64 ), GUILayout.Height( 64 ) ) as Sprite;
+                        } catch( NullReferenceException ) {
+                        }
+                    } finally {
+                        EditorGUILayout.EndHorizontal();
+                    }
+                }
+                if( indexToDelete > -1 ) {
+                    location.sprites.RemoveAt( indexToDelete );
+                    SetDatabaseDirty( "Delete Location Sprite" );
+                }
+
+                EditorGUILayout.LabelField( string.Empty, GUILayout.Height( 4 ) );
+
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.FlexibleSpace();
+                if( GUILayout.Button( new GUIContent( " ", "Add new location sprite." ), "OL Plus", GUILayout.Height( 16 ) ) ) {
+                    location.sprites.Add( null );
+                    SetDatabaseDirty( "Add Location Sprite" );
+                }
+                EditorGUILayout.LabelField( string.Empty, GUILayout.Width( 12 ) );
+                EditorGUILayout.EndHorizontal();
+            }
+
         }
 
     }

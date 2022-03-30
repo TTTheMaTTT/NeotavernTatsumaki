@@ -7,9 +7,14 @@ using PixelCrushers.DialogueSystem;
 
 // Синглтон, контролирующий потоки игровых событий
 public class GameController : GameControllerAbstract
-{    
+{
     // Поставлена ли игра на паузу
     private bool _isPaused;
+
+    [SerializeField]
+    private SpriteRenderer background;
+    [SerializeField]
+    private Sprite reserveBackgroundImage;
 
     private DialogueSystemController _dialogueSystemController;
     private PauseMenu _pauseMenu;
@@ -71,6 +76,11 @@ public class GameController : GameControllerAbstract
     {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void ChangeBackground()
+    {
+        background.sprite = reserveBackgroundImage;
     }
 
 }

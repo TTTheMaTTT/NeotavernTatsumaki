@@ -3307,7 +3307,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'required Fade(stay, 1, #000000, 5);
+        value: 'required Fade(stay, 1, #FF0000, 5);
 
           {{default}}'
         type: 0
@@ -3363,8 +3363,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 367.83975
-        y: 690.1366
+        x: 369.72653
+        y: 686.363
         width: 160
         height: 30
     - id: 12
@@ -3591,7 +3591,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'required Fade(unstay, 1, #000000, 5);
+        value: 'required Fade(unstay, 1, #FF0000, 5);
 
           {{default}}'
         type: 0
@@ -3626,7 +3626,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 364.9597
+        x: 364.0163
         y: 840.485
         width: 160
         height: 30
@@ -4475,7 +4475,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'required Transition(TransitionEffect, 1.5);
+        value: 'Transition(TransitionEffect, 1.5);
 
           required SendMessage(ChangeBackground,
           , GameController)@0.75;'
@@ -4515,8 +4515,8 @@ MonoBehaviour:
         y: 930.0013
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 346.36325}
-    canvasZoom: 0.7599998
+    canvasScrollPosition: {x: 0, y: 398.05652}
+    canvasZoom: 0.9399996
   - id: 4
     fields:
     - title: Title
