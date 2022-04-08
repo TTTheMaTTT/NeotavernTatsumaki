@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
 
@@ -8,6 +9,7 @@ public class GameControllerBarInside : GameControllerAbstract
     private Dragger _currentDragger;
     private InteractableAbstract _currentInteractable;
     private CursorAbstract _gameCursor;
+    private DialogueSystemController _dialogueSystemController;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class GameControllerBarInside : GameControllerAbstract
     private void Start()
     {
         Cursor.visible = false;
+        _dialogueSystemController = FindObjectOfType<DialogueSystemController>();
     }
 
     private void Update()
