@@ -9,7 +9,7 @@ namespace PixelCrushers.DialogueSystem
 {
 
     // Окошко с персонажами диалога, которые отображаются в виде 2D спрайтов. 
-    // Умеет выставлять, перемещать и выставлять актёров на сцене, в зависимости от параметров текущего DialogueEntry.
+    // Умеет выставлять, перемещать и убирать актёров на сцене, в зависимости от параметров текущего DialogueEntry.
     public class VisualNovelSceneUI : DialogueSceneUIBase
     {
 
@@ -29,9 +29,9 @@ namespace PixelCrushers.DialogueSystem
             public int Index;// Index of this actor in 
             public int PrevActorIndex = -1;// Если -1, значит, данное лицо говорило последним
             public int NextActorIndex = -1;// Если -1, значит, данное лицо мы не слышали дольше всех
+            public bool IsPermanent = false;// Если true, то актёра ничего не может убрать со сцены, даже окончание диалога
         }
 
-        #region Serialized Fields
 
         [SerializeField] private float _actorDefaultScale = 0.4f;// Scaling of actor's original image on this window
 
@@ -41,9 +41,6 @@ namespace PixelCrushers.DialogueSystem
 
         [SerializeField] private float _transitionSpeed = 1f;// speed of image's position transitions
 
-        #endregion //Serialized Fields
-
-        #region Properties & Private Fields
 
         private int _maxActorsOnScreen = DefaultMaxActorsOnScreen;// Maximum of actors count, that are shown
 
@@ -54,11 +51,9 @@ namespace PixelCrushers.DialogueSystem
         private HashSet<int> _shownActorsIndices;// indices of shown actors
         private HashSet<int> _removedActorsIndices;// Indices of removed actors
         private int _prevActorsCount;// _allActors size before last update of the dialogue scene
-        private int _leadActorIndex;// Index of the leading actor who is currently speaking
+        private int _leadActorIndex = -1;// Index of the leading actor who is currently speaking
+        private HashSet<int> _permanentActorsIds;// id актёров, которые остаются на сцене все время.
 
-        #endregion //Properties & Private Fields
-
-        #region Initialization
 
         private void Awake()
         {
@@ -71,10 +66,11 @@ namespace PixelCrushers.DialogueSystem
             _actorIdToIndex = new Dictionary<int, int>();
             _shownActorsIndices = new HashSet<int>();
             _removedActorsIndices = new HashSet<int>();
+            _permanentActorsIds = new HashSet<int>();
+            _leadActorIndex = -1;
             _prevActorsCount = 0;
         }
-
-        #endregion // Initialization
+        
 
         private void Update()
         {
@@ -83,25 +79,56 @@ namespace PixelCrushers.DialogueSystem
 
 
         // Clear all service structure and destroy actors UI
-        public override void Reset()
+        public override void ResetScene()
         {
-            _allActors.Clear();
-            _actorIdToIndex.Clear();
-            _shownActorsIndices.Clear();
-            _removedActorsIndices.Clear();
-            _prevActorsCount = 0;
-            _leadActorIndex = -1;
-            for( int i = transform.childCount - 1; i >= 0; i-- ) {
-                DestroyImmediate( transform.GetChild( i ).gameObject );
+            var activeActorIndices = _actorIdToIndex.Values.ToList();
+            foreach( var actorIndex in activeActorIndices ) {
+                if( !_allActors[actorIndex].IsPermanent ) {
+                    DeleteActor( _allActors[actorIndex].ActorID );
+                }
             }
+            PrepareForNextSceneState();
+            // Удалим все старые actorState, подготовим структуры к новому диалогу
+            if( _leadActorIndex == -1 ) {
+                Assert.IsTrue( _actorIdToIndex.Count == 0 );
+                _allActors.Clear();
+                _actorIdToIndex.Clear();
+                _shownActorsIndices.Clear();
+                _removedActorsIndices.Clear();
+            } else {
+                // Пересоставим структуры
+                List<ActorInfo> remainActors = new List<ActorInfo>();
+                int currentIndex = _leadActorIndex;
+                while( currentIndex != -1 ) {
+                    Assert.IsTrue( _actorIdToIndex.ContainsKey( _allActors[currentIndex].ActorID ) );
+                    remainActors.Add( _allActors[currentIndex] );
+                    currentIndex = _allActors[currentIndex].NextActorIndex;
+                }
+                for( int i = 0; i < remainActors.Count; i++ ) {
+                    remainActors[i].NextActorIndex = i >= remainActors.Count ? -1 : i + 1;
+                    remainActors[i].PrevActorIndex = i - 1; 
+                }
+                _allActors = remainActors;
+                _actorIdToIndex.Clear();
+                for( int i = 0; i < _allActors.Count; i++ ) {
+                    _actorIdToIndex.Add( _allActors[i].ActorID, i );
+                }
+                _removedActorsIndices.Clear();
+                DefineShownIndices();
+                MakeArrangements();
+            }
+            _prevActorsCount = _allActors.Count;
         }
-        
+
 
         // Make all actors leave the scene. They will move to the bottom of screen
         public override void CloseScene()
         {
-            foreach( int index in _shownActorsIndices ) {
-                DeleteActor( _allActors[index].ActorID );
+            var activeActorIndices = _actorIdToIndex.Values.ToList();
+            foreach( var actorIndex in activeActorIndices ) {
+                if( !_allActors[actorIndex].IsPermanent ) {
+                    DeleteActor( _allActors[actorIndex].ActorID );
+                }
             }
             DefineShownIndices();
             MakeArrangements();
@@ -145,6 +172,28 @@ namespace PixelCrushers.DialogueSystem
         }
 
 
+        // Выставить данному actorId статус постоянства. Постоянного актёра нельзя убрать со сцены никакими способами.
+        public void SetActorPermanence( int actorId, bool isPermanent )
+        {
+            if( actorId < 0 ) {
+                return;
+            }
+            if( isPermanent ) {
+                _permanentActorsIds.Add( actorId );
+                if( _actorIdToIndex.ContainsKey( actorId ) ) {
+                    _allActors[_actorIdToIndex[_actorIdToIndex[actorId]]].IsPermanent = true;
+                }
+            } else {
+                if( _permanentActorsIds.Contains( actorId ) ) {
+                    _permanentActorsIds.Remove( actorId );
+                    if( _actorIdToIndex.ContainsKey( actorId ) ) {
+                        _allActors[_actorIdToIndex[_actorIdToIndex[actorId]]].IsPermanent = false;
+                    }
+                }
+            }
+        }
+
+
         // Finish work that must be done in previous state.
         // Actors moved to their positions, designated by prevous state.
         // Instantly delete actors, that should be deleted im previous state.
@@ -161,7 +210,6 @@ namespace PixelCrushers.DialogueSystem
                 if( _allActors[index].ActorObject != null ) {
                     Destroy( _allActors[index].ActorObject );
                 }
-
             }
         }
 
@@ -202,8 +250,10 @@ namespace PixelCrushers.DialogueSystem
                         break;
 
                     case ActorArrangementActionType.Leave:
-                        DeleteActor( actorState.ActorID );
-                        mustChangeArrangement = true;
+                        if( _actorIdToIndex.ContainsKey( actorState.ActorID ) && !_allActors[_actorIdToIndex[actorState.ActorID]].IsPermanent ) {
+                            DeleteActor( actorState.ActorID );
+                            mustChangeArrangement = true;
+                        }
                         break;
                     default:
                         Assert.IsTrue( false );
@@ -227,6 +277,7 @@ namespace PixelCrushers.DialogueSystem
             actorImage.transform.localScale = new Vector3( 1f, 1f, 1f );
             actorInfo.ActorObject = actorImage.gameObject;
             actorInfo.Index = _allActors.Count;
+            actorInfo.IsPermanent = _permanentActorsIds.Contains( actorId );
             _actorIdToIndex.Add( actorId, _allActors.Count );
 
             // Set default position on the scene
@@ -285,7 +336,7 @@ namespace PixelCrushers.DialogueSystem
 
 
         // Define which actors should be shown
-        void DefineShownIndices()
+        private void DefineShownIndices()
         {
             _shownActorsIndices.Clear();
             int currentIndex = _leadActorIndex;
@@ -418,6 +469,7 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+
         // Show actors that must be shown
         private void SetActorsVisibility()
         {
@@ -444,6 +496,7 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+
         private const float LeaveEps = 0.1f;
 
 
@@ -466,6 +519,7 @@ namespace PixelCrushers.DialogueSystem
                 }
             }
         }
+
 
         // Get default x-coordinate for positionType
         private float GetDefaultPosition( ActorScreenPositionType positionType )

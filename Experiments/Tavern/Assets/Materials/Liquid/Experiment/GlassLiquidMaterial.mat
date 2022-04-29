@@ -104,6 +104,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _WaterLevel: 0
+    - _Wobble: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _threshold: 0

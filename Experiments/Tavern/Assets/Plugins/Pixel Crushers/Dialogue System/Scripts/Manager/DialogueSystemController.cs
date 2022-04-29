@@ -410,11 +410,12 @@ namespace PixelCrushers.DialogueSystem
             Lua.UnregisterFunction( "GetActorId" );
         }
 
-        public double GetActorId( string name )
+        public int GetActorId( string name )
         {
             Actor actor = masterDatabase?.GetActor( name );
             return actor == null ? -1 : actor.id;
         }
+
 
         /// <summary>
         /// Standard Unity Input method to check if a button is down.

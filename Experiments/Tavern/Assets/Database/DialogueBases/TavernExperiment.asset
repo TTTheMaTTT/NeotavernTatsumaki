@@ -90,7 +90,7 @@ MonoBehaviour:
     - title: Initial Value
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Description
       value: 
       type: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     - title: Title
       value: PumpkinStart
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -110,7 +110,7 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -122,7 +122,7 @@ MonoBehaviour:
     - title: 
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -408,8 +408,8 @@ MonoBehaviour:
         y: 312.91714
         width: 160
         height: 30
-    canvasScrollPosition: {x: 1.7391357, y: 6.0869446}
-    canvasZoom: 1.1499999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1.06
   syncInfo:
     syncActors: 0
     syncItems: 0

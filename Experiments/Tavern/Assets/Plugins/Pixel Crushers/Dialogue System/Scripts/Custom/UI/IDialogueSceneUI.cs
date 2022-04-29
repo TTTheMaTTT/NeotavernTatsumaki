@@ -8,7 +8,7 @@ namespace PixelCrushers.DialogueSystem
     /// </summary>
     public interface IDialogueSceneUI
     {
-        void Reset();
+        void ResetScene();
         void ChangeScene( DialogueEntry entry, List<CharacterInfo> entryActorsInfo );
     }
 }

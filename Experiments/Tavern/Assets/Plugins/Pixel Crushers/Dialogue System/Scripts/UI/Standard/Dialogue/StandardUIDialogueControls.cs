@@ -138,13 +138,13 @@ namespace PixelCrushers.DialogueSystem
         public void ResetDialogueScene()
         {
             if( dialogueScene != null ) {
-                dialogueScene.Reset();
+                dialogueScene.ResetScene();
             }
         }
 
         public void CloseDialogueScene()
         {
-                dialogueScene?.CloseScene();
+            dialogueScene?.CloseScene();
         }
 
         public void ClearCaches()

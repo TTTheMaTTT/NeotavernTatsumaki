@@ -1,34 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class InteractableAbstract : MonoBehaviour
 {
 
-    private void OnMouseDown()
+    private Material _material = null;
+    protected Material interactableMaterial
     {
-        StartInteraction();
-    }
-
-    private void OnMouseUp()
-    {
-        StopInteraction();
-    }
-
-    protected void StartInteraction()
-    {
-        var gameControllerInstance = GameControllerAbstract.Instance() as GameControllerBarInside;
-        if( gameControllerInstance != null ) {
-            gameControllerInstance.StartInteraction( this );
+        get {
+            if( _material == null ) {
+                _material = GetComponent<Renderer>().material;
+            }
+            return _material;
         }
     }
 
-    protected void StopInteraction()
+    private const string _outlineThicknessProperty = "_OutlineThickness";
+    private const float _outlineActiveValue = 2f;
+    private const float _outlineInactiveValue = 0f;
+
+    [SerializeField] protected int _interactionLayer = 0;
+    public int interactionLayer
     {
-        var gameControllerInstance = GameControllerAbstract.Instance() as GameControllerBarInside;
-        if( gameControllerInstance != null ) {
-            gameControllerInstance.StopInteraction( this );
+        get {
+            return _interactionLayer;
         }
     }
+
+
+    protected void Awake()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        if( spriteRenderer != null ) {
+            string layerName = spriteRenderer.sortingLayerName;
+        }
+    }
+
+    public void ShowInteraction()
+    {
+        if( interactableMaterial != null ) {
+            interactableMaterial.SetFloat( _outlineThicknessProperty, _outlineActiveValue );
+        }
+    }
+
+
+    public void HideInteraction()
+    {
+        if( interactableMaterial != null ) {
+            interactableMaterial.SetFloat( _outlineThicknessProperty, _outlineInactiveValue );
+        }
+    }
+    
 
 }

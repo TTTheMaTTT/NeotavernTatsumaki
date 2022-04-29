@@ -11,7 +11,7 @@ namespace PixelCrushers.DialogueSystem
     public class DialogueSceneUIBase : MonoBehaviour, IDialogueSceneUI
     {
         // Clear all service structure and destroy actors UI
-        public virtual void Reset()
+        public virtual void ResetScene()
         {
             // do nothing
         }
