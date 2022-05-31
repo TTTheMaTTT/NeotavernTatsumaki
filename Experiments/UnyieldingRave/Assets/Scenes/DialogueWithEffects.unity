@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -161,6 +163,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -261,6 +264,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.18, y: -0.64199996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -356,7 +360,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -382,6 +386,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.72, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -462,6 +467,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4207821, y: 0.35370827, z: -1.7364707}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -528,6 +534,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -560,10 +567,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -609,6 +618,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.75, y: 1.035, z: 0}
   m_LocalScale: {x: 1.4896281, y: 1.4896281, z: 1.4896281}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -641,6 +651,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1001 &3951204408015491169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,6 +663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -670,6 +686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -682,16 +703,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -710,7 +721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.continueButton
+      propertyPath: dialogueTimeMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
@@ -721,23 +732,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.skipPCSubtitleAfterResponseMenu
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.showNPCSubtitlesWithResponses
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.allowPCSubtitleReminders
-      value: 0
+      propertyPath: displaySettings.inputSettings.cancel.key
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -746,7 +742,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.informSequenceStartAndEnd
+      propertyPath: displaySettings.cameraSettings.defaultSequence
+      value: Delay({{end}})
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.inputSettings.cancelConversation.key
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
@@ -756,39 +767,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.cameraSettings.defaultSequence
-      value: Delay({{end}})
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.inputSettings.cancel.key
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.inputSettings.cancelConversation.key
+      propertyPath: displaySettings.subtitleSettings.allowPCSubtitleReminders
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: dialogueTimeMode
+      propertyPath: displaySettings.subtitleSettings.informSequenceStartAndEnd
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.showNPCSubtitlesWithResponses
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: m_RenderMode
-      value: 1
+      propertyPath: displaySettings.subtitleSettings.skipPCSubtitleAfterResponseMenu
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 537932440}
+    - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
       propertyPath: m_SortingOrder
@@ -810,6 +821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6782066
       objectReference: {fileID: 0}
@@ -825,6 +841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -836,16 +857,6 @@ PrefabInstance:
     - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4352641621528382410, guid: fe9974e17d6ffe249847c5f31690238a,
@@ -865,6 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
         type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1283611984}
+    - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
+        type: 3}
       propertyPath: backgroundObject
       value: 
       objectReference: {fileID: 1283611983}
@@ -874,11 +890,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: eb0e44ebd38c95948a7df4799b115dbe,
         type: 3}
-    - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
-        type: 3}
-      propertyPath: background
-      value: 
-      objectReference: {fileID: 1283611984}
     - target: {fileID: 4352641621528382411, guid: fe9974e17d6ffe249847c5f31690238a,
         type: 3}
       propertyPath: reserveBackgroundImage
@@ -896,6 +907,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -911,6 +927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -923,16 +944,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}

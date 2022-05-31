@@ -11,13 +11,13 @@ E:\Programmes\2021.2.10f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/UnyieldingRave
+E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/PixelCrushersDialogueSystem
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-1234
-Successfully changed project path to: E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/UnyieldingRave
-E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/UnyieldingRave
+1071
+Successfully changed project path to: E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/PixelCrushersDialogueSystem
+E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/PixelCrushersDialogueSystem
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,89 +47,89 @@ E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/UnyieldingRave
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 48.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 41.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path E:/Programmes/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/UnyieldingRave/Assets
+[Subsystems] Discovering subsystems at path E:/Good Stuff/MyGames/NeotavernTatsumaki/Experiments/PixelCrushersDialogueSystem/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce RTX 2070 (ID=0x1f02)
     Vendor:   NVIDIA
     VRAM:     8031 MB
-    Driver:   27.21.14.5751
+    Driver:   27.21.14.6079
 Initialize mono
 Mono path[0] = 'E:/Programmes/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Programmes/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/Programmes/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56360
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Programmes/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002456 seconds.
+Registered in 0.003334 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 55.12 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 49.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.511 seconds
+- Completed reload, in  0.486 seconds
 Domain Reload Profiling:
-	ReloadAssembly (512ms)
-		BeginReloadAssembly (65ms)
+	ReloadAssembly (486ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (380ms)
-			LoadAssemblies (65ms)
+		EndReloadAssembly (360ms)
+			LoadAssemblies (60ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (94ms)
+			SetupTypeCache (84ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (217ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (205ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (55ms)
+				RefreshPlugins (49ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (107ms)
-				ProcessInitializeOnLoadMethodAttributes (41ms)
+				ProcessInitializeOnLoadAttributes (103ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002614 seconds.
+Registered in 0.002590 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.781 seconds
+- Completed reload, in  0.702 seconds
 Domain Reload Profiling:
-	ReloadAssembly (782ms)
-		BeginReloadAssembly (102ms)
+	ReloadAssembly (702ms)
+		BeginReloadAssembly (90ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (596ms)
-			LoadAssemblies (67ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (541ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (177ms)
+			SetupTypeCache (160ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (270ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (244ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (44ms)
-				ProcessInitializeOnLoadAttributes (178ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (163ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -137,13 +137,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2609 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (56.0 KB). Loaded Objects now: 3075.
-Memory consumption went from 102.2 MB to 102.1 MB.
-Total: 2.946900 ms (FindLiveObjects: 0.260900 ms CreateObjectMapping: 0.125800 ms MarkObjects: 2.489100 ms  DeleteObjects: 0.070400 ms)
+Unloading 2600 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (55.8 KB). Loaded Objects now: 3073.
+Memory consumption went from 105.4 MB to 105.4 MB.
+Total: 11.356400 ms (FindLiveObjects: 0.292900 ms CreateObjectMapping: 0.193700 ms MarkObjects: 10.765200 ms  DeleteObjects: 0.103100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -157,53 +157,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 65841.986327 seconds.
-  path: Assets/Sprites/UI/next_statement_button.png
-  artifactKey: Guid(2c095b45e96971243bc757fbfe0f9038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/next_statement_button.png using Guid(2c095b45e96971243bc757fbfe0f9038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6110ed4bd55d2a738d2868a5e880b2b6') in 0.317858 seconds 
+  Time since last request: 184332.590860 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(836fae34a198c294dad63d4f863ff793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(836fae34a198c294dad63d4f863ff793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608089f25414dc76abe37f112f36178a') in 0.027309 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/UI/dialogue_statement_pane.png
-  artifactKey: Guid(9ce5e4e5982dfe6489fc9f4f802e752e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/dialogue_statement_pane.png using Guid(9ce5e4e5982dfe6489fc9f4f802e752e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '788a97eb723bbae5f4ab31906555cb87') in 0.081612 seconds 
+  Time since last request: 0.114196 seconds.
+  path: Assets/Scripts/GameController/Room
+  artifactKey: Guid(70af5db8436d157468863b759fbcaeaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/Room using Guid(70af5db8436d157468863b759fbcaeaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1217e2084a39dc0d8a72f3a3d1e84cf') in 0.001097 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.946791 seconds.
-  path: Assets/Sprites/Backgrounds/Gray.jpg
-  artifactKey: Guid(a984f6f36d23eb0439681ee92a716caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/Gray.jpg using Guid(a984f6f36d23eb0439681ee92a716caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a220fac263754fe9ae102ceacaca7ae2') in 0.227820 seconds 
+  Time since last request: 5.121661 seconds.
+  path: Assets/Scripts/GameController/GameControllerAbstract.cs
+  artifactKey: Guid(5372c00bb7f848e47a208499a3f64ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/GameControllerAbstract.cs using Guid(5372c00bb7f848e47a208499a3f64ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b04e9363f2a4f97acf45a6a808d352bd') in 0.031105 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Sprites/Backgrounds/VIP 00.jpg
-  artifactKey: Guid(2fd93786f1feb204ea2be79cccaf617f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/VIP 00.jpg using Guid(2fd93786f1feb204ea2be79cccaf617f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd169186ea5357fc7177eb40436f36f99') in 0.133651 seconds 
+  Time since last request: 3.558905 seconds.
+  path: Assets/Scripts/GameController/DialogueSystem
+  artifactKey: Guid(36167b86771cffe4cbb73d1bba877a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/DialogueSystem using Guid(36167b86771cffe4cbb73d1bba877a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a941497e6fb61c033b3a50a9fc099df') in 0.001251 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sprites/Backgrounds/tavern_back.png
-  artifactKey: Guid(093da0c364675284a99aeb82198febe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/tavern_back.png using Guid(093da0c364675284a99aeb82198febe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db7ced780450c600744d07581e23a634') in 0.204354 seconds 
+  Time since last request: 4.542252 seconds.
+  path: Assets/Scripts/GameController/Experiment
+  artifactKey: Guid(bd933dd2a86bde443b96e310b0a4cfde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/Experiment using Guid(bd933dd2a86bde443b96e310b0a4cfde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd3636c8395ac183a79764ea227fe8d0') in 0.001262 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.870497 seconds.
-  path: Assets/Sprites/Backgrounds/Borrowed/madeInAbbys19.jpg
-  artifactKey: Guid(a52d3677d21f1f946b75d14c34445d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/Borrowed/madeInAbbys19.jpg using Guid(a52d3677d21f1f946b75d14c34445d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b744aaf8e1338db5c27fc1d682a9e1c5') in 0.277446 seconds 
+  Time since last request: 1.588017 seconds.
+  path: Assets/Scripts/GameController/Experiment/Editor
+  artifactKey: Guid(8ebaccc132348704bafd77d1cf46172e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/Experiment/Editor using Guid(8ebaccc132348704bafd77d1cf46172e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6bb551c7ffac7a1b8103b3cc015355c') in 0.067145 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/Backgrounds/Borrowed/psychoanalysis-room.jpg
-  artifactKey: Guid(5554a64635fdd9f4c853a75a175b7190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/Borrowed/psychoanalysis-room.jpg using Guid(5554a64635fdd9f4c853a75a175b7190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3505e5295e23fab44bdbb1885dd565b') in 0.259761 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sprites/Backgrounds/Borrowed/space00.jpg
-  artifactKey: Guid(5d1e3114d324d8748ba5f1dd70266bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/Borrowed/space00.jpg using Guid(5d1e3114d324d8748ba5f1dd70266bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '723f4996cd95dd44ad88cf966504211c') in 0.185849 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 1.022940 seconds.
+  path: Assets/Scripts/GameController/Experiment/Editor/GameControllerTavernOutsideEditor.cs
+  artifactKey: Guid(69d152d91d6d42e4e8a494410ada51a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameController/Experiment/Editor/GameControllerTavernOutsideEditor.cs using Guid(69d152d91d6d42e4e8a494410ada51a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0348622275d91d90b452551d4e2ccb35') in 0.036629 seconds 

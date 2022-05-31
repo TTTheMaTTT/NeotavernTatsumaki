@@ -8,9 +8,6 @@ using PixelCrushers.DialogueSystem;
 // Синглтон, контролирующий потоки игровых событий
 public class GameController : GameControllerAbstract
 {
-    // Поставлена ли игра на паузу
-    private bool _isPaused;
-
     [SerializeField]
     private SpriteRenderer background;
     [SerializeField]

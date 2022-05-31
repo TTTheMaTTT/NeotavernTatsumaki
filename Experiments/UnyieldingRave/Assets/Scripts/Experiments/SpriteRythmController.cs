@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpriteRythmController : MonoBehaviour
 {
     [SerializeField]
-    private int bpm = 120;// частота битов.
+    private float bpm = 120;// частота битов.
 
     private string beatSpeedParameterName = "BeatSpeed";
 
@@ -18,7 +18,7 @@ public class SpriteRythmController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         if( animator != null ) {
-            animator.SetFloat( beatSpeedParameterName, (float)bpm / 60f );
+            animator.SetFloat( beatSpeedParameterName, bpm / 60f );
         }
     }
 
