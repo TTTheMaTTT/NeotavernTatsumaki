@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class BeatStroke : MonoBehaviour
@@ -13,7 +12,8 @@ public class BeatStroke : MonoBehaviour
         _reactionAreaObject = transform.Find( _reactionAreaObjectName )?.gameObject;
     }
 
-    public void SetReactionAreaWidth( float width )
+
+    public void SetReactionArea( float width, BeatReactionType reactionType )
     {
         if( _reactionAreaObject != null ) {
             var rectTransform = _reactionAreaObject.GetComponent<RectTransform>();
@@ -23,8 +23,22 @@ public class BeatStroke : MonoBehaviour
             Vector2 size = rectTransform.sizeDelta;
             size.x = width;
             rectTransform.sizeDelta = size;
+            Vector2 position = rectTransform.anchoredPosition;
+            switch( reactionType ) {
+                case BeatReactionType.OnlyBeforeBeat:
+                    position.x = -size.x / 2;
+                    break;
+                case BeatReactionType.BeforeAndAfterBeat:
+                    position.x = 0f;
+                    break;
+                default:
+                    throw new Exception( $"Wrong reaction type {reactionType}" );
+                    break;
+            }
+            rectTransform.anchoredPosition = position;
         }
     }
+
 
     // Update is called once per frame
     private void Update()

@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7455f514f4a2d43a3d3f918d772a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 25
+  bias: 40
   timeStep: 0.15
   timeToBeat: 0.05
   restSmoothTime: 2

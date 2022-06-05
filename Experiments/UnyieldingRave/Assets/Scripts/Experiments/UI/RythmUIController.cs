@@ -45,6 +45,8 @@ public class RythmUIController : MonoBehaviour
     private float _prevTimeLength;
     private float _prevTrackLength;
 
+    bool _shouldChange = false;
+
     private GameObject _rythmLineObject;
     private const string rythmLineObjectName = "RythmLine";
     private Dictionary<int, GameObject> _beatIdToStrokeObject = new Dictionary<int, GameObject>();
@@ -57,7 +59,7 @@ public class RythmUIController : MonoBehaviour
     private Color _deactivateColor = new Color( 0f, 0f, 0f, 0f );
     private Color _failColor = new Color( 1f, 0f, 0f, 1f );
     private Color _successColor = new Color( 0f, 1f, 0f, 1f );
-    [SerializeField] private Color _targetColor;
+    private Color _targetColor;
     private GameObject _beatReactionObject;
     private Image _beatReactionSprite;
     private const string _beatReactionObjectName = "BeatReaction";
@@ -67,9 +69,20 @@ public class RythmUIController : MonoBehaviour
     public float reactionDelta
     {
         set {
+            _shouldChange = _shouldChange || _reactionDelta != value;
             _reactionDelta = value;
         }
     }
+
+    private BeatReactionType _reactionType = BeatReactionType.BeforeAndAfterBeat;
+    public BeatReactionType reactionType
+    {
+        set {
+            _shouldChange = _shouldChange || _reactionType != value;
+            _reactionType = value;
+        }
+    }
+
     private Coroutine changeColorRoutine;
 
 
@@ -276,9 +289,9 @@ public class RythmUIController : MonoBehaviour
         newBeatStroke.transform.position = new Vector3( 0f, 0f, 0f );
         newBeatStroke.transform.localScale = new Vector3( 1f, 1f, 1f );
         newBeatStroke.GetComponent<RectTransform>().anchoredPosition = new Vector2( 0f, 0f );
-        float beatReactionAreaWidth = _reactionDelta / shownTrackTimeLength * (trackRightPos - trackLeftPos) * 2;
+        float beatReactionAreaWidth = _reactionDelta / shownTrackTimeLength * (trackRightPos - trackLeftPos) * (_reactionType == BeatReactionType.BeforeAndAfterBeat? 2 : 1);
         var beatStroke = newBeatStroke.GetComponent<BeatStroke>();
-        beatStroke?.SetReactionAreaWidth( beatReactionAreaWidth );
+        beatStroke?.SetReactionArea( beatReactionAreaWidth, _reactionType );
         _beatIdToStrokeObject.Add( beat.Id, newBeatStroke );
     }
 
@@ -334,15 +347,16 @@ public class RythmUIController : MonoBehaviour
             _trackCurrentPosObject.GetComponent<RectTransform>().anchoredPosition = new Vector2( trackCurrentPos, position.y );
         }
         float newTrackLength = trackRightPos - trackLeftPos;
-        if( newTrackLength != _prevTrackLength || shownTrackTimeLength != _prevTimeLength ) {
-            float beatReactionAreaWidth = _reactionDelta / shownTrackTimeLength * newTrackLength * 2;
+        if( newTrackLength != _prevTrackLength || shownTrackTimeLength != _prevTimeLength || _shouldChange ) {
+            float beatReactionAreaWidth = _reactionDelta / shownTrackTimeLength * newTrackLength * (_reactionType == BeatReactionType.BeforeAndAfterBeat ? 2 : 1);
             foreach( var keyValue in _beatIdToStrokeObject ) {
                 var beatStroke = keyValue.Value.GetComponent<BeatStroke>();
-                beatStroke.SetReactionAreaWidth( beatReactionAreaWidth );
+                beatStroke.SetReactionArea( beatReactionAreaWidth, _reactionType );
             }
         }
         _prevTrackLength = newTrackLength;
         _prevTimeLength = shownTrackTimeLength;
+        _shouldChange = false;
     }
 
     #endregion //TrackMovement
