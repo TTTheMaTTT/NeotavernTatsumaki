@@ -12,7 +12,14 @@ public class SomeEnemyController : EnemyController
     [SerializeField] [Range( 0f, 1f )] private float attackProbability = 0.5f;
 
 
-    public override void OnBeat()
+    public override void OnRythmAction()
+    {
+        base.OnRythmAction();
+        Action();
+    }
+
+
+    private void Action()
     {
         if( _isPreparingAttack ) {
             _state.Action = CharacterAction.Attack;

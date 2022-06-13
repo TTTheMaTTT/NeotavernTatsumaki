@@ -5,17 +5,10 @@ using UnityEngine;
 //  онтроллер персонажа, управл€емого игроком
 public class PlayerController : CharacterRythmController
 {
-    [Range( 0f, 1f )]
-    private float _beatResetProportion = 0.5f;
-    private float _beatResetTime;
-    private Coroutine _beatResetRoutine;
 
-    public override void ConfigureBeats( float bpm, float beatOffset )
+    public void Idle()
     {
-        base.ConfigureBeats( bpm, beatOffset );
-
-        float beatTime = 60f / bpm;
-        _beatResetTime = _beatResetProportion * beatTime;
+        _state.Action = CharacterAction.None;
     }
 
 
@@ -31,15 +24,16 @@ public class PlayerController : CharacterRythmController
     }
 
 
-    public override void OnBeat()
+    public override void OnRythmAction()
     {
-        Animate();
-        if( _beatResetRoutine != null ) {
-            StopCoroutine( _beatResetRoutine );
-        }
-        _beatResetRoutine = StartCoroutine( BeatResetRoutine( _beatResetTime ) );
+        Action();
     }
 
+
+    private void Action()
+    {
+        Animate();
+    }
 
     private void Animate()
     {
@@ -56,10 +50,4 @@ public class PlayerController : CharacterRythmController
         }
     }
 
-
-    private IEnumerator BeatResetRoutine( float resetTime )
-    {
-        yield return new WaitForSeconds( resetTime );
-        _state.Action = CharacterAction.None;
-    }
 }

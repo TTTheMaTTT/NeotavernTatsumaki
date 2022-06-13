@@ -7,6 +7,15 @@ using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using PixelCrushers.DialogueSystem;
 
+
+// Игровой контроллер управляет действиями пресонажей, а точнее указывает, в какие моменты действия должны происходить
+// Этот енам содержит в себе режимы работы контроллера в вопросе моментов вызова ритмичного игрового события.
+public enum RythmGameActionType
+{
+    OnBeat,// Событие произойдёт в момент окончания окна реакции на бит.
+    OnPlayerInput// Событие произойдёт либо на инпут игрока при реакции на бит, либо в конце окна реакции (если игрок не успеет среагировать).
+}
+
 // Экспериментальный игровой контроллер, исползующийся для некоторой ритм-игры
 public class GameControllerRythmBattle : GameControllerAbstract
 {
@@ -15,7 +24,8 @@ public class GameControllerRythmBattle : GameControllerAbstract
     private PauseMenu _pauseMenu;
     private EventSystem _eventSystem;
 
-    private List<IBeatResponsive> beatResponsiveObjects;
+    private List<IBeatResponsive> _beatResponsiveObjects;
+    private List<IRythmGameActor> _rythmGameActors;
 
     private PlayerController _playerController;
     private string _playerTag = "Player";
@@ -23,12 +33,19 @@ public class GameControllerRythmBattle : GameControllerAbstract
     private EnemyController _enemy;
     private string _enemyTag = "Enemy";
 
+    // Определяет, в какие моменты происходит событие ритм-игры. В момент бита или реакции игрока на бит.
+    // Однако, если rythmActionType == OnBeat и reactionType == BeforeAndAfterBeat, то события будут происходить, когда закончится окно реакции.
+    [SerializeField] private RythmGameActionType rythmActionType = RythmGameActionType.OnBeat;
+    // Тип окна реакции.
+    [SerializeField] private BeatReactionType reactionType = BeatReactionType.BeforeAndAfterBeat;
     private BeatTimeline _beatTimeline;// Карта битов данного трека
     private int _nextBeatToReactIndex = -1;// Индекс предстоящего бита, на который ещё предстоит среагировать. -1, если битов нет совсем. _beatTimeline.Count, если биты закончились.
     private int _nextBeatIndex = -1;// Индекс ближайшего бита, который ещё не произошёл
-    [SerializeField]private float _reactionDelta = 0.15f;// Как сильно может отличаться время реагирования от времени бита, чтобы всё ещё засчитывать попадание по биту.
-    private BeatReactionType _reactionType = BeatReactionType.OnlyBeforeBeat;
+    private int _rythmActionBeatIndex = -1;// Индекс ближайшего бита, вместе с которым должно произойти следующее ритм-событие
+    [SerializeField] private float _reactionDelta = 0.15f;// Как сильно может отличаться время реагирования от времени бита, чтобы всё ещё засчитывать попадание по биту.
     private Queue<int> _beatsToReact = new Queue<int>();// Биты, на которые нужно среагировать
+
+    private Dictionary<int, CharacterAction> _playerReactionsOnBeats = new Dictionary<int, CharacterAction>();// Каким действием игрок среагировал на бит
 
     private float _time;// Текущее время в треке
     [SerializeField] private float currentTime;
@@ -55,7 +72,8 @@ public class GameControllerRythmBattle : GameControllerAbstract
         _rythmUIController = FindObjectOfType<RythmUIController>();
         Assert.IsNotNull( _rythmUIController );
 
-        beatResponsiveObjects = FindObjectsOfType<CharacterController>().Select( x => x as IBeatResponsive ).ToList();
+        _beatResponsiveObjects = FindObjectsOfType<UnityEngine.Object>().Where(x => x as IBeatResponsive != null ).Select( x => x as IBeatResponsive ).ToList();
+        _rythmGameActors = FindObjectsOfType<CharacterController>().Select( x => x as IRythmGameActor ).ToList();
 
         var players = GameObject.FindGameObjectsWithTag( _playerTag );
         Assert.IsTrue( players.Length == 1, "One and only one player is allowed!" );
@@ -83,15 +101,19 @@ public class GameControllerRythmBattle : GameControllerAbstract
     {
         _pauseMenu.Close();
 
+        _beatsToReact = new Queue<int>();
+        _playerReactionsOnBeats = new Dictionary<int, CharacterAction>();
+
         CreateBeatTimeline();
         _nextBeatToReactIndex = _beatTimeline.GetNextBeatIndexAfterTime( -trackStartTime );
         _nextBeatIndex = _nextBeatToReactIndex;
+        _rythmActionBeatIndex = _nextBeatToReactIndex;
         _rythmUIController.SetBeatTimeline( _beatTimeline );
         _rythmUIController.reactionDelta = _reactionDelta;
-        _rythmUIController.reactionType = _reactionType;
+        _rythmUIController.reactionType = reactionType;
 
         var rythmControllers = FindObjectsOfType<CharacterController>();
-        foreach( var beatResponsive in beatResponsiveObjects ) {
+        foreach( var beatResponsive in _beatResponsiveObjects ) {
             beatResponsive.ConfigureBeats( bpm, -trackStartTime );
         }
     }
@@ -99,19 +121,14 @@ public class GameControllerRythmBattle : GameControllerAbstract
 
     private void Update()
     {
-        bool isBeatHitted = ManageBeats();
-        if( isBeatHitted ) {
-            ManagePlayerActions();
-        }
+        ManageBeats();
         LaunchBeatActions();
     }
 
 
     // Управление линией битов
-    private bool ManageBeats()
+    private void ManageBeats()
     {
-        bool isBeatHitted = false;
-
         if( Input.GetButtonDown( "Cancel" ) ) {
             if( !_isPaused ) {
                 SetOnPause();
@@ -140,45 +157,52 @@ public class GameControllerRythmBattle : GameControllerAbstract
             _nextBeatToReactIndex++;
         }
 
-        // Удаляем биты, у которых истёк срок годности (реакции)
+        // Реакция игрока на биты
+        if( Input.GetKeyDown( KeyCode.Mouse0 ) || Input.GetKeyDown( KeyCode.Mouse1 ) ) {
+            if( _beatsToReact.Count == 0 ) {
+                _rythmUIController.ShowBeatHitFail();
+            } else {
+                int beatIndex = _beatsToReact.Dequeue();// Игрок больше не сможет среагировать на бит, на который он уже среагировал
+                _rythmUIController.ShowBeatHitSuccess();
+                _rythmUIController.HitBeat( _beatTimeline[beatIndex] );
+                ManagePlayerBeatReaction( beatIndex );
+                if( rythmActionType == RythmGameActionType.OnPlayerInput ) {
+                    // Сразу запускаем ритм-действие
+                    Assert.IsTrue( _rythmActionBeatIndex == beatIndex );// Сверимся с битом ритм-действия
+                    RythmEvent( _rythmActionBeatIndex );
+                    _rythmActionBeatIndex++;// Увеличиваем индекс, чтобы повторно не вызвался метод на момент конца реакции бита
+                }
+
+            }
+        }
+
+        // Удаляем биты, у которых истёк срок годности (реакции). Игрок больше не сможет на них среагировать.
         bool canPeek = true;
         while( canPeek ) {
             canPeek = false;
             if( _beatsToReact.Count > 0 ) {
                 int beatIndex = _beatsToReact.Peek();
-                if( IsBeatHappened( beatIndex ) ) {
+                if( IsBeatReactionHappened( beatIndex ) ) {
                     _rythmUIController.ShowBeatHitFail();
                     _beatsToReact.Dequeue();
                     canPeek = true;// Также смотрим на следующие биты.
                 }
             }
         }
-
-        if( Input.GetKeyDown( KeyCode.Mouse0 ) || Input.GetKeyDown( KeyCode.Mouse1 ) ) {
-            if( _beatsToReact.Count == 0 ) {
-                _rythmUIController.ShowBeatHitFail();
-            } else {
-                isBeatHitted = true;
-                int beatIndex = _beatsToReact.Dequeue();
-                _rythmUIController.ShowBeatHitSuccess();
-                _rythmUIController.HitBeat( _beatTimeline[beatIndex] );
-            }
-        }
-        return isBeatHitted;
     }
 
 
     // Управление от игрока
-    private void ManagePlayerActions()
+    private void ManagePlayerBeatReaction( int beatIndex )
     {
         // Действия игрока
         if( _playerController.State.Health <= 0 ) {
             return;
         }
         if( Input.GetKeyDown( KeyCode.Mouse0 ) ) {
-            _playerController.Attack();
+            _playerReactionsOnBeats.Add( beatIndex, CharacterAction.Attack );
         } else if( Input.GetKeyDown( KeyCode.Mouse1 ) ) {
-            _playerController.Defend();
+            _playerReactionsOnBeats.Add( beatIndex, CharacterAction.Defend );
         }
     }
 
@@ -188,26 +212,79 @@ public class GameControllerRythmBattle : GameControllerAbstract
     {
         while( _nextBeatIndex < _beatTimeline.Count && IsBeatHappened( _nextBeatIndex ) ) {
             _nextBeatIndex++;
-            foreach( var beatResponsive in beatResponsiveObjects ) {
+            foreach( var beatResponsive in _beatResponsiveObjects ) {
                 beatResponsive.OnBeat();
             }
-            CalculateActions();
         }
+        while( _rythmActionBeatIndex < _beatTimeline.Count && IsBeatReactionHappened( _rythmActionBeatIndex ) ) {
+            // Сюда должны попадать, если
+            // rythmActionType == OnPlayerInput и игрок не среагировал на бит с индексом _rythmActionBeatIndex.
+            // rythmActionType == OnBeat, и просто подошёл конец окна реакции на бит с индексом _rythmActionBeatIndex. Игрок мог как среагировать, так и не среагировать.
+            // Т.е. независимо от режима rythmActionType, если выполнение кода попало сюда, значит надо вызывать ритм-действие.
+            RythmEvent( _rythmActionBeatIndex );
+            _rythmActionBeatIndex++;
+        }
+
     }
 
 
-    // Считаем ли, что бит с указанным индексом уже произошёл
+    // Считаем ли, что бит с указанным индексом уже произошёл, 
     private bool IsBeatHappened( int beatIndex )
     {
         Assert.IsTrue( beatIndex >= 0 && beatIndex < _beatTimeline.Count );
-        switch( _reactionType ) {
+        return currentTime >= _beatTimeline[beatIndex].Time;
+    }
+
+
+    // Считаем ли, что бит с указанным индексом уже произошёл, а также прошло время для реагирования на этот бит
+    private bool IsBeatReactionHappened( int beatIndex )
+    {
+        Assert.IsTrue( beatIndex >= 0 && beatIndex < _beatTimeline.Count );
+        switch( reactionType ) {
             case BeatReactionType.OnlyBeforeBeat:
                 return currentTime >= _beatTimeline[beatIndex].Time;
             case BeatReactionType.BeforeAndAfterBeat:
                 return currentTime - _beatTimeline[beatIndex].Time > _reactionDelta;
             default:
-                throw new Exception( $"Wrong reaction type {_reactionType}" );
+                throw new Exception( $"Wrong reaction type {reactionType}" );
         }
+    }
+
+
+    // Игровое ритм-событие, запускающее ритм-действие у персонажей, связанные с битом с индексом beatIndex
+    private void RythmEvent( int beatIndex )
+    {
+        Assert.IsTrue( beatIndex >= 0 && beatIndex < _beatTimeline.Count );
+        ManagePlayerAction( beatIndex );
+
+        foreach( var rythmGameActor in _rythmGameActors ) {
+            rythmGameActor.OnRythmAction();
+        }
+        CalculateActions();
+    }
+
+
+    private void ManagePlayerAction( int beatIndex )
+    {
+        if( !_playerReactionsOnBeats.ContainsKey( beatIndex ) ) {
+            _playerController.Idle();
+            return;
+        }
+        switch( _playerReactionsOnBeats[ beatIndex ] ) {
+            case CharacterAction.Attack:
+                _playerController.Attack();
+                break;
+            case CharacterAction.Defend:
+                _playerController.Defend();
+                break;
+            case CharacterAction.None:
+                _playerController.Idle();
+                break;
+            default:
+                Assert.IsTrue( false, "Wrong character state action" );
+                break;
+        }
+        _playerReactionsOnBeats.Remove( beatIndex );
     }
 
 

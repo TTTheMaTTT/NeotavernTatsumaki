@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterRythmController : CharacterController, IBeatResponsive
+public class CharacterRythmController : CharacterController, IBeatResponsive, IRythmGameActor
 {
     protected BasicCharacterRythmVisual _visual;
 
@@ -35,5 +35,9 @@ public class CharacterRythmController : CharacterController, IBeatResponsive
 
 
     public virtual void OnBeat()
+    {}
+
+
+    public virtual void OnRythmAction()
     {}
 }

@@ -1243,11 +1243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529b182e5de278749ae5323394bfff21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reactionDelta: 0.2
+  rythmActionType: 0
+  reactionType: 0
+  _reactionDelta: 0.15
   currentTime: 0
   bpm: 115
   trackLength: 120
   trackStartTime: 1.8
+  _playerStartHealth: 3
+  _enemyStartHealth: 10
 --- !u!1 &1400803576
 GameObject:
   m_ObjectHideFlags: 0
