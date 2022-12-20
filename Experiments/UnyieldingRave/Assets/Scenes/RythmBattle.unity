@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1243,8 +1243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529b182e5de278749ae5323394bfff21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rythmActionType: 0
-  reactionType: 0
+  rythmActionType: 1
+  reactionType: 1
   _reactionDelta: 0.15
   currentTime: 0
   bpm: 115

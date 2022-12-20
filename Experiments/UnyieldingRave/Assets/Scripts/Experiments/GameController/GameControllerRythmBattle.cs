@@ -307,7 +307,6 @@ public class GameControllerRythmBattle : GameControllerAbstract
     }
 
 
-
     public override void SetOnPause()
     {
         _isPaused = true;

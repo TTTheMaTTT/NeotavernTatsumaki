@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -147,6 +149,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.33, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1931146511}
   m_RootOrder: 1
@@ -180,6 +183,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.83, y: 0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1312103914}
   - {fileID: 1905119654}
@@ -344,6 +348,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -374,6 +379,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.09, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1287876208}
   m_RootOrder: 1
@@ -431,7 +437,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.55
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -457,6 +463,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.72, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -488,6 +495,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6199999, y: 0.5569999, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1287876208}
   m_RootOrder: 0
@@ -503,10 +511,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -603,6 +613,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 689649479}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SelectUsable
         m_Mode: 0
         m_Arguments:
@@ -617,6 +628,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 689649479}
+        m_TargetAssemblyTypeName: 
         m_MethodName: DeselectUsable
         m_Mode: 0
         m_Arguments:
@@ -641,6 +653,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.85, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2128994277}
   m_Father: {fileID: 0}
@@ -686,6 +699,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6199999, y: 0.5569999, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1931146511}
   m_RootOrder: 0
@@ -701,10 +715,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -802,6 +818,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -953,6 +970,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.93, y: 2.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 645068667}
   - {fileID: 498625641}
@@ -986,6 +1004,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6199999, y: 0.5569999, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147848599}
   m_RootOrder: 0
@@ -1001,10 +1020,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1068,10 +1089,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1117,6 +1140,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.71, y: 0.99, z: 0}
   m_LocalScale: {x: 0.9491861, y: 0.9491861, z: 0.596504}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1149,6 +1173,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &1905119653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1200,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.52, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147848599}
   m_RootOrder: 1
@@ -1326,6 +1352,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.07, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 795188751}
   - {fileID: 99603733}
@@ -1479,6 +1506,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.93, y: 1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2079728892}
   - {fileID: 2129700301}
@@ -1512,6 +1540,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6199999, y: 0.5569999, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015933842}
   m_RootOrder: 0
@@ -1527,10 +1556,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1593,6 +1624,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 689649478}
   m_RootOrder: 0
@@ -1608,10 +1640,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1673,6 +1707,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.53, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015933842}
   m_RootOrder: 1
@@ -1691,6 +1726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1703,6 +1743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -1721,16 +1766,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408648215952, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -1746,7 +1781,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.continueButton
+      propertyPath: initialDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b083f3a3e2f9a41b06e806c1054ebe,
+        type: 2}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: dialogueTimeMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
@@ -1757,23 +1798,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.skipPCSubtitleAfterResponseMenu
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.showNPCSubtitlesWithResponses
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.allowPCSubtitleReminders
-      value: 0
+      propertyPath: displaySettings.inputSettings.cancel.key
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
@@ -1782,7 +1808,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.subtitleSettings.informSequenceStartAndEnd
+      propertyPath: displaySettings.cameraSettings.defaultSequence
+      value: Delay({{end}})
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.inputSettings.cancelConversation.key
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
@@ -1792,38 +1833,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: displaySettings.cameraSettings.defaultSequence
-      value: Delay({{end}})
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.inputSettings.cancel.key
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
-        type: 3}
-      propertyPath: displaySettings.inputSettings.cancelConversation.key
+      propertyPath: displaySettings.subtitleSettings.allowPCSubtitleReminders
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: dialogueTimeMode
+      propertyPath: displaySettings.subtitleSettings.informSequenceStartAndEnd
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: initialDatabase
-      value: 
-      objectReference: {fileID: 11400000, guid: 34b083f3a3e2f9a41b06e806c1054ebe,
-        type: 2}
-    - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+      propertyPath: displaySettings.subtitleSettings.showNPCSubtitlesWithResponses
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951204408653974068, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
-      propertyPath: m_RenderMode
+      propertyPath: displaySettings.subtitleSettings.skipPCSubtitleAfterResponseMenu
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
@@ -1831,6 +1861,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 537932440}
+    - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3951204408661768880, guid: 0f1ca39eef36cb24eb44adc7cfea3f30,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1861,6 +1896,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7245676932313954929}
+          m_TargetAssemblyTypeName: 
           m_MethodName: OnConversationStart
           m_Mode: 1
           m_Arguments:
@@ -1875,6 +1911,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7245676932313954929}
+          m_TargetAssemblyTypeName: 
           m_MethodName: OnConversationEnd
           m_Mode: 1
           m_Arguments:
@@ -1952,6 +1989,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1967,6 +2009,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1979,16 +2026,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5718377536808826446, guid: 1d2b4acfd22c41240be5d0da19ad822d,
         type: 3}
@@ -2031,6 +2068,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2046,6 +2088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -2057,16 +2104,6 @@ PrefabInstance:
     - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7245676930993136470, guid: 3a351a4d978b55b42bf1f353d8055787,
