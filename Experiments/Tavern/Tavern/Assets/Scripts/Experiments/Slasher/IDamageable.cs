@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Experiments.Slasher
 {
     public interface IDamageable

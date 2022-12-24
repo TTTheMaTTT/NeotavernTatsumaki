@@ -5,12 +5,6 @@ namespace Experiments.Slasher
 
     public class ImpController : EnemyController
     {
-        [SerializeField] private float _attackDistance = 1f;
-
-        private GameObject _target;
-
-
-
         protected override void Awake()
         {
             base.Awake();
@@ -31,10 +25,12 @@ namespace Experiments.Slasher
                 } else {
                     _movement = Vector2.zero;
                 }
-
+                _animator.SetBool( "EnemyUpper", delta.y > Mathf.Abs( delta.x ) );
+                _animator.SetBool( "EnemyDowner", delta.y < -Mathf.Abs( delta.x ) );
                 if( delta.sqrMagnitude <= _attackDistance * _attackDistance ) {
                     Attack();
                 }
+
             }
         }
 
@@ -45,11 +41,6 @@ namespace Experiments.Slasher
             _movement = Vector2.zero;
         }
 
-
-        private void FixedUpdate()
-        {
-            _rb?.MovePosition( _rb.position + _movement.normalized * _moveSpeed * Time.fixedDeltaTime );
-        }
 
     }
 

@@ -9,6 +9,16 @@ namespace Experiments.Slasher
             get; set;
         } = 0;
 
+        public int PoiseDamage
+        {
+            get; set;
+        } = 0;
+
+        public Vector2 PushForce
+        {
+            get; set;
+        } = Vector2.zero;
+
         public GameObject Owner
         {
             get; set;
@@ -20,8 +30,14 @@ namespace Experiments.Slasher
                 return;// не причинияем себе вред своей же атакой
             }
             var damageable = collision.gameObject.GetComponent<IDamageable>();
-            if( damageable != null ) {
-                damageable.TakeDamage( Damage );
+            damageable?.TakeDamage( Damage );
+
+            var poiseDamageable = collision.gameObject.GetComponent<IPoiseDamageable>();
+            poiseDamageable?.TakePoiseDamage( PoiseDamage );
+
+            var rigid = collision.gameObject.GetComponent<Rigidbody2D>();
+            if( rigid != null ) {
+                rigid.AddForce( PushForce );
             }
         }
     }

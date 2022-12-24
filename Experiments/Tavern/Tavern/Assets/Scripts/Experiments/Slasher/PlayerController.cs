@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Experiments.Slasher
@@ -8,6 +6,8 @@ namespace Experiments.Slasher
     {
         [SerializeField] private float _moveSpeed = 5f;
         [SerializeField] private int _damage = 1;
+        [SerializeField] private int _poiseDamage = 1;
+        [SerializeField] private float _hitForce = 100f;
 
         private CharacterState _state = CharacterState.None;
         private Vector2 _movement;
@@ -15,6 +15,7 @@ namespace Experiments.Slasher
         private Rigidbody2D _rb;
         private Animator _animator;
         private HitBox _hitBox;
+        private Direction _direction;
 
         protected override void Awake()
         {
@@ -23,6 +24,7 @@ namespace Experiments.Slasher
             _animator = GetComponent<Animator>();
             _hitBox = GetComponentInChildren<HitBox>( true );
             _hitBox.Damage = _damage;
+            _hitBox.PoiseDamage = _poiseDamage;
             _hitBox.Owner = gameObject;
         }
 
@@ -40,23 +42,31 @@ namespace Experiments.Slasher
                     _animator.SetFloat( "Horizontal", _movement.x );
                     _animator.SetFloat( "Vertical", _movement.y );
                     _animator.SetFloat( "Speed", _movement.sqrMagnitude );
-
-                    if( Mathf.Abs( _movement.x ) > Mathf.Abs( _movement.y ) ) {
-                        _animator.SetBool( "DirectionLeft", _movement.x < 0 );
-                        _animator.SetBool( "DirectionRight", _movement.x > 0 );
-                        _animator.SetBool( "DirectionUp", false );
-                        _animator.SetBool( "DirectionDown", false );
-
-                    } else if (_movement.y != 0) {
-                        _animator.SetBool( "DirectionLeft", false );
-                        _animator.SetBool( "DirectionRight", false );
-                        _animator.SetBool( "DirectionUp", _movement.y > 0 );
-                        _animator.SetBool( "DirectionDown", _movement.y < 0 );
-                    }
+                    ProcessDirection();
                     break;
                 }
                 default:
                     break;
+            }
+        }
+
+        private void ProcessDirection()
+        {
+            Direction prevDirection = _direction;
+            if( Mathf.Abs( _movement.x ) > Mathf.Abs( _movement.y ) ) {
+                _direction = _movement.x < 0 ? Direction.Left : (_movement.x > 0 ? Direction.Right : _direction);
+            } else {
+                _direction = _movement.y < 0 ? Direction.Down : (_movement.y > 0 ? Direction.Up : _direction);
+            }
+
+            if( prevDirection != _direction ) {
+                _animator.SetBool( "DirectionLeft", _direction == Direction.Left );
+                _animator.SetBool( "DirectionRight", _direction == Direction.Right );
+                _animator.SetBool( "DirectionUp", _direction == Direction.Up );
+                _animator.SetBool( "DirectionDown", _direction == Direction.Down );
+                int x = _direction == Direction.Right ? 1 : _direction == Direction.Left ? -1 : 0;
+                int y = _direction == Direction.Up ? 1 : _direction == Direction.Down ? -1 : 0;
+                _hitBox.PushForce = new Vector2( x, y ) * _hitForce;
             }
         }
 

@@ -992,7 +992,7 @@ TextureImporter:
         x: 32
         y: 126
         width: 54
-        height: 66
+        height: 73
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1013,9 +1013,9 @@ TextureImporter:
         x: 107
         y: 126
         width: 60
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.64199394, y: 0.49270588}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1034,9 +1034,9 @@ TextureImporter:
         x: 194
         y: 126
         width: 74
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7230647, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1052,12 +1052,12 @@ TextureImporter:
       name: Imp 00_135
       rect:
         serializedVersion: 2
-        x: 306
+        x: 307
         y: 126
         width: 63
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.6605883, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1076,9 +1076,9 @@ TextureImporter:
         x: 422
         y: 127
         width: 55
-        height: 56
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 72
+      alignment: 9
+      pivot: {x: 0.62585783, y: 0.49260414}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1097,9 +1097,9 @@ TextureImporter:
         x: 528
         y: 127
         width: 55
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5871327, y: 0.4999998}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1363,12 +1363,12 @@ TextureImporter:
       Imp 00_13: -1809087410
       Imp 00_35: 828895801
       Imp 00_106: 1141070124
-      Imp 00_2: -1844860546
       Imp 00_89: -920149028
+      Imp 00_93: -816486238
       Imp 00_104: 1942430414
       Imp 00_120: 1538777295
       Imp 00_17: -1037680205
-      Imp 00_93: -816486238
+      Imp 00_2: -1844860546
       Imp 00_33: -1866731336
       Imp 00_27: -2127301370
       Imp 00_79: 838516422

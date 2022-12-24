@@ -1,0 +1,2058 @@
+fileFormatVersion: 2
+guid: 7f3095e12c4cd6740bfb702c4e04a044
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Magog 00_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 945
+        width: 47
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b33a87056eb4ca49a1497232b8d60cd
+      internalID: -2051648346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 945
+        width: 47
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78df0adf84e5bf14ca1cadedfd7f1aab
+      internalID: -1241586624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 945
+        width: 48
+        height: 100
+      alignment: 9
+      pivot: {x: 0.51, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece8e37b2bc60fb4abbf7120f1a0da9e
+      internalID: -1883131415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 945
+        width: 48
+        height: 100
+      alignment: 9
+      pivot: {x: 0.51, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8fb7a0104706848af49ef21e29ef79
+      internalID: -2000640883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_4
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 945
+        width: 48
+        height: 100
+      alignment: 9
+      pivot: {x: 0.49, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4746da12908d338419f7de65f314d3e1
+      internalID: -1023918329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_5
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 946
+        width: 49
+        height: 100
+      alignment: 9
+      pivot: {x: 0.495, y: 0.49}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98c162253f43084da20bac3ffceec98
+      internalID: 803346167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_6
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 944
+        width: 48
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526dc07a966c81b4eaf2c0447b3562b6
+      internalID: 788845241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_7
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 943
+        width: 48
+        height: 102
+      alignment: 9
+      pivot: {x: 0.505, y: 0.505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f63ccf11cbfd044b189939a9130540
+      internalID: -800427200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_8
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 943
+        width: 48
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0.505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72243b1701450724aa02a3ebc607a6dc
+      internalID: 853921389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 812
+        width: 56
+        height: 90
+      alignment: 9
+      pivot: {x: 0.3848106, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18efbe4cfda43e459d5e60429797878
+      internalID: -131272904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_10
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 812
+        width: 81
+        height: 90
+      alignment: 9
+      pivot: {x: 0.65, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063c51c4b3b8c0243b25cb0c4780fc7a
+      internalID: 1591798088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 812
+        width: 83
+        height: 90
+      alignment: 9
+      pivot: {x: 0.66, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea60132b28da5a4fbcc65324fec890a
+      internalID: 1363776905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_12
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 812
+        width: 74
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d4133cb318dec4994ad6a022dde1c3
+      internalID: -430647299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_13
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 812
+        width: 69
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044f7d02c78ae4f4dbaaa85f5f91d307
+      internalID: 350367112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_14
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 812
+        width: 73
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d669778c2a3a1459ef692e167ad543
+      internalID: 517502411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_15
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 812
+        width: 72
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce35faaa8a3c0fb4d85b4c80c7c2d1e5
+      internalID: -1338395703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_16
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 812
+        width: 74
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d450d5842deab284491d8f619b73a011
+      internalID: -330822570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_17
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 812
+        width: 77
+        height: 90
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3139e68fea76aa46a9287b7ffa46997
+      internalID: 1363555976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_18
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 699
+        width: 93
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c85fb40bd41ee498b8981afb21a28c
+      internalID: 276721845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_19
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 699
+        width: 77
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262eaf83209cf954392cfd221581d5ca
+      internalID: 2054724446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_20
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 699
+        width: 74
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701d52ba4a5baf5418e85c7d1cd2b94a
+      internalID: -262865653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_21
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 792
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fe991b8fcd00c40970643179f08ad4
+      internalID: -789397374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 700
+        width: 60
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56abb9827df55c04294d51a0f67bf2ee
+      internalID: -652495597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_23
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 700
+        width: 63
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0497845025e1fe6488150049a181ac7e
+      internalID: 1993656288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_24
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 699
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e343d401b42ccec4f8a6c7117284969e
+      internalID: -846610199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_25
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 696
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477b6b01d5a9c364194ba5b5f20bd628
+      internalID: 1377939915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_26
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 699
+        width: 64
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9daa229badc7341a96ffa35ebc6cee
+      internalID: 1237942725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_27
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 731
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b58d7e240d631541ad36396b6894201
+      internalID: 1428640834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_28
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 733
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6e009f6fb18444baf0ce0fc3d49a03
+      internalID: -853715153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_29
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 736
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdeb1618ff10134c9e7467b9e5bdff2
+      internalID: 1390502046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_32
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 705
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d9fcbac5292f44ea7cff2862fe8629
+      internalID: -856942643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_33
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 685
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bce0df85202f74c83a118e723494bf
+      internalID: -1528224064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_34
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 689
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e8f4770f1bd094c8d07971571befcc
+      internalID: 1391301863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_35
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 686
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d452a9a5c3953414e8da7c1788fd84be
+      internalID: 40039387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 566
+        width: 77
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f542e02ef195241874dfeb9def162b
+      internalID: 792145682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_37
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 566
+        width: 80
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832bd09e8be3b2346975597b3f7d2398
+      internalID: -1337522163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_38
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 566
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f270278ff095a184eac798685366ae5f
+      internalID: -102572001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_40
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 566
+        width: 87
+        height: 91
+      alignment: 9
+      pivot: {x: 0.73, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db55dd9ee01025418e8d853bd777faf
+      internalID: -568188644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_41
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 566
+        width: 77
+        height: 91
+      alignment: 9
+      pivot: {x: 0.43, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d569013a0f61fc40affa8a0c215347d
+      internalID: 2007560422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_42
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 566
+        width: 66
+        height: 91
+      alignment: 9
+      pivot: {x: 0.53, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75fb77e14f93ce4082e0e54aa935326
+      internalID: -2003202111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_43
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 566
+        width: 78
+        height: 91
+      alignment: 9
+      pivot: {x: 0.62, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be796b7083997c64abe90ffa5b50c1d8
+      internalID: 1094431272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_44
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 566
+        width: 54
+        height: 91
+      alignment: 9
+      pivot: {x: 0.52, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57a41081b0b64d4da28fdddd211e72e
+      internalID: 2008789804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_45
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 634
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0f72f9a20ef65498cd2e6903386b57
+      internalID: 580523226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_46
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 633
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c23b56af781bb54d8a10d6e9b6e130a
+      internalID: -1032041275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_47
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 631
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601fe49c5c3614d458c0089b9fdde4dc
+      internalID: -266342789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 580
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de323782616984a449ff1814fc5a5e3e
+      internalID: 101349908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_50
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 443
+        width: 108
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3c7883103fcdf46b635db81d62c648
+      internalID: 1624590271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_51
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 443
+        width: 108
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd8c93f54d843949b99c5e26daa8b42
+      internalID: -489748531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_52
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 491
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e58f0f41591a6408d68ddc0a347284
+      internalID: 526608903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_53
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 443
+        width: 109
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f825d59e53d66d4c8c53cd6ad983d94
+      internalID: 2135470165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_61
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 435
+        width: 51
+        height: 95
+      alignment: 9
+      pivot: {x: 0.65, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f9d6bb4818fb147b52530e4fac64d4
+      internalID: 1086586981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_62
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 435
+        width: 64
+        height: 95
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c2e32f3e79fbf4eae9acd1018fbc23
+      internalID: 1916729049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_63
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 435
+        width: 91
+        height: 95
+      alignment: 9
+      pivot: {x: 0.715, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cca1d1f91da4b64daa3d4b5978954f6
+      internalID: -1999812503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_64
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 434
+        width: 103
+        height: 95
+      alignment: 9
+      pivot: {x: 0.39, y: 0.61}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ecb3b2cb2742c42b8d5242c00494ec
+      internalID: -433096637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_65
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 436
+        width: 76
+        height: 95
+      alignment: 9
+      pivot: {x: 0.45, y: 0.59}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79378b2ea09c4e741ac8c93b32af55cd
+      internalID: -2137457089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_66
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 434
+        width: 77
+        height: 95
+      alignment: 9
+      pivot: {x: 0.64, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2439e156d4c104f9d0725148a5ba09
+      internalID: 1752573040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_67
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 435
+        width: 52
+        height: 95
+      alignment: 9
+      pivot: {x: 0.59, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05c0eb7d9734764f9cb72a0498556d3
+      internalID: -1216390684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_71
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 296
+        width: 76
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74eeb5ad743ce74997b072cce3a2af0
+      internalID: 947210174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_72
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 291
+        width: 83
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd71e140e08bc71439d13931bda83c03
+      internalID: -9878227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_74
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 318
+        width: 73
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb9ebb2668a4064c9c84db52a7cb4d7
+      internalID: -1471353748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_76
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 322
+        width: 94
+        height: 99
+      alignment: 9
+      pivot: {x: 0.65, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7621af344c21e541b43b0611f459da6
+      internalID: -1068246823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_77
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 322
+        width: 71
+        height: 100
+      alignment: 9
+      pivot: {x: 0.57, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611b5227d1a12004bac8e1c81810e92f
+      internalID: 1532413469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_78
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 322
+        width: 61
+        height: 99
+      alignment: 9
+      pivot: {x: 0.61, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709a732875a2b93418d5fa696007b9bf
+      internalID: 333622911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_79
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 322
+        width: 71
+        height: 99
+      alignment: 9
+      pivot: {x: 0.65, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb683db0cbdf1d1499ce5f208d9b0358
+      internalID: 1944146573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_80
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 322
+        width: 53
+        height: 98
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156957ac35499d640b3804b97e223265
+      internalID: -1804311831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_130
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 147
+        width: 84
+        height: 111
+      alignment: 9
+      pivot: {x: 0.725, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e617d7b7637c45c4a8fead2a83574469
+      internalID: 791275418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_136
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 148
+        width: 72
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5972222, y: 0.45454547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a9af132a050394e96fc65cb0861863
+      internalID: -403722947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_137
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 147
+        width: 82
+        height: 111
+      alignment: 9
+      pivot: {x: 0.73, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f192ef7d35b9354f947097278206b38
+      internalID: 31171476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_138
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 147
+        width: 83
+        height: 111
+      alignment: 9
+      pivot: {x: 0.67, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f766d1c888362c48af69d36a39dc148
+      internalID: 1227404810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_139
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 147
+        width: 55
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc426e68fda2cb4489fd406c17ebd34
+      internalID: -1274020842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_145
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 147
+        width: 64
+        height: 111
+      alignment: 9
+      pivot: {x: 0.65, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcc3e0a859a4184a9ad975cdc932bd2
+      internalID: -1747452634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_180
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 5
+        width: 75
+        height: 118
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d158d7f88ed9b6b42a63ccc35fc0aab8
+      internalID: 1686625158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_181
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 5
+        width: 93
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8004f3a25dd3e149aff5aa85a49afcc
+      internalID: 1813775548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_183
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 27
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba841c86240dda458ab428e2512ebe6
+      internalID: -1225501911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_184
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 27
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f71f71345f9b34d9e1406b09761d5d
+      internalID: -1393186384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_185
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 27
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61959b9af6ac4254aa548714e34eab43
+      internalID: 954672917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_186
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 27
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6cd4fe4c13b7b4d8297b94d5a10179
+      internalID: -1888938565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_187
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 26
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc453747f07d22f4b83789b283aafa13
+      internalID: -436373641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_188
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 26
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aafedc0fd6dd2a41b1ae897d542a6e1
+      internalID: -326040881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_189
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 5
+        width: 78
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cedefe7c4a70240ba518ba5471c2c3
+      internalID: -583870416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_190
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 5
+        width: 60
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3165171f71b009f4a90e1b3af1b6c848
+      internalID: -1067943379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_191
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 5
+        width: 45
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a96dcd4f58bb504b935cca13d4cfe81
+      internalID: 959701025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magog 00_192
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 5
+        width: 50
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf6b5195595490489262016c7cb9909
+      internalID: 1014544848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Magog 00_94: -600692063
+      Magog 00_63: -1999812503
+      Magog 00_23: 1993656288
+      Magog 00_117: -758101464
+      Magog 00_144: 375286150
+      Magog 00_163: -607684894
+      Magog 00_68: -236772545
+      Magog 00_0: -2051648346
+      Magog 00_73: 1157068283
+      Magog 00_59: 1912702572
+      Magog 00_25: 1377939915
+      Magog 00_37: -1337522163
+      Magog 00_66: 1752573040
+      Magog 00_185: 954672917
+      Magog 00_17: 1363555976
+      Magog 00_67: -1216390684
+      Magog 00_46: -1032041275
+      Magog 00_134: -263489577
+      Magog 00_82: -1034126368
+      Magog 00_136: -403722947
+      Magog 00_178: 645267347
+      Magog 00_16: -330822570
+      Magog 00_107: -1059072946
+      Magog 00_1: -1241586624
+      Magog 00_70: 157963682
+      Magog 00_149: 237786639
+      Magog 00_176: -1213709893
+      Magog 00_97: 149872396
+      Magog 00_95: 1071998564
+      Magog 00_42: -2003202111
+      Magog 00_145: -1747452634
+      Magog 00_153: -1037952481
+      Magog 00_83: -627785159
+      Magog 00_159: -773164987
+      Magog 00_14: 517502411
+      Magog 00_92: -1167259099
+      Magog 00_21: -789397374
+      Magog 00_108: -60471383
+      Magog 00_45: 580523226
+      Magog 00_121: 230636588
+      Magog 00_30: 224981784
+      Magog 00_28: -853715153
+      Magog 00_65: -2137457089
+      Magog 00_81: -1454307007
+      Magog 00_89: 1151528641
+      Magog 00_140: 110981154
+      Magog 00_139: -1274020842
+      Magog 00_43: 1094431272
+      Magog 00_118: -622877074
+      Magog 00_33: -1528224064
+      Magog 00_106: 1679319538
+      Magog 00_5: 803346167
+      Magog 00_151: 968654534
+      Magog 00_91: -2001881053
+      Magog 00_26: 1237942725
+      Magog 00_53: 2135470165
+      Magog 00_174: 1671171471
+      Magog 00_119: -50854511
+      Magog 00_60: 1030112550
+      Magog 00_112: 833451720
+      Magog 00_58: -843958147
+      Magog 00_188: -326040881
+      Magog 00_93: -414411378
+      Magog 00_171: -414331776
+      Magog 00_109: 1046946742
+      Magog 00_57: 2032640158
+      Magog 00_74: -1471353748
+      Magog 00_52: 526608903
+      Magog 00_175: 1243990600
+      Magog 00_54: 1976589897
+      Magog 00_24: -846610199
+      Magog 00_100: 2124662180
+      Magog 00_101: -1346233130
+      Magog 00_47: -266342789
+      Magog 00_62: 1916729049
+      Magog 00_142: 1785346982
+      Magog 00_18: 276721845
+      Magog 00_162: 408911527
+      Magog 00_49: -372516259
+      Magog 00_71: 947210174
+      Magog 00_85: -1533573505
+      Magog 00_9: -131272904
+      Magog 00_39: 1059557713
+      Magog 00_132: 2008761109
+      Magog 00_7: -800427200
+      Magog 00_69: -458488519
+      Magog 00_87: -783227676
+      Magog 00_64: -433096637
+      Magog 00_179: -1930088658
+      Magog 00_56: 818597670
+      Magog 00_114: 1672051919
+      Magog 00_79: 1944146573
+      Magog 00_96: 749595551
+      Magog 00_12: -430647299
+      Magog 00_146: -505773006
+      Magog 00_10: 1591798088
+      Magog 00_120: 989704891
+      Magog 00_150: -1708640658
+      Magog 00_180: 1686625158
+      Magog 00_84: 412667181
+      Magog 00_137: 31171476
+      Magog 00_48: 101349908
+      Magog 00_166: -478595670
+      Magog 00_15: -1338395703
+      Magog 00_11: 1363776905
+      Magog 00_22: -652495597
+      Magog 00_161: 119069005
+      Magog 00_31: 1977115342
+      Magog 00_192: 1014544848
+      Magog 00_160: 1454147818
+      Magog 00_156: 1834713914
+      Magog 00_158: 1019479356
+      Magog 00_55: -394042835
+      Magog 00_103: -1419649173
+      Magog 00_164: -506783668
+      Magog 00_104: 373968780
+      Magog 00_27: 1428640834
+      Magog 00_80: -1804311831
+      Magog 00_41: 2007560422
+      Magog 00_172: 1329591014
+      Magog 00_183: -1225501911
+      Magog 00_191: 959701025
+      Magog 00_3: -2000640883
+      Magog 00_148: -186090153
+      Magog 00_115: -1330732882
+      Magog 00_125: -1726829912
+      Magog 00_135: -1380802474
+      Magog 00_165: 1270104041
+      Magog 00_72: -9878227
+      Magog 00_122: 353041871
+      Magog 00_190: -1067943379
+      Magog 00_154: 2138876571
+      Magog 00_8: 853921389
+      Magog 00_75: 1817923047
+      Magog 00_189: -583870416
+      Magog 00_4: -1023918329
+      Magog 00_34: 1391301863
+      Magog 00_40: -568188644
+      Magog 00_131: 210407307
+      Magog 00_167: -750045656
+      Magog 00_88: 2110500416
+      Magog 00_138: 1227404810
+      Magog 00_127: 1618333980
+      Magog 00_99: -1203745751
+      Magog 00_147: 7465316
+      Magog 00_182: -1434711222
+      Magog 00_13: 350367112
+      Magog 00_168: 1709838835
+      Magog 00_187: -436373641
+      Magog 00_77: 1532413469
+      Magog 00_35: 40039387
+      Magog 00_20: -262865653
+      Magog 00_105: 562056760
+      Magog 00_2: -1883131415
+      Magog 00_6: 788845241
+      Magog 00_111: -18518110
+      Magog 00_51: -489748531
+      Magog 00_116: 525302758
+      Magog 00_177: -727390117
+      Magog 00_128: -1069736878
+      Magog 00_113: -2033835495
+      Magog 00_133: 2061269336
+      Magog 00_186: -1888938565
+      Magog 00_152: -1415123995
+      Magog 00_123: 541492796
+      Magog 00_169: 26476991
+      Magog 00_124: -1213812175
+      Magog 00_90: -1811539974
+      Magog 00_157: 545680130
+      Magog 00_126: -1175431848
+      Magog 00_32: -856942643
+      Magog 00_38: -102572001
+      Magog 00_86: -1876722380
+      Magog 00_155: 788446601
+      Magog 00_110: 2105712813
+      Magog 00_143: 975510884
+      Magog 00_129: 1420043402
+      Magog 00_61: 1086586981
+      Magog 00_141: -872062336
+      Magog 00_173: 686552061
+      Magog 00_19: 2054724446
+      Magog 00_78: 333622911
+      Magog 00_170: -2023550968
+      Magog 00_102: 355727955
+      Magog 00_29: 1390502046
+      Magog 00_76: -1068246823
+      Magog 00_36: 792145682
+      Magog 00_184: -1393186384
+      Magog 00_98: -775320378
+      Magog 00_44: 2008789804
+      Magog 00_181: 1813775548
+      Magog 00_130: 791275418
+      Magog 00_50: 1624590271
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
